@@ -1,4 +1,5 @@
 import MaxWidthContainer from '@app/components/MaxWidthContainer';
+import Sidebar from '@app/components/Sidebar';
 import Typography from '@app/components/Typography/Typography';
 import { NextPage } from 'next';
 import styled from 'styled-components';
