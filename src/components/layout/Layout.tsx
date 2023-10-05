@@ -1,8 +1,8 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, useState } from 'react';
 
 import { styled } from 'styled-components';
 import Header from './Header';
-import Footer from './Footer';
+import Sidebar from '../Sidebar';
 
 const Root = styled.div`
   min-height: 100vh;
@@ -22,12 +22,15 @@ type Props = {
   children: ReactNode;
 };
 
-const Layout: FC<Props> = ({ children }) => (
-  <Root>
-    <Header />
-    <MainLayout>{children}</MainLayout>
-    <Footer />
-  </Root>
-);
+const Layout: FC<Props> = ({ children }) => {
+  const [menuOpen, setOpenMenu] = useState<boolean>(false);
+  return (
+    <Root>
+      <Header onOpenMenu={() => setOpenMenu((prev) => !prev)} />
+      <MainLayout>{children}</MainLayout>
+      <Sidebar open={menuOpen} onClose={() => setOpenMenu(false)} />
+    </Root>
+  );
+};
 
 export default Layout;

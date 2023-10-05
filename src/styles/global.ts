@@ -51,6 +51,9 @@ a {
   text-decoration: none;
   font-size: inherit;
   outline: none;
+  :focus {
+    outline: 3px solid ${theme.colors.accent.pink}
+  }
 }
 button {
   font-family: "Inter", sans-serif;
@@ -65,6 +68,9 @@ a {
 p {
   font-size: 16px;
   line-height: 1.25;
+  :focus {
+    outline: 3px solid ${theme.colors.accent.pink}
+  }
 }
 
 button::-moz-focus-inner {
