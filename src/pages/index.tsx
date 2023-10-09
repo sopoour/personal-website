@@ -29,8 +29,17 @@ const Home: NextPage = () => {
   return (
     <Root>
       <TopWrapper>
-        <Typography textalign="center" as="h1">
-          Some title
+        <Typography>
+          I&apos;m passionate about building accessible, creative and inclusive products that have a
+          positive impact on society and our environment. User experience and writing clean
+          accessible code matter to me. I sweat the details, tho keeping in mind the holistic
+          product experience. I&apos;m mostly self-taught but learn what I need to build the best
+          possible solution. I&apos;ve worked several years as Product Manager until I&apos;ve
+          decided to switch career to Frontend Development. I&apos;m happiest when I&apos;m
+          creating, learning, exploring and thinking about how to make things better. My curiosity
+          has been my leading driver to dive into different programming languages, frontend
+          frameworks, design systems, animations, accessibility and much more. My motto is to always
+          follow whatever sparks that awe in you, then try it, break it and try again.
         </Typography>
       </TopWrapper>
       <DetailContainer>

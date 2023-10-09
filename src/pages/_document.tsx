@@ -37,20 +37,7 @@ class DocumentApp extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          {/* Change font families here */}
-          <link
-            rel="preload"
-            as="font"
-            href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap"
-          />
-          <link
-            rel="preload"
-            as="font"
-            href="https://fonts.googleapis.com/css?family=Roboto Mono:300,400,500,700&display=swap"
-          />
-        </Head>
-
+        <Head>{/* Change font families here */}</Head>
         <body>
           <Main />
           <NextScript />

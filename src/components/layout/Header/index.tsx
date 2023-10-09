@@ -4,7 +4,7 @@ import React from 'react';
 import { styled } from 'styled-components';
 import { FaBars, FaCross } from 'react-icons/fa';
 
-const HeaderWrapper = styled.header`
+const HeaderWrapper = styled.div`
   display: flex;
   position: sticky;
   top: 0;
@@ -44,7 +44,7 @@ type Props = {
 };
 
 const Header: React.FC<Props> = ({ onOpenMenu }) => (
-  <HeaderWrapper>
+  <HeaderWrapper aria-label="Mobile header">
     <Typography> Sophia</Typography>
     <BurgerMenu type="button" onClick={onOpenMenu}>
       <FaBars />
