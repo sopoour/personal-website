@@ -4,7 +4,6 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
-  optimizeFonts: false,
   webpack(config, { buildId, isServer, webpack }) {
     config.plugins.push(
       new webpack.DefinePlugin({
