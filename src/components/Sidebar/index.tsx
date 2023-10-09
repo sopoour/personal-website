@@ -55,14 +55,14 @@ const Content = styled.header<{ $open?: boolean }>`
   flex-direction: column;
   gap: 16px;
   justify-content: space-between;
-
+  width: 300px;
   ${({ $open }) =>
     $open &&
     css`
       transform: none;
       opacity: 1;
     `}
-  ${() => theme.media('md')`transform: none; width: 300px; opacity: 1; overflow: visible`}
+  ${() => theme.media('md')`transform: none;  opacity: 1`}
 `;
 
 const Header = styled.div`
