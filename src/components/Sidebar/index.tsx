@@ -6,6 +6,8 @@ import theme from '@app/styles/theme';
 import profile from '@app/assets/profile.png';
 import Image from 'next/image';
 import Typography from '../Typography/Typography';
+import Navigation from '../Navigation';
+import SoMe from '../SoMe';
 
 const Backdrop = styled.div<{ $open?: boolean }>`
   position: fixed;
@@ -36,11 +38,12 @@ const Backdrop = styled.div<{ $open?: boolean }>`
     `}
 `;
 
-const Content = styled.div<{ $open?: boolean }>`
-  position: fixed;
+const Content = styled.header<{ $open?: boolean }>`
+  position: sticky;
   overflow-y: auto;
   top: 0;
   bottom: 0;
+  height: 100vh;
   background: ${theme.colors.bg.default};
   z-index: 10;
   transition: all 300ms ease-in-out;
@@ -48,6 +51,10 @@ const Content = styled.div<{ $open?: boolean }>`
   transform: translateX(-100%);
   opacity: 0;
   padding: 80px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
 
   ${({ $open }) =>
     $open &&
@@ -55,7 +62,7 @@ const Content = styled.div<{ $open?: boolean }>`
       transform: none;
       opacity: 1;
     `}
-  ${() => theme.media('md')`transform: none; width: 25%; opacity: 1`}
+  ${() => theme.media('md')`transform: none; width: 300px; opacity: 1; overflow: visible`}
 `;
 
 const Header = styled.div`
@@ -84,11 +91,13 @@ const Sidebar: FC<Props> = ({ open, onClose }) => {
       <Backdrop onClick={onClose} $open={open} />
       <Content $open={open}>
         <Header>
-          <ProfileImage src={profile.src} width={100} height={100} alt="profile image" />
+          <ProfileImage src={profile.src} width={100} height={100} alt="sophia auer avatar" />
           <Typography textalign="center" fontSize="20px">
             Soph. (they/them).
           </Typography>
         </Header>
+        <Navigation />
+        <SoMe />
       </Content>
     </>
   );
