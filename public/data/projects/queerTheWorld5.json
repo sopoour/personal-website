@@ -1,0 +1,51 @@
+{
+    "id": "queer-the-world",
+    "title": "Find queer events anywhere",
+    "links": [
+        {
+            "type": "link",
+            "id": "queer-the-world",
+            "link": "https://queer-the-world.vercel.app/"
+        },
+        {
+            "type": "github",
+            "id": "queer-the-world-github",
+            "link": "https://github.com/sopoour/queer-the-world"
+        }
+    ],
+    "description": "This is currently WIP project that I'm mainly working on. I've scraped about 1K events from Wikipedia that I'm visualizing in different ways to make it easier to find queer events around the world all year long.",
+    "tags": [
+        {
+            "type": "tech",
+            "label": "Typescript"
+        },
+        {
+            "type": "tech",
+            "label": "React"
+        },
+        {
+            "type": "tech",
+            "label": "Next.js"
+        },
+        {
+            "type": "tool",
+            "label": "Vercel"
+        },
+        {
+            "type": "tool",
+            "label": "Prisma"
+        },
+        {
+            "type": "tech",
+            "label": "Python"
+        },
+        {
+            "type": "tool",
+            "label": "Scrapy"
+        },
+        {
+            "type": "tech",
+            "label": "PostgreSQL"
+        }
+    ]
+}

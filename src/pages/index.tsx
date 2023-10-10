@@ -1,8 +1,15 @@
 import MaxWidthContainer from '@app/components/MaxWidthContainer';
+import ProjectCard from '@app/components/ProjectCard';
 import Sidebar from '@app/components/Sidebar';
 import Typography from '@app/components/Typography/Typography';
+import { fetcher } from '@app/hooks/fetch/useFetch';
+import { Project } from '@app/types';
 import { NextPage } from 'next';
-import styled from 'styled-components';
+import { useState } from 'react';
+import styled, { css } from 'styled-components';
+import useSWR from 'swr';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import theme from '@app/styles/theme';
 
 const Root = styled.span`
   display: flex;
@@ -15,33 +22,74 @@ const Root = styled.span`
   `}
 `;
 
-const TopWrapper = styled(MaxWidthContainer)`
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+const Carousel = styled(MaxWidthContainer)`
+  position: relative;
+  width: 75%;
+  height: 20rem;
+  perspective: 300px;
+  transform-style: preserve-3d;
+
+  ${theme.media('sm')`
+    height: 23rem;
+    width: 60%;
+    perspective: 500px;
+  `}
 `;
 
 const DetailContainer = styled.div`
   padding: 0 20px;
 `;
 
+const NavButton = styled.button<{ side: 'left' | 'right' }>`
+  color: white;
+  font-size: 3rem;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  z-index: 2;
+  cursor: pointer;
+  user-select: none;
+  background: unset;
+  border: unset;
+
+  ${({ side }) =>
+    side === 'left'
+      ? css`
+          transform: translate(-100%, -50%);
+          left: 10%;
+        `
+      : css`
+          right: 10%;
+          transform: translate(100%, -50%);
+        `}
+`;
+
 const Home: NextPage = () => {
+  const [activeCard, setActiveCard] = useState<number>(1);
+  const { data, isLoading } = useSWR<Project[]>('/api/projects', fetcher);
+
+  if (isLoading) return <p>Loading...</p>;
   return (
     <Root>
-      <TopWrapper>
-        <Typography>
-          I&apos;m passionate about building accessible, creative and inclusive products that have a
-          positive impact on society and our environment. User experience and writing clean
-          accessible code matter to me. I sweat the details, tho keeping in mind the holistic
-          product experience. I&apos;m mostly self-taught but learn what I need to build the best
-          possible solution. I&apos;ve worked several years as Product Manager until I&apos;ve
-          decided to switch career to Frontend Development. I&apos;m happiest when I&apos;m
-          creating, learning, exploring and thinking about how to make things better. My curiosity
-          has been my leading driver to dive into different programming languages, frontend
-          frameworks, design systems, animations, accessibility and much more. My motto is to always
-          follow whatever sparks that awe in you, then try it, break it and try again.
-        </Typography>
-      </TopWrapper>
+      <Carousel>
+        <NavButton side="left" onClick={() => setActiveCard((i) => i - 1)}>
+          <IoIosArrowBack />
+        </NavButton>
+        {data &&
+          data?.map((project, index) => (
+            <ProjectCard
+              project={project}
+              key={project.id}
+              activeIndex={activeCard}
+              projectIndex={index}
+            />
+          ))}
+        <NavButton side="right" onClick={() => setActiveCard((i) => i + 1)}>
+          <IoIosArrowForward />
+        </NavButton>
+      </Carousel>
       <DetailContainer>
         <Typography textalign="center">Some text</Typography>
       </DetailContainer>
