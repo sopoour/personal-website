@@ -1,5 +1,3 @@
-// pages/api/mergeJson.ts
-
 import { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
@@ -10,7 +8,8 @@ export default async function getProjects(
   res: NextApiResponse<Project[] | { error: string }>,
 ) {
   try {
-    const folderPath = 'public/data/projects';
+    const dirRelativeToPublicFolder = 'data/projects';
+    const folderPath = path.resolve('./public', dirRelativeToPublicFolder);
     const files = fs.readdirSync(folderPath);
     const mergedData = files.map((file) => {
       // get for each file the filePath and the data from it
