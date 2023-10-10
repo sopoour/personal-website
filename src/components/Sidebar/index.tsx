@@ -7,7 +7,15 @@ import profile from '@app/assets/profile.png';
 import Image from 'next/image';
 import Typography from '../Typography/Typography';
 import Navigation from '../Navigation';
-import SoMe from '../SoMe';
+import LinkContainer from '../LinkContainer';
+import { IconLink } from '@app/types';
+
+const links: IconLink[] = [
+  { type: 'github' },
+  { type: 'linkedin' },
+  { type: 'email' },
+  { type: 'instagram' },
+];
 
 const Backdrop = styled.div<{ $open?: boolean }>`
   position: fixed;
@@ -97,7 +105,7 @@ const Sidebar: FC<Props> = ({ open, onClose }) => {
           </Typography>
         </Header>
         <Navigation />
-        <SoMe />
+        <LinkContainer iconLinks={links} />
       </Content>
     </>
   );
