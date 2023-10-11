@@ -16,6 +16,9 @@ const theme = {
       pink: '#F535AA',
       orange: '#FF4F09',
       green: '#30FF7F',
+      pinkSoft: 'rgba(245, 53, 170, 0.25)',
+      orangeSoft: 'rgba(255, 79, 9, 0.15)',
+      greenSoft: 'rgba(48, 255, 127, 0.15)',
     },
   },
 } as const;

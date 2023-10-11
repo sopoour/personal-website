@@ -1,5 +1,5 @@
 import { flexRow } from '@app/styles/mixins';
-import { FC, ReactElement, useMemo } from 'react';
+import { FC, useMemo } from 'react';
 import { styled } from 'styled-components';
 import theme from '@app/styles/theme';
 import Link from 'next/link';
@@ -12,12 +12,11 @@ const Container = styled.span<{ hoverColour?: string; size?: 'small' | 'big' }>`
   justify-content: center;
 
   svg {
-    width: ${({ size }) => (size === 'big' ? '20px' : '12px')};
-    height: ${({ size }) => (size === 'big' ? '20px' : '12px')};
-    transition: transform 0.3s ease-in-out;
+    width: ${({ size }) => (size === 'big' ? '20px' : '14px')};
+    height: ${({ size }) => (size === 'big' ? '20px' : '14px')};
+    transition: all 0.3s ease-in-out;
     path {
       fill: ${theme.colors.bg.soft};
-      transition: fill 0.3s ease-in-out;
     }
     &:hover {
       cursor: pointer;

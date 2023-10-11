@@ -11,7 +11,7 @@ export default async function getProjects(
     const dirRelativeToPublicFolder = 'data/projects';
     const folderPath = path.resolve('./public', dirRelativeToPublicFolder);
     const files = fs.readdirSync(folderPath);
-    const mergedData = files.map((file) => {
+    const mergedData: Project[] = files.map((file) => {
       // get for each file the filePath and the data from it
       const filePath = path.join(folderPath, file);
       const data = fs.readFileSync(filePath, 'utf-8');
