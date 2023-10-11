@@ -1,6 +1,5 @@
 import MaxWidthContainer from '@app/components/MaxWidthContainer';
 import ProjectCard from '@app/components/ProjectCard';
-import Sidebar from '@app/components/Sidebar';
 import Typography from '@app/components/Typography/Typography';
 import { fetcher } from '@app/hooks/fetch/useFetch';
 import { Project } from '@app/types';
@@ -24,9 +23,9 @@ const Root = styled.span`
 
 const Carousel = styled(MaxWidthContainer)`
   position: relative;
-  width: 75%;
+  width: 80%;
   height: 20rem;
-  perspective: 300px;
+  perspective: 500px;
   transform-style: preserve-3d;
 
   ${theme.media('sm')`
@@ -67,14 +66,17 @@ const NavButton = styled.button<{ side: 'left' | 'right' }>`
 `;
 
 const Home: NextPage = () => {
-  const [activeCard, setActiveCard] = useState<number>(1);
+  const [activeCard, setActiveCard] = useState<number>(0);
   const { data, isLoading } = useSWR<Project[]>('/api/projects', fetcher);
+  const handleNext = () => data && setActiveCard((prevIndex) => (prevIndex + 1) % data.length);
+  const handlePrev = () =>
+    data && setActiveCard((prevIndex) => (prevIndex - 1 + data.length) % data.length);
 
   if (isLoading) return <p>Loading...</p>;
   return (
     <Root>
       <Carousel>
-        <NavButton side="left" onClick={() => setActiveCard((i) => i - 1)}>
+        <NavButton side="left" onClick={handlePrev}>
           <IoIosArrowBack />
         </NavButton>
         {data &&
@@ -86,7 +88,7 @@ const Home: NextPage = () => {
               projectIndex={index}
             />
           ))}
-        <NavButton side="right" onClick={() => setActiveCard((i) => i + 1)}>
+        <NavButton side="right" onClick={handleNext}>
           <IoIosArrowForward />
         </NavButton>
       </Carousel>
