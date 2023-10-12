@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-project": "node src/scripts/generate-project.js"
   },
   "dependencies": {
     "@svgr/webpack": "8.1.0",
@@ -48,6 +49,7 @@
     "jest-environment-jsdom": "29.4.3",
     "npm-check-updates": "16.7.9",
     "prettier": "latest",
+    "readline-sync": "^1.4.10",
     "style-loader": "2.0.0",
     "ts-jest": "29.0.5",
     "typescript": "latest"

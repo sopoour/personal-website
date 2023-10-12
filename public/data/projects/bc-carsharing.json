@@ -1,0 +1,48 @@
+{
+  "id": "bc-carsharing",
+  "title": "Blockchain based Car Sharing Prototype",
+  "description": "A prototype built as part of my Master Thesis together with my Thesis Partner. Based on this, we also published a paper in Journal of Network and Computer Applications. It simulates the unlocking of a car by having a Rasperry Pi representing the server of the car, an RFID sensor as the car lock and the RFID tag as the keyless option to open the door. The transaction is verified in the Blockchain network of Hyperledger Fabric.",
+  "date": "2020-05-15",
+  "links": [
+    {
+      "type": "link",
+      "id": "bc-carsharing-demo",
+      "link": "https://doi.org/10.1016/j.jnca.2021.103316"
+    },
+    {
+      "type": "github",
+      "id": "bc-carsharing-github",
+      "link": "https://github.com/sopoour/blockchainCarsharing"
+    }
+  ],
+  "tags": [
+    {
+      "type": "skill",
+      "label": "Embedded Programming"
+    },
+    {
+      "type": "tech",
+      "label": "Python"
+    },
+    {
+      "type": "tech",
+      "label": "Node.js"
+    },
+    {
+      "type": "tool",
+      "label": "Hyperledger Fabric"
+    },
+    {
+      "type": "tech",
+      "label": "Raspberry Pi"
+    },
+    {
+      "type": "tech",
+      "label": "RFID sensor"
+    },
+    {
+      "type": "skill",
+      "label": "Research and Editing"
+    }
+  ]
+}

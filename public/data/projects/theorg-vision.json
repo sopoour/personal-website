@@ -1,0 +1,51 @@
+{
+  "id": "theorg-vision",
+  "title": "The Org's revenue product - Vision",
+  "description": "Vision is a Sales enabling tool fostering the power of the public org chart data base by The Org. I implemented most of the current features including search of people and companies with org charts, filtering, saved list and subscriptions.",
+  "date": "2023-05-15",
+  "links": [
+    {
+      "type": "link",
+      "id": "theorg-vision-demo",
+      "link": "https://vision.theorg.com"
+    }
+  ],
+  "tags": [
+    {
+      "type": "skill",
+      "label": "Frontend Development"
+    },
+    {
+      "type": "tech",
+      "label": "Next.js"
+    },
+    {
+      "type": "tech",
+      "label": "React"
+    },
+    {
+      "type": "tech",
+      "label": "GraphQL"
+    },
+    {
+      "type": "tool",
+      "label": "Vercel"
+    },
+    {
+      "type": "tech",
+      "label": "Typescript"
+    },
+    {
+      "type": "skill",
+      "label": "Product Management"
+    },
+    {
+      "type": "tech",
+      "label": "Radix UI"
+    },
+    {
+      "type": "tech",
+      "label": "styled-components"
+    }
+  ]
+}

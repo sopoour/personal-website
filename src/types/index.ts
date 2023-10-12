@@ -4,7 +4,7 @@ export type IconLink = {
   link?: string;
 };
 
-export type TagType = 'tech' | 'tool' | 'skills';
+export type TagType = 'tech' | 'tool' | 'skill';
 
 export type Tag = {
   type: TagType;
@@ -19,4 +19,5 @@ export type Project = {
   links: IconLink[];
   description: string;
   tags: Tag[];
+  date: string;
 };

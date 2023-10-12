@@ -1,10 +1,11 @@
 {
     "id": "queer-the-world",
     "title": "Find queer events anywhere",
+    "date": "2023-08-10",
     "links": [
         {
             "type": "link",
-            "id": "queer-the-world",
+            "id": "queer-the-world-demo",
             "link": "https://queer-the-world.vercel.app/"
         },
         {
@@ -15,6 +16,10 @@
     ],
     "description": "This is currently WIP project that I'm mainly working on. I've scraped about 1K events from Wikipedia that I'm visualizing in different ways to make it easier to find queer events around the world all year long.",
     "tags": [
+        {
+            "type": "skill",
+            "label": "Fullstack Development"
+        },
         {
             "type": "tech",
             "label": "Typescript"
@@ -46,6 +51,14 @@
         {
             "type": "tech",
             "label": "PostgreSQL"
+        },
+        {
+            "type": "tool",
+            "label": "Figma"
+        },
+        {
+            "type": "skill",
+            "label": "Product Design"
         }
     ]
 }

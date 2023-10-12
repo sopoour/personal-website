@@ -1,0 +1,43 @@
+{
+  "id": "theorg",
+  "title": "Redesign and new Branding at The Org",
+  "description": "This complete revamp of the position page was one of the features/projects I've worked on during my time as a Frontend Developer at The Org. As a nice design goody, the implementation of the mini org chart (showing the reports and managers) was the most fun part.",
+  "date": "2022-11-15",
+  "links": [
+    {
+      "type": "link",
+      "id": "theorg-demo",
+      "link": "https://theorg.com/org/theorg/org-chart/andreas"
+    }
+  ],
+  "tags": [
+    {
+      "type": "skill",
+      "label": "Frontend Development"
+    },
+    {
+      "type": "tech",
+      "label": "Next.js"
+    },
+    {
+      "type": "tech",
+      "label": "Typescript"
+    },
+    {
+      "type": "tech",
+      "label": "React"
+    },
+    {
+      "type": "tool",
+      "label": "Storybook"
+    },
+    {
+      "type": "tool",
+      "label": "Vercel"
+    },
+    {
+      "type": "tech",
+      "label": "styled-components"
+    }
+  ]
+}
