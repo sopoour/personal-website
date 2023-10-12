@@ -48,6 +48,7 @@
     "jest-environment-jsdom": "29.4.3",
     "npm-check-updates": "16.7.9",
     "prettier": "latest",
+    "readline-sync": "^1.4.10",
     "style-loader": "2.0.0",
     "ts-jest": "29.0.5",
     "typescript": "latest"

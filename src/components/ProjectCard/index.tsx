@@ -46,7 +46,7 @@ const ProjectCard: FC<Props> = ({ project, activeIndex, projectIndex }) => {
         <Tags tags={project.tags} />
       </DetailsContainer>
       <Image
-        src={`/images/${project.id}.png`}
+        src={`/data/images/${project.id}.png`}
         alt={`${project.title} - Project thumbnail`}
         objectFit="cover"
         fill

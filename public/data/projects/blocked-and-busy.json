@@ -1,0 +1,47 @@
+{
+  "id": "blocked-and-busy",
+  "title": "Blocked & Busy",
+  "description": "Blocked and Busy will be a site to signup for a Newsletter and view the individual posts",
+  "links": [
+    {
+      "type": "link",
+      "id": "blocked-and-busy-demo",
+      "link": "https://blocked-and-busy.netlify.app/"
+    },
+    {
+      "type": "github",
+      "id": "blocked-and-busy-github",
+      "link": "https://github.com/sopoour/blocked-and-busy"
+    }
+  ],
+  "tags": [
+    {
+      "type": "tech",
+      "label": "Next.js"
+    },
+    {
+      "type": "tech",
+      "label": "React"
+    },
+    {
+      "type": "tech",
+      "label": "Typescript"
+    },
+    {
+      "type": "tool",
+      "label": "Contentful"
+    },
+    {
+      "type": "tech",
+      "label": "GraphQL"
+    },
+    {
+      "type": "tool",
+      "label": "Netlify"
+    },
+    {
+      "type": "tech",
+      "label": "styled-components"
+    }
+  ]
+}
