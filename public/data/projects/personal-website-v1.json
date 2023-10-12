@@ -26,6 +26,10 @@
     },
     {
       "type": "tech",
+      "label": "Bootstrap"
+    },
+    {
+      "type": "tech",
       "label": "Javascript"
     },
     {

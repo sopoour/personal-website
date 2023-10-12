@@ -10,7 +10,6 @@ const Container = styled.span<{ hoverColour?: string; size?: 'small' | 'big' }>`
   ${flexRow};
   gap: 16px;
   justify-content: center;
-
   svg {
     width: ${({ size }) => (size === 'big' ? '20px' : '14px')};
     height: ${({ size }) => (size === 'big' ? '20px' : '14px')};
