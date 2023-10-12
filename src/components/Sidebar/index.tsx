@@ -80,6 +80,8 @@ const Header = styled.div`
   align-items: center;
   gap: 16px;
   flex-shrink: 0;
+  position: relative;
+  z-index: 12;
 `;
 
 const ProfileImage = styled(Image)`

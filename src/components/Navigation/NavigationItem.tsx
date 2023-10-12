@@ -33,7 +33,7 @@ type Props = {
 };
 
 const NavigationItem: FC<Props> = ({ item }) => (
-  <Item id={item} href="#">
+  <Item id={item} href={`#${item.toLowerCase().replace(/\s/g, '-')}`}>
     · · · {item}
   </Item>
 );
