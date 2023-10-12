@@ -2,6 +2,7 @@
   "id": "blocked-and-busy",
   "title": "Blocked & Busy",
   "description": "Blocked and Busy will be a site to signup for a Newsletter and view the individual posts",
+  "date": "2023-09-15",
   "links": [
     {
       "type": "link",
@@ -16,6 +17,10 @@
   ],
   "tags": [
     {
+      "type": "skill",
+      "label": "Fullstack development"
+    },
+    {
       "type": "tech",
       "label": "Next.js"
     },
@@ -29,7 +34,7 @@
     },
     {
       "type": "tool",
-      "label": "Contentful"
+      "label": "Contentful CRM"
     },
     {
       "type": "tech",

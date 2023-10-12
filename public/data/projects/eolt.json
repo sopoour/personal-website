@@ -1,0 +1,56 @@
+{
+  "id": "eolt",
+  "title": "Encylopedia of Ludic Terms (EoLT) - Freelance project for ITU",
+  "description": "This has been built for a research group at the IT University in Copenhagen. It's an encyclopedia for game studies where researchers can add articles explaining specific words in Game studies. You can both browse or search specific keywords to find the articles and each article has a table of content. This was one of my first projects using React and Contentful as CRM. ",
+  "date": "2021-11-15",
+  "links": [
+    {
+      "type": "link",
+      "id": "eolt-demo",
+      "link": "https://eolt.org/"
+    },
+    {
+      "type": "github",
+      "id": "eolt-github",
+      "link": "https://github.com/ludicterms/ludicterms.github.io"
+    }
+  ],
+  "tags": [
+    {
+      "type": "skill",
+      "label": "Product Management"
+    },
+    {
+      "type": "skill",
+      "label": "Fullstack Development"
+    },
+    {
+      "type": "tech",
+      "label": "React"
+    },
+    {
+      "type": "tech",
+      "label": "Javascript"
+    },
+    {
+      "type": "tech",
+      "label": "CSS"
+    },
+    {
+      "type": "tech",
+      "label": "styled-components"
+    },
+    {
+      "type": "tool",
+      "label": "Contentful CRM"
+    },
+    {
+      "type": "tool",
+      "label": "Github pages"
+    },
+    {
+      "type": "tech",
+      "label": "React Markdown"
+    }
+  ]
+}

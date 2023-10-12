@@ -17,7 +17,7 @@ export const DetailsContainer = styled.div`
   ${flexColumn};
   width: 100%;
   height: 100%;
-  padding: 32px 16px;
+  padding: 32px;
   gap: 8px;
   background-color: #0b0e2b;
   box-shadow: 0 60px 50px -60px ${theme.colors.bg.soft};
@@ -82,6 +82,7 @@ export const Card = styled.div<{
   &::before {
     z-index: 2;
     content: 'View details';
+    font-weight: 500;
     width: max-content;
     height: max-content;
     border-radius: 4px;
@@ -145,7 +146,7 @@ export const Card = styled.div<{
 
 export const Links = styled(LinkContainer)`
   gap: 10px;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
   svg {
     &:hover {
       path {

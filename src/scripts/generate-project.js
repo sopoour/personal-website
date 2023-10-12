@@ -8,19 +8,20 @@ const data = {};
 data.id = readlineSync.question('Enter project id in format "name-of-project": ');
 data.title = readlineSync.question('Enter project name: ');
 data.description = readlineSync.question('Enter project description: ');
+data.date = readlineSync.question('Enter project date in format "YYYY-MM-DD": ');
 data.links = [];
 data.tags = [];
 const demoLink = readlineSync.question('Enter demo url: ', {
-  limit: urlRegex,
+  limit: [urlRegex, 'no url'],
   limitMessage: 'The demolink is not in an url format',
 });
 const githubLink = readlineSync.question('Enter github url: ', {
-  limit: urlRegex,
+  limit: [urlRegex, 'no url'],
   limitMessage: 'The githubLink is not in an url format',
 });
 
-if (demoLink.length > 0) data.links.push({ type: 'link', id: `${data.id}-demo`, link: demoLink });
-if (githubLink.length > 0)
+if (demoLink !== 'no url') data.links.push({ type: 'link', id: `${data.id}-demo`, link: demoLink });
+if (githubLink !== 'no url')
   data.links.push({ type: 'github', id: `${data.id}-github`, link: githubLink });
 
 console.log(

@@ -11,12 +11,16 @@ export default async function getProjects(
     const dirRelativeToPublicFolder = 'data/projects';
     const folderPath = path.resolve('./public', dirRelativeToPublicFolder);
     const files = fs.readdirSync(folderPath);
-    const mergedData: Project[] = files.map((file) => {
-      // get for each file the filePath and the data from it
-      const filePath = path.join(folderPath, file);
-      const data = fs.readFileSync(filePath, 'utf-8');
-      return JSON.parse(data);
-    });
+    const mergedData: Project[] = files
+      .map((file) => {
+        // get for each file the filePath and the data from it
+        const filePath = path.join(folderPath, file);
+        const data = fs.readFileSync(filePath, 'utf-8');
+        return JSON.parse(data);
+      })
+      .sort((a, b) =>
+        new Date(a.date) < new Date(b.date) ? 1 : new Date(a.date) > new Date(b.date) ? -1 : 0,
+      );
 
     res.status(200).json(mergedData);
   } catch (error) {

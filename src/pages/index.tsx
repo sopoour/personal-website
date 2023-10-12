@@ -29,7 +29,7 @@ const Carousel = styled(MaxWidthContainer)`
   transform-style: preserve-3d;
 
   ${theme.media('sm')`
-    height: 23rem;
+    height: 25rem;
     width: 60%;
     perspective: 500px;
   `}

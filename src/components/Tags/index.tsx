@@ -12,7 +12,7 @@ const getColourTheme = (type: TagType) => {
       return { color: theme.colors.accent.pink, backgroundColor: theme.colors.accent.pinkSoft };
     case 'tool':
       return { color: theme.colors.accent.green, backgroundColor: theme.colors.accent.greenSoft };
-    case 'skills':
+    case 'skill':
       return { color: theme.colors.accent.orange, backgroundColor: theme.colors.accent.orangeSoft };
   }
 };

@@ -19,4 +19,5 @@ export type Project = {
   links: IconLink[];
   description: string;
   tags: Tag[];
+  date: string;
 };

@@ -1,0 +1,51 @@
+{
+  "id": "pi-robot",
+  "title": "Remote-controlled Pi Robot (aka Elliot)",
+  "description": "Out of curiosity I've started building a little robot car. I'm using a RPi 3B+ with an Explorer HAT. Elliot can be Remote-controlled via a remote and is unlocked via a RFID sensor. The initial set-up is based on STS Pilot by Mark Dammer with a Python based Flask application for the Backend and JS/HTML/CSS for the remote Frontend. I'm planning to add some distance and air pollution sensors as well as to use some object detection.",
+  "date": "2021-03-15",
+  "links": [
+    {
+      "type": "github",
+      "id": "pi-robot-github",
+      "link": "https://github.com/sopoour/pi_robot"
+    }
+  ],
+  "tags": [
+    {
+      "type": "skill",
+      "label": "Robotics"
+    },
+    {
+      "type": "skill",
+      "label": "Embedded Programming"
+    },
+    {
+      "type": "tech",
+      "label": "Python"
+    },
+    {
+      "type": "tech",
+      "label": "Raspberry Pi"
+    },
+    {
+      "type": "tech",
+      "label": "Flask"
+    },
+    {
+      "type": "tech",
+      "label": "Javascript"
+    },
+    {
+      "type": "tech",
+      "label": "HTML"
+    },
+    {
+      "type": "tech",
+      "label": "CSS"
+    },
+    {
+      "type": "tech",
+      "label": "RFID sensor"
+    }
+  ]
+}

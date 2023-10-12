@@ -1,0 +1,40 @@
+{
+  "id": "personal-website-v1",
+  "title": "Personal Website v1",
+  "description": "This has been my first coding project a long time ago. Through building the website I've found the passion in coding and continued from there",
+  "date": "2018-05-15",
+  "links": [
+    {
+      "type": "link",
+      "id": "personal-website-v1-demo",
+      "link": "https://sopoour.github.io/"
+    },
+    {
+      "type": "github",
+      "id": "personal-website-v1-github",
+      "link": "https://github.com/sopoour/sopoour.github.io"
+    }
+  ],
+  "tags": [
+    {
+      "type": "tech",
+      "label": "HTML"
+    },
+    {
+      "type": "tech",
+      "label": "CSS"
+    },
+    {
+      "type": "tech",
+      "label": "Javascript"
+    },
+    {
+      "type": "tool",
+      "label": "Github Pages"
+    },
+    {
+      "type": "tool",
+      "label": "Adobe Photoshop"
+    }
+  ]
+}

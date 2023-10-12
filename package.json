@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-project": "node src/scripts/generate-project.js"
   },
   "dependencies": {
     "@svgr/webpack": "8.1.0",
