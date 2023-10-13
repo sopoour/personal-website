@@ -9,8 +9,12 @@ import {
   SubTitle,
   ContentWrapper,
   ProfileImage,
+  ScrollArrowContainer,
+  ScrollArrowFadeElement,
 } from './styles';
 import profile from '@app/assets/profile_design.png';
+import Link from 'next/link';
+import { IoIosArrowDown } from 'react-icons/io';
 
 const Intro: FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,13 +22,11 @@ const Intro: FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 10);
+      setIsScrolled(scrollPosition > 25);
 
-      if (scrollPosition > 10) {
+      if (scrollPosition > 25) {
         // If scrolled, remove the scroll event listener
         window.removeEventListener('scroll', handleScroll);
-        //@ts-ignore
-        document.getElementById('layout-root').style.overflowY = 'unset';
       }
     };
 
@@ -42,10 +44,22 @@ const Intro: FC = () => {
       <BottomRight />
       <ContentWrapper>
         <ProfileImage src={profile.src} width={400} height={305} alt="sophia auer avatar" />
-        <Title fontWeight={700}>
-          Hi! I&apos;m Sophia. <span>(they/them).</span>
+        <Title
+          fontWeight={700}
+          as="h1"
+          aria-label="Personal Website by Sophia Auer"
+          title="Personal Website by Sophia Auer"
+        >
+          Hi! I&apos;m Soph. <span>(they/them).</span>
         </Title>
-        <SubTitle>Frontend Developer</SubTitle>
+        <SubTitle as="h2">Frontend Developer</SubTitle>
+        <Link href="#projects">
+          <ScrollArrowContainer>
+            <IoIosArrowDown />
+            <ScrollArrowFadeElement />
+            <ScrollArrowFadeElement />
+          </ScrollArrowContainer>
+        </Link>
       </ContentWrapper>
     </IntroContainer>
   );

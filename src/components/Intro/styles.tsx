@@ -8,6 +8,7 @@ import theme from '@app/styles/theme';
 import Typography from '../Typography/Typography';
 import { robotoMono } from '@app/styles/fonts';
 import { flexColumn } from '@app/styles/mixins';
+import { IoIosArrowDown } from 'react-icons/io';
 
 const rotate1 = keyframes`
     10% {
@@ -28,6 +29,19 @@ const rotate2 = keyframes`
       transform: rotate(2deg);
       -webkit-transform: rotate(2deg);
     }
+`;
+
+const fadeIn = keyframes`
+  
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
 `;
 
 const transformInitial = css`
@@ -67,7 +81,7 @@ export const Title = styled(Typography)`
       width: 0;
     }
     to {
-      width: 32rem;
+      width: 30rem;
     }
   }
 
@@ -76,7 +90,7 @@ export const Title = styled(Typography)`
       width: 0;
     }
     to {
-      width: 26rem;
+      width: 24rem;
     }
   }
 
@@ -104,19 +118,8 @@ export const SubTitle = styled(Typography)`
   font-family: ${robotoMono.style.fontFamily};
   opacity: 0;
   font-size: 20px;
-  animation: fadeIn 3s forwards 6s;
-  -webkit-animation: fadeIn 3s forwards 6s;
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(100px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  animation: ${fadeIn} 3s forwards 6s;
+  -webkit-animation: ${fadeIn} 3s forwards 6s;
 
   ${theme.media('sm')`
     font-size: 24px;
@@ -124,14 +127,11 @@ export const SubTitle = styled(Typography)`
 `;
 
 export const IntroContainer = styled.div<{ $moveAway: boolean }>`
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
   background: ${theme.colors.bg.default};
   display: flex;
   flex-flow: column wrap;
+  height: 100vh;
+  width: 100%;
   z-index: 1000;
   transition: all 0.75s ease-in-out;
   -webkit-transition: all 0.75s ease-in-out;
@@ -147,9 +147,10 @@ export const IntroContainer = styled.div<{ $moveAway: boolean }>`
   ${({ $moveAway }) =>
     $moveAway &&
     css`
-      transform: translateY(-150%);
-      -webkit-transform: translateY(-150%);
+      transform: translateY(-200%);
+      -webkit-transform: translateY(-200%);
       opacity: 0;
+      height: 0;
     `}
 `;
 
@@ -289,6 +290,67 @@ export const ProfileImage = styled(Image)`
     100% {
       opacity: 1;
       transform: scale(1);
+    }
+  }
+`;
+
+export const ScrollArrowFadeElement = styled(IoIosArrowDown)`
+  transition-duration: 400ms;
+`;
+
+export const ScrollArrowContainer = styled.div`
+  ${flexColumn};
+  justify-content: center;
+  margin-top: 30px;
+  opacity: 0;
+  animation: ${fadeIn} 3s forwards 6.5s;
+  -webkit-animation: ${fadeIn} 3s forwards 6.5s;
+  & svg {
+    width: 25px !important;
+    height: 25px !important;
+  }
+
+  ${ScrollArrowFadeElement} {
+    opacity: 0.45;
+    animation: downOne 3s ease-in-out infinite;
+    margin-top: -20px;
+  }
+
+  ${ScrollArrowFadeElement}:last-of-type {
+    opacity: 0.2;
+    animation: downTwo 3s ease-in-out infinite;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    svg > path {
+      fill: ${theme.colors.accent.green};
+    }
+  }
+
+  @keyframes downOne {
+    0% {
+      transform: translateY(-4px);
+    }
+    40%,
+    60% {
+      transform: translateY(20%);
+    }
+    100% {
+      transform: translateY(-4px);
+    }
+  }
+
+  @keyframes downTwo {
+    0% {
+      transform: translateY(-8px);
+    }
+    40%,
+    60% {
+      transform: translateY(40%);
+    }
+    100% {
+      transform: translateY(-8px);
     }
   }
 `;
