@@ -301,6 +301,7 @@ export const ScrollArrowFadeElement = styled(IoIosArrowDown)`
 export const ScrollArrowContainer = styled.div`
   ${flexColumn};
   justify-content: center;
+  cursor: pointer;
   margin-top: 30px;
   opacity: 0;
   animation: ${fadeIn} 3s forwards 6.5s;

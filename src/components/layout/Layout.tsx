@@ -36,12 +36,14 @@ const Layout: FC<Props> = ({ children }) => {
   const [menuOpen, setOpenMenu] = useState<boolean>(false);
 
   return (
-    <Root id="layout-root">
+    <>
       <Intro />
-      <Header onOpenMenu={() => setOpenMenu((prev) => !prev)} />
-      <MainLayout>{children}</MainLayout>
-      <Sidebar open={menuOpen} onClose={() => setOpenMenu(false)} />
-    </Root>
+      <Root>
+        <Header onOpenMenu={() => setOpenMenu((prev) => !prev)} />
+        <MainLayout>{children}</MainLayout>
+        <Sidebar open={menuOpen} onClose={() => setOpenMenu(false)} />
+      </Root>
+    </>
   );
 };
 

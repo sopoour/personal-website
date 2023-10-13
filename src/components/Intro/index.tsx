@@ -13,8 +13,8 @@ import {
   ScrollArrowFadeElement,
 } from './styles';
 import profile from '@app/assets/profile_design.png';
-import Link from 'next/link';
 import { IoIosArrowDown } from 'react-icons/io';
+import { animateScroll } from 'react-scroll';
 
 const Intro: FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,7 +23,6 @@ const Intro: FC = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setIsScrolled(scrollPosition > 25);
-
       if (scrollPosition > 25) {
         // If scrolled, remove the scroll event listener
         window.removeEventListener('scroll', handleScroll);
@@ -53,13 +52,14 @@ const Intro: FC = () => {
           Hi! I&apos;m Soph. <span>(they/them).</span>
         </Title>
         <SubTitle as="h2">Frontend Developer</SubTitle>
-        <Link href="#projects">
-          <ScrollArrowContainer>
-            <IoIosArrowDown />
-            <ScrollArrowFadeElement />
-            <ScrollArrowFadeElement />
-          </ScrollArrowContainer>
-        </Link>
+        <ScrollArrowContainer
+          onClick={() => animateScroll.scrollTo(90, { smooth: true, duration: 500 })}
+          itemType="button"
+        >
+          <IoIosArrowDown />
+          <ScrollArrowFadeElement />
+          <ScrollArrowFadeElement />
+        </ScrollArrowContainer>
       </ContentWrapper>
     </IntroContainer>
   );

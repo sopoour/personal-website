@@ -2,14 +2,16 @@ import { FC } from 'react';
 import styled from 'styled-components';
 import theme from '@app/styles/theme';
 import { robotoMono } from '@app/styles/fonts';
+import { Link } from 'react-scroll';
 
-const Item = styled.a`
+const Item = styled(Link)`
   position: relative;
   width: 100%;
   transition: all 0.5s;
   font-size: 16px;
+  cursor: pointer;
   font-family: ${robotoMono.style.fontFamily};
-
+  color: ${theme.colors.fg.inactive};
   &::before {
     content: '· ';
     position: relative;
@@ -33,7 +35,15 @@ type Props = {
 };
 
 const NavigationItem: FC<Props> = ({ item }) => (
-  <Item id={item} href={`#${item.toLowerCase().replace(/\s/g, '-')}`}>
+  <Item
+    id={item}
+    activeStyle={{ color: theme.colors.fg.default }}
+    to={item.toLowerCase().replace(/\s/g, '-')}
+    spy
+    smooth
+    offset={item === 'Projects' ? -150 : -70}
+    duration={500}
+  >
     · · · {item}
   </Item>
 );
