@@ -1,5 +1,5 @@
 import { css, keyframes, styled } from 'styled-components';
-
+import Image from 'next/image';
 import Geo1 from '@app/assets/geo1.svg';
 import Geo2 from '@app/assets/geo2.svg';
 import Geo3 from '@app/assets/geo3.svg';
@@ -12,40 +12,51 @@ import { flexColumn } from '@app/styles/mixins';
 const rotate1 = keyframes`
     10% {
       transform: rotate(1deg);
+      -webkit-transform: rotate(1deg);
     }
     80% {
       transform: rotate(-2deg);
+      -webkit-transform: rotate(-2deg);
     }
 `;
 const rotate2 = keyframes`
     10% {
       transform: rotate(-2deg);
+      -webkit-transform: rotate(-2deg);
     }
     80% {
       transform: rotate(2deg);
+      -webkit-transform: rotate(2deg);
     }
 `;
 
 const transformInitial = css`
   transform: translateX(0) translateY(0) scale(1);
+  -webkit-transform: translateX(0) translateY(0) scale(1);
 `;
 
-export const TextWrapper = styled.div`
+export const ContentWrapper = styled.div`
   ${flexColumn};
   gap: 16px;
-  position: absolute;
-  bottom: 50%;
-  left: calc(50% - 225px);
-  width: max-content;
+  margin: auto;
+  width: 100%;
   align-items: center;
+
+  ${theme.media('sm')`
+    width: 32rem;
+  `}
 `;
 
 export const Title = styled(Typography)`
-  white-space: nowrap; /* keep text in one line */
-  overflow: hidden; /* hide text behind the cursor */
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 30px;
   animation:
-    typewriter 6s steps(30) 1s 1 normal both,
-    cursor 900ms steps(30) 8;
+    typewriterMobile 4s steps(30) 2s 1 normal both,
+    cursor 700ms steps(30) 8;
+  -webkit-animation:
+    typewriterMobile 4s steps(30) 2s 1 normal both,
+    cursor 700ms steps(30) 8;
   border-right: 2px solid ${theme.colors.bg.default};
   > span {
     font-size: 20px;
@@ -56,7 +67,16 @@ export const Title = styled(Typography)`
       width: 0;
     }
     to {
-      width: 450px;
+      width: 32rem;
+    }
+  }
+
+  @keyframes typewriterMobile {
+    from {
+      width: 0;
+    }
+    to {
+      width: 26rem;
     }
   }
 
@@ -68,13 +88,25 @@ export const Title = styled(Typography)`
       border-right-color: ${theme.colors.accent.green};
     }
   }
+
+  ${theme.media('sm')`
+    font-size: 40px;
+    animation:
+    typewriter 4s steps(30) 1s 1 normal both,
+    cursor 700ms steps(30) 8;
+  -webkit-animation:
+    typewriter 4s steps(30) 1s 1 normal both,
+    cursor 700ms steps(30) 8;
+  `}
 `;
 
 export const SubTitle = styled(Typography)`
-  font-family: ${robotoMono.style.fontFamily} !important;
+  font-family: ${robotoMono.style.fontFamily};
   opacity: 0;
-  animation: fadeIn 3s forwards;
-  animation-delay: 7s;
+  font-size: 20px;
+  animation: fadeIn 3s forwards 6s;
+  -webkit-animation: fadeIn 3s forwards 6s;
+
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -85,6 +117,10 @@ export const SubTitle = styled(Typography)`
       transform: translateY(0);
     }
   }
+
+  ${theme.media('sm')`
+    font-size: 24px;
+  `}
 `;
 
 export const IntroContainer = styled.div<{ $moveAway: boolean }>`
@@ -97,7 +133,8 @@ export const IntroContainer = styled.div<{ $moveAway: boolean }>`
   display: flex;
   flex-flow: column wrap;
   z-index: 1000;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.75s ease-in-out;
+  -webkit-transition: all 0.75s ease-in-out;
   gap: 16px;
   opacity: 1;
 
@@ -111,6 +148,7 @@ export const IntroContainer = styled.div<{ $moveAway: boolean }>`
     $moveAway &&
     css`
       transform: translateY(-150%);
+      -webkit-transform: translateY(-150%);
       opacity: 0;
     `}
 `;
@@ -121,10 +159,14 @@ export const LeftTop = styled(Geo1)`
   animation:
     appearTopLeft 12.5s linear,
     ${rotate1} 12.5s infinite;
+  -webkit-animation:
+    appearTopLeft 12.5s linear,
+    ${rotate1} 12.5s infinite;
 
   @keyframes appearTopLeft {
     0% {
       transform: translateX(-100px) translateY(-100px) scale(0.5);
+      -webkit-transform: translateX(-100px) translateY(-100px) scale(0.5);
     }
     100% {
       ${transformInitial};
@@ -148,9 +190,13 @@ export const TopRight = styled(Geo2)`
   animation:
     appearTopRight 12.5s linear,
     ${rotate2} 12.5s infinite;
+  -webkit-animation:
+    appearTopRight 12.5s linear,
+    ${rotate2} 12.5s infinite;
   @keyframes appearTopRight {
     0% {
       transform: translateX(100px) translateY(-50px) scale(0.5);
+      -webkit-transform: translateX(100px) translateY(-50px) scale(0.5);
     }
     100% {
       ${transformInitial};
@@ -174,10 +220,14 @@ export const BottomLeft = styled(Geo3)`
   animation:
     appearBottomLeft 12.5s linear,
     ${rotate2} 12.5s infinite;
+  -webkit-animation:
+    appearBottomLeft 12.5s linear,
+    ${rotate2} 12.5s infinite;
 
   @keyframes appearBottomLeft {
     0% {
       transform: translateX(-100px) translateY(100px) scale(0.5);
+      -webkit-transform: translateX(-100px) translateY(100px) scale(0.5);
     }
     100% {
       ${transformInitial};
@@ -201,10 +251,14 @@ export const BottomRight = styled(Geo4)`
   animation:
     appearBottomRight 12.5s linear,
     ${rotate1} 12.5s infinite;
+  -webkit-animation:
+    appearBottomRight 12.5s linear,
+    ${rotate1} 12.5s infinite;
 
   @keyframes appearBottomRight {
     0% {
       transform: translateX(100px) translateY(100px) scale(0.5);
+      -webkit-transform: translateX(100px) translateY(100px) scale(0.5);
     }
     100% {
       ${transformInitial};
@@ -220,4 +274,21 @@ export const BottomRight = styled(Geo4)`
     bottom: -5%;
     right: -5%;
   `}
+`;
+
+export const ProfileImage = styled(Image)`
+  width: 100% !important;
+  height: auto !important;
+  animation: fadeInScale 2s forwards;
+  -webkit-animation: fadeInScale 2s forwards;
+  @keyframes fadeInScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.2);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 `;

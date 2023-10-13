@@ -7,9 +7,10 @@ import {
   BottomRight,
   Title,
   SubTitle,
-  TextWrapper,
+  ContentWrapper,
+  ProfileImage,
 } from './styles';
-import Typography from '../Typography/Typography';
+import profile from '@app/assets/profile_design.png';
 
 const Intro: FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,13 +18,13 @@ const Intro: FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 0);
+      setIsScrolled(scrollPosition > 10);
 
-      if (scrollPosition > 0) {
+      if (scrollPosition > 10) {
         // If scrolled, remove the scroll event listener
         window.removeEventListener('scroll', handleScroll);
         //@ts-ignore
-        document.getElementById('layout-root').style.overflow = 'unset';
+        document.getElementById('layout-root').style.overflowY = 'unset';
       }
     };
 
@@ -39,12 +40,13 @@ const Intro: FC = () => {
       <TopRight />
       <BottomLeft />
       <BottomRight />
-      <TextWrapper>
-        <Title fontSize="40px" fontWeight={700}>
+      <ContentWrapper>
+        <ProfileImage src={profile.src} width={400} height={305} alt="sophia auer avatar" />
+        <Title fontWeight={700}>
           Hi! I&apos;m Sophia. <span>(they/them).</span>
         </Title>
-        <SubTitle fontSize="24px">Frontend Developer</SubTitle>
-      </TextWrapper>
+        <SubTitle>Frontend Developer</SubTitle>
+      </ContentWrapper>
     </IntroContainer>
   );
 };

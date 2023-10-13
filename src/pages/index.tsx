@@ -8,6 +8,7 @@ const Root = styled.span`
   gap: 40px;
   position: relative;
   padding: 20px 0 32px 0;
+  overflow: hidden;
 
   ${({ theme }) => theme.media('sm')`
     padding: 30px 0 48px 0;

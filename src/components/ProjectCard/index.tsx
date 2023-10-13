@@ -30,7 +30,7 @@ const ProjectCard: FC<Props> = ({ project, activeIndex, projectIndex }) => {
       direction={Math.sign(activeIndex - projectIndex)}
       style={{
         opacity: Math.abs(activeIndex - projectIndex) >= MAX_VISIBILITY ? '0' : '1',
-        display: Math.abs(activeIndex - projectIndex) > MAX_VISIBILITY ? 'none' : 'block',
+        display: Math.abs(activeIndex - projectIndex) >= MAX_VISIBILITY ? 'none' : 'block',
         pointerEvents: activeIndex === projectIndex ? 'auto' : 'none',
       }}
       $viewDetails={view}

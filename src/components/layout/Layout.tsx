@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, useEffect, useState } from 'react';
 
-import { css, styled } from 'styled-components';
+import { styled } from 'styled-components';
 import Header from './Header';
 import Sidebar from '../Sidebar';
 import theme from '@app/styles/theme';
@@ -12,7 +12,7 @@ const Root = styled.div`
   flex-direction: column;
   width: 100%;
   position: relative;
-  overflow: hidden;
+  overflow-y: hidden;
 `;
 
 const MainLayout = styled.main`
