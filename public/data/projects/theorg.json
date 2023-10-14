@@ -38,6 +38,10 @@
     {
       "type": "tech",
       "label": "styled-components"
+    },
+    {
+      "type": "tool",
+      "label": "Cypress"
     }
   ]
 }

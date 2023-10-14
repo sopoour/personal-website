@@ -81,7 +81,7 @@ export const Title = styled(Typography)`
       width: 0;
     }
     to {
-      width: 30rem;
+      width: 29rem;
     }
   }
 
@@ -90,7 +90,7 @@ export const Title = styled(Typography)`
       width: 0;
     }
     to {
-      width: 24rem;
+      width: 23rem;
     }
   }
 
@@ -118,8 +118,8 @@ export const SubTitle = styled(Typography)`
   font-family: ${robotoMono.style.fontFamily};
   opacity: 0;
   font-size: 20px;
-  animation: ${fadeIn} 3s forwards 6s;
-  -webkit-animation: ${fadeIn} 3s forwards 6s;
+  animation: ${fadeIn} 1.5s forwards 5.5s;
+  -webkit-animation: ${fadeIn} 1.5s forwards 5.5s;
 
   ${theme.media('sm')`
     font-size: 24px;
@@ -298,17 +298,20 @@ export const ScrollArrowFadeElement = styled(IoIosArrowDown)`
   transition-duration: 400ms;
 `;
 
-export const ScrollArrowContainer = styled.div`
+export const ScrollArrowContainer = styled.button`
   ${flexColumn};
   justify-content: center;
   cursor: pointer;
   margin-top: 30px;
   opacity: 0;
-  animation: ${fadeIn} 3s forwards 6.5s;
-  -webkit-animation: ${fadeIn} 3s forwards 6.5s;
+  animation: ${fadeIn} 1.5s forwards 5.75s;
+  -webkit-animation: ${fadeIn} 1.5s forwards 5.75s;
   & svg {
     width: 25px !important;
     height: 25px !important;
+    path {
+      fill: ${theme.colors.fg.default};
+    }
   }
 
   ${ScrollArrowFadeElement} {

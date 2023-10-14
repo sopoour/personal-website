@@ -32,6 +32,7 @@ const ProjectCard: FC<Props> = ({ project, activeIndex, projectIndex }) => {
         opacity: Math.abs(activeIndex - projectIndex) >= MAX_VISIBILITY ? '0' : '1',
         display: Math.abs(activeIndex - projectIndex) > MAX_VISIBILITY ? 'none' : 'block',
         pointerEvents: activeIndex === projectIndex ? 'auto' : 'none',
+        /* zIndex: activeIndex === projectIndex ? 1 : -2, */
       }}
       $viewDetails={view}
       onClick={() => setView(true)}
