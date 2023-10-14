@@ -1,7 +1,6 @@
 import { flexColumn, flexRow } from '@app/styles/mixins';
 import theme from '@app/styles/theme';
 import { css, styled } from 'styled-components';
-import Typography from '../Typography/Typography';
 import LinkContainer from '../LinkContainer';
 
 const transition = css`
@@ -36,7 +35,7 @@ export const Card = styled.div<{
   $viewDetails: boolean;
 }>`
   position: absolute;
-  width: 80%;
+  width: 100%;
   height: 100%;
   left: 0;
   right: 0;

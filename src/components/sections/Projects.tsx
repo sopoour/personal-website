@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { css, styled } from 'styled-components';
 import theme from '@app/styles/theme';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
@@ -6,18 +6,19 @@ import ProjectCard from '../ProjectCard';
 import useSWR from 'swr';
 import { Project } from '@app/types';
 import { fetcher } from '@app/hooks/fetch/useFetch';
-import MaxWidthContainer from '../MaxWidthContainer';
+import { useSwipe } from '@app/hooks/useSwipe';
 
-const Carousel = styled(MaxWidthContainer)`
+const Carousel = styled.div`
   position: relative;
-  width: 80%;
-  height: 20rem;
-  perspective: 500px;
+  width: 100%;
+  height: 30rem;
+  perspective: 800px;
+  margin: 0 auto;
   transform-style: preserve-3d;
 
   ${theme.media('sm')`
-    height: 25rem;
-    width: 60%;
+    height: 30rem;
+    width: 80%;
     perspective: 500px;
   `}
 `;
@@ -35,17 +36,21 @@ const NavButton = styled.button<{ side: 'left' | 'right' }>`
   user-select: none;
   background: unset;
   border: unset;
-
+  color: ${theme.colors.bg.default};
   ${({ side }) =>
     side === 'left'
       ? css`
           transform: translate(-100%, -50%);
-          left: 10%;
+          left: 15%;
         `
       : css`
-          right: 10%;
+          right: 15%;
           transform: translate(100%, -50%);
-        `}
+        `};
+
+  ${theme.media('sm')`
+      color: ${theme.colors.fg.default};
+    `}
 `;
 
 const Projects: FC = () => {
@@ -54,7 +59,7 @@ const Projects: FC = () => {
   const handleNext = () => data && setActiveCard((prevIndex) => (prevIndex + 1) % data.length);
   const handlePrev = () =>
     data && setActiveCard((prevIndex) => (prevIndex - 1 + data.length) % data.length);
-
+  useSwipe({ left: handlePrev, right: handleNext });
   if (isLoading) return <p>Loading...</p>;
 
   return (

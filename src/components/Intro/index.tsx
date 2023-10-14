@@ -22,8 +22,8 @@ const Intro: FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 25);
-      if (scrollPosition > 25) {
+      setIsScrolled(scrollPosition > 0);
+      if (scrollPosition > 0) {
         // If scrolled, remove the scroll event listener
         window.removeEventListener('scroll', handleScroll);
       }
@@ -53,8 +53,8 @@ const Intro: FC = () => {
         </Title>
         <SubTitle as="h2">Frontend Developer</SubTitle>
         <ScrollArrowContainer
-          onClick={() => animateScroll.scrollTo(90, { smooth: true, duration: 500 })}
-          itemType="button"
+          onClick={() => animateScroll.scrollTo(30, { smooth: true, duration: 500 })}
+          title="Scroll down button"
         >
           <IoIosArrowDown />
           <ScrollArrowFadeElement />

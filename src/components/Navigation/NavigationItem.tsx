@@ -9,7 +9,6 @@ const Item = styled(Link)`
   width: 100%;
   transition: all 0.5s;
   font-size: 16px;
-  cursor: pointer;
   font-family: ${robotoMono.style.fontFamily};
   color: ${theme.colors.fg.inactive};
   &::before {
@@ -19,8 +18,13 @@ const Item = styled(Link)`
     left: -20px;
   }
 
-  &:hover {
-    color: ${theme.colors.accent.pink};
+  &:not(.active) {
+    cursor: pointer;
+  }
+
+  &:hover,
+  &.active {
+    color: ${theme.colors.accent.green};
     transform: translateX(20px);
     &::before {
       content: '· ';
@@ -37,11 +41,11 @@ type Props = {
 const NavigationItem: FC<Props> = ({ item }) => (
   <Item
     id={item}
-    activeStyle={{ color: theme.colors.fg.default }}
+    activeClass="active"
     to={item.toLowerCase().replace(/\s/g, '-')}
     spy
     smooth
-    offset={item === 'Projects' ? -150 : -70}
+    offset={item === 'Projects' ? -145 : -70}
     duration={500}
   >
     · · · {item}

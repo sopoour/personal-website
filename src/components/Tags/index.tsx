@@ -9,9 +9,9 @@ import { flexRow } from '@app/styles/mixins';
 const getColourTheme = (type: TagType) => {
   switch (type) {
     case 'tech':
-      return { color: theme.colors.accent.pink, backgroundColor: theme.colors.accent.pinkSoft };
-    case 'tool':
       return { color: theme.colors.accent.green, backgroundColor: theme.colors.accent.greenSoft };
+    case 'tool':
+      return { color: theme.colors.accent.pink, backgroundColor: theme.colors.accent.pinkSoft };
     case 'skill':
       return { color: theme.colors.accent.orange, backgroundColor: theme.colors.accent.orangeSoft };
   }
