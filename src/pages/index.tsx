@@ -13,6 +13,7 @@ const Root = styled.div`
 
   ${({ theme }) => theme.media('sm')`
     padding: 30px 0 48px 0;
+    overflow: unset;
   `}
 `;
 
