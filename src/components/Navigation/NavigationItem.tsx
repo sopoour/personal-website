@@ -8,7 +8,7 @@ const Item = styled(Link)`
   position: relative;
   width: 100%;
   transition: all 0.5s;
-  font-size: 16px;
+  font-size: 14px;
   font-family: ${robotoMono.style.fontFamily};
   color: ${theme.colors.fg.inactive};
   &::before {
@@ -32,13 +32,18 @@ const Item = styled(Link)`
       left: 0px;
     }
   }
+
+  ${theme.media('md')`
+    font-size: 16px;
+  `}
 `;
 
 type Props = {
   item: string;
+  onClickItem?: () => void;
 };
 
-const NavigationItem: FC<Props> = ({ item }) => (
+const NavigationItem: FC<Props> = ({ item, onClickItem }) => (
   <Item
     id={item}
     tabIndex={1}
@@ -46,8 +51,8 @@ const NavigationItem: FC<Props> = ({ item }) => (
     to={item.toLowerCase().replace(/\s/g, '-')}
     spy
     smooth
-    offset={item === 'Projects' ? -145 : -70}
-    duration={500}
+    duration={700}
+    onClick={onClickItem}
   >
     · · · {item}
   </Item>

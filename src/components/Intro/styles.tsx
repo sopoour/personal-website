@@ -7,8 +7,9 @@ import Geo4 from '@app/assets/geo4.svg';
 import theme from '@app/styles/theme';
 import Typography from '../Typography/Typography';
 import { robotoMono } from '@app/styles/fonts';
-import { flexColumn } from '@app/styles/mixins';
+import { fadeIn, flexColumn } from '@app/styles/mixins';
 import { IoIosArrowDown } from 'react-icons/io';
+import Headline from '../Headline';
 
 const rotate1 = keyframes`
     10% {
@@ -29,19 +30,6 @@ const rotate2 = keyframes`
       transform: rotate(2deg);
       -webkit-transform: rotate(2deg);
     }
-`;
-
-const fadeIn = keyframes`
-  
-    0% {
-      opacity: 0;
-      transform: translateY(100px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  
 `;
 
 const transformInitial = css`
@@ -114,44 +102,24 @@ export const Title = styled(Typography)`
   `}
 `;
 
-export const SubTitle = styled(Typography)`
-  font-family: ${robotoMono.style.fontFamily};
-  opacity: 0;
-  font-size: 20px;
-  animation: ${fadeIn} 1.5s forwards 5.5s;
-  -webkit-animation: ${fadeIn} 1.5s forwards 5.5s;
-
-  ${theme.media('sm')`
-    font-size: 24px;
-  `}
-`;
-
-export const IntroContainer = styled.div<{ $moveAway: boolean }>`
+export const IntroContainer = styled.div`
   background: ${theme.colors.bg.default};
   display: flex;
   flex-flow: column wrap;
   height: 100vh;
   width: 100%;
-  z-index: 1000;
+  z-index: -1;
   transition: all 0.75s ease-in-out;
   -webkit-transition: all 0.75s ease-in-out;
   gap: 16px;
   opacity: 1;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
 
   > svg {
     position: fixed;
     flex-shrink: 0;
-    z-index: 11;
   }
-
-  ${({ $moveAway }) =>
-    $moveAway &&
-    css`
-      transform: translateY(-200%);
-      -webkit-transform: translateY(-200%);
-      opacity: 0;
-      height: 0;
-    `}
 `;
 
 export const LeftTop = styled(Geo1)`
@@ -357,4 +325,10 @@ export const ScrollArrowContainer = styled.button`
       transform: translateY(-8px);
     }
   }
+`;
+
+export const IntroHeadliine = styled(Headline)`
+  opacity: 0;
+  animation: ${fadeIn} 1.5s forwards 5.5s;
+  -webkit-animation: ${fadeIn} 1.5s forwards 5.5s;
 `;

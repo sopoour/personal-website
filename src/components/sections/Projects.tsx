@@ -9,6 +9,7 @@ import { fetcher } from '@app/hooks/fetch/useFetch';
 import { Breakpoints } from '@app/styles/media';
 import { flexRow, removeScrollBar } from '@app/styles/mixins';
 import useKeyPress from '@app/hooks/useKeyPress';
+import Section from '../layout/Section';
 
 const NavButton = styled.button<{ side: 'left' | 'right' }>`
   color: white;
@@ -44,7 +45,7 @@ const NavButton = styled.button<{ side: 'left' | 'right' }>`
 const Carousel = styled.div`
   position: relative;
   height: 30rem;
-  width: 80%;
+  width: 100%;
   perspective: 500px;
   margin: 0 auto;
   transform-style: preserve-3d;
@@ -84,23 +85,25 @@ const Projects: FC = () => {
   if (isLoading) return <p>Loading...</p>;
 
   return (
-    <Carousel as="section" id="projects">
-      <NavButton side="left" onClick={handlePrev} tabIndex={3}>
-        <IoIosArrowBack />
-      </NavButton>
-      {data &&
-        data?.map((project, index) => (
-          <ProjectCard
-            project={project}
-            key={project.id}
-            activeIndex={activeCard}
-            projectIndex={index}
-          />
-        ))}
-      <NavButton side="right" onClick={handleNext} tabIndex={4}>
-        <IoIosArrowForward />
-      </NavButton>
-    </Carousel>
+    <Section id="projects" $maxWidth={0}>
+      <Carousel className={'animate'}>
+        <NavButton side="left" onClick={handlePrev} tabIndex={3}>
+          <IoIosArrowBack />
+        </NavButton>
+        {data &&
+          data?.map((project, index) => (
+            <ProjectCard
+              project={project}
+              key={project.id}
+              activeIndex={activeCard}
+              projectIndex={index}
+            />
+          ))}
+        <NavButton side="right" onClick={handleNext} tabIndex={4}>
+          <IoIosArrowForward />
+        </NavButton>
+      </Carousel>
+    </Section>
   );
 };
 

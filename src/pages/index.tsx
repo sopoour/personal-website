@@ -1,6 +1,12 @@
 import { NextPage } from 'next';
 import styled from 'styled-components';
 import Projects from '@app/components/sections/Projects';
+import About from '@app/components/sections/About';
+import { gsap } from 'gsap';
+import { useLayoutEffect, useRef } from 'react';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Root = styled.div`
   display: flex;
@@ -18,10 +24,34 @@ const Root = styled.div`
 `;
 
 const Home: NextPage = () => {
+  /* useLayoutEffect(() => {
+    let sections = gsap.utils.toArray('section');
+
+    sections.forEach((section: any, index) => {
+      const animate = section.querySelector('.animate');
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: 'top center',
+          toggleActions: 'play none none reverse',
+          markers: true,
+          scrub: true,
+        },
+      });
+
+      tl.set(animate, { transformOrigin: 'center center' }).fromTo(
+        section,
+        { opacity: 0, scale: 0.8, y: '+=100' },
+        { opacity: 1, scale: 1, y: 0, duration: 3, immediateRender: false },
+      );
+    });
+  }, []); */
+
   return (
-    <Root>
+    <>
       <Projects />
-    </Root>
+      <About />
+    </>
   );
 };
 

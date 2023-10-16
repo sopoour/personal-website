@@ -11,10 +11,14 @@ const Container = styled.nav`
   width: 100%;
 `;
 
-const Navigation: FC = () => (
+type Props = {
+  onClickItem?: () => void;
+};
+
+const Navigation: FC<Props> = ({ onClickItem }) => (
   <Container>
     {navItems.map((item) => (
-      <NavigationItem item={item} key={item} />
+      <NavigationItem item={item} key={item} onClickItem={onClickItem} />
     ))}
   </Container>
 );
