@@ -52,9 +52,14 @@ a {
   text-decoration: none;
   font-size: inherit;
   outline: none;
-  :focus {
-    outline: 3px solid ${theme.colors.accent.pink}
+  &:focus {
+    outline: 3px solid ${theme.colors.accent.pink};
+    border-radius: 2px;
   }
+  &:focus:not(:focus-visible) {
+  outline: 0;
+  box-shadow: none;
+}
 }
 button {
   font-family: ${montserrat.style.fontFamily};
