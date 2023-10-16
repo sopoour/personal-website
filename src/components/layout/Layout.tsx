@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect, useState } from 'react';
+import React, { FC, ReactNode, useState } from 'react';
 
 import { styled } from 'styled-components';
 import Header from './Header';
@@ -6,19 +6,32 @@ import Sidebar from '../Sidebar';
 import theme from '@app/styles/theme';
 import Intro from '../Intro';
 
+const Wrapper = styled.div`
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+`;
+
 const Root = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   width: 100%;
   position: relative;
+  background-color: ${theme.colors.bg.default};
 `;
 
 const MainLayout = styled.main`
-  padding: 48px 20px;
+  padding: 48px 0;
   flex: 1;
   width: 100%;
   margin: 0 auto;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 
   ${theme.media('md')`
    position: relative;
@@ -36,14 +49,14 @@ const Layout: FC<Props> = ({ children }) => {
   const [menuOpen, setOpenMenu] = useState<boolean>(false);
 
   return (
-    <>
+    <Wrapper>
       <Intro />
       <Root>
         <Header onOpenMenu={() => setOpenMenu((prev) => !prev)} />
         <MainLayout>{children}</MainLayout>
         <Sidebar open={menuOpen} onClose={() => setOpenMenu(false)} />
       </Root>
-    </>
+    </Wrapper>
   );
 };
 

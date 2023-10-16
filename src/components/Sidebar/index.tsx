@@ -58,19 +58,19 @@ const Content = styled.header<{ $open?: boolean }>`
   left: 0;
   transform: translateX(-100%);
   opacity: 0;
-  padding: 80px 32px;
+  padding: 80px 20px;
   display: flex;
   flex-direction: column;
   gap: 16px;
   justify-content: space-between;
-  width: 300px;
+  width: 250px;
   ${({ $open }) =>
     $open &&
     css`
       transform: none;
       opacity: 1;
     `}
-  ${() => theme.media('md')`transform: none;  opacity: 1`}
+  ${() => theme.media('md')`transform: none;  opacity: 1; padding: 80px 32px; width: 300px;`}
 `;
 
 const Header = styled.div`
@@ -104,7 +104,7 @@ const Sidebar: FC<Props> = ({ open, onClose }) => {
             Soph. (they/them).
           </Typography>
         </Header>
-        <Navigation />
+        <Navigation onClickItem={onClose} />
         <LinkContainer iconLinks={links} />
       </Content>
     </>

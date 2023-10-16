@@ -33,8 +33,8 @@ const BurgerMenu = styled.button`
   svg > path {
     fill: ${theme.colors.fg.default};
   }
-  &:hover,
-  &:focus {
+  &:hover {
+    border-radius: 100px;
     filter: brightness(1.5);
   }
 `;

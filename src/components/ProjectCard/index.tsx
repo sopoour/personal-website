@@ -17,7 +17,6 @@ type Props = {
 };
 
 const ProjectCard: FC<Props> = ({ project, activeIndex, projectIndex }) => {
-  const projectId = project.title.toLowerCase().replace(/\s/g, '-');
   const [view, setView] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
   const isDesktop = useMedia(Breakpoints.sm);
