@@ -41,6 +41,7 @@ type Props = {
 const NavigationItem: FC<Props> = ({ item }) => (
   <Item
     id={item}
+    tabIndex={1}
     activeClass="active"
     to={item.toLowerCase().replace(/\s/g, '-')}
     spy

@@ -19,7 +19,7 @@ const Root = styled.div`
 
 const Home: NextPage = () => {
   return (
-    <Root title="Main page wrapper">
+    <Root>
       <Projects />
     </Root>
   );
