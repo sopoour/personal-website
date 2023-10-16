@@ -1,10 +1,5 @@
 import { FC } from 'react';
 import {
-  BottomLeft,
-  IntroContainer,
-  LeftTop,
-  TopRight,
-  BottomRight,
   Title,
   ContentWrapper,
   ProfileImage,
@@ -15,14 +10,11 @@ import {
 import profile from '@app/assets/profile_design.png';
 import { IoIosArrowDown } from 'react-icons/io';
 import { scroller } from 'react-scroll';
+import GeoBackground from '../GeoBackground';
 
 const Intro: FC = () => {
   return (
-    <IntroContainer>
-      <LeftTop />
-      <TopRight />
-      <BottomLeft />
-      <BottomRight />
+    <GeoBackground>
       <ContentWrapper>
         <ProfileImage src={profile.src} width={400} height={305} alt="sophia auer avatar" />
         <Title
@@ -44,7 +36,7 @@ const Intro: FC = () => {
           <ScrollArrowFadeElement />
         </ScrollArrowContainer>
       </ContentWrapper>
-    </IntroContainer>
+    </GeoBackground>
   );
 };
 

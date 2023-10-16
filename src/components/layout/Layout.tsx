@@ -5,6 +5,8 @@ import Header from './Header';
 import Sidebar from '../Sidebar';
 import theme from '@app/styles/theme';
 import Intro from '../Intro';
+import GeoBackground from '../GeoBackground';
+import { IntroHeadliine } from '../Intro/styles';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -19,6 +21,7 @@ const Root = styled.div`
   width: 100%;
   position: relative;
   background-color: ${theme.colors.bg.default};
+  z-index: 1;
 `;
 
 const MainLayout = styled.main`
@@ -56,6 +59,11 @@ const Layout: FC<Props> = ({ children }) => {
         <MainLayout>{children}</MainLayout>
         <Sidebar open={menuOpen} onClose={() => setOpenMenu(false)} />
       </Root>
+      <GeoBackground>
+        <p style={{ marginTop: '20%', marginLeft: '35%' }}>
+          Place here IntroHeader, the about me section and a good bye
+        </p>
+      </GeoBackground>
     </Wrapper>
   );
 };
