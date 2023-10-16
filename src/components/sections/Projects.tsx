@@ -7,7 +7,7 @@ import useSWR from 'swr';
 import { Project } from '@app/types';
 import { fetcher } from '@app/hooks/fetch/useFetch';
 import { Breakpoints } from '@app/styles/media';
-import { flexRow } from '@app/styles/mixins';
+import { flexRow, removeScrollBar } from '@app/styles/mixins';
 import useKeyPress from '@app/hooks/useKeyPress';
 
 const NavButton = styled.button<{ side: 'left' | 'right' }>`
@@ -59,7 +59,7 @@ const Carousel = styled.div`
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-
+    ${removeScrollBar};
     ${NavButton} {
       display: none;
     }
