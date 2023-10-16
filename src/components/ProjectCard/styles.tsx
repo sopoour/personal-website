@@ -182,6 +182,12 @@ export const Card = styled.div<{
     ${ProjectThumbnail} {
       filter: unset;
     }
+
+    &:hover {
+      img {
+        transform: unset;
+      }
+    }
   }
 `;
 
