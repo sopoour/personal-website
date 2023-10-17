@@ -23,8 +23,6 @@ const MainLayout = styled.main`
   flex: 1;
   width: 100%;
   margin: 0 auto;
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
   height: 100vh;
 
   ${theme.media('md')`

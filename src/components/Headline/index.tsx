@@ -4,6 +4,7 @@ import Typography from '../Typography/Typography';
 import { robotoMono } from '@app/styles/fonts';
 import { fadeIn, flexColumn, flexRow } from '@app/styles/mixins';
 import theme from '@app/styles/theme';
+import getAccentColour from '@app/utils/getAccentColour';
 
 const Container = styled.div`
   ${flexColumn};
@@ -79,11 +80,6 @@ type Props = {
 };
 
 const Headline: FC<Props> = ({ className }) => {
-  const titleColours = [
-    theme.colors.accent.pink,
-    theme.colors.accent.green,
-    theme.colors.accent.orange,
-  ];
   const titles = [
     'wannabe artist 🎹🎸🎨',
     'Star Wars fan 🚀',
@@ -99,7 +95,7 @@ const Headline: FC<Props> = ({ className }) => {
       <SubTitle as="h2">Frontend Developer and</SubTitle>
       <RotatingTitles>
         {titles.map((title, index) => (
-          <RotatingTitle key={title} color={titleColours[index % 3]} $stepNum={index}>
+          <RotatingTitle key={title} color={getAccentColour(index)} $stepNum={index}>
             {title}
           </RotatingTitle>
         ))}
