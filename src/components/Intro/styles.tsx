@@ -13,6 +13,7 @@ export const ContentWrapper = styled.div`
   margin: auto;
   width: 100%;
   align-items: center;
+  z-index: 1;
 
   ${theme.media('sm')`
     width: 32rem;
@@ -76,6 +77,11 @@ export const ProfileImage = styled(Image)`
   height: auto;
   z-index: 10;
   opacity: 0;
+  width: 90%;
+
+  ${theme.media('xs')`
+    width: 400px;
+  `}
 `;
 
 export const ScrollArrowFadeElement = styled(IoIosArrowDown)`
