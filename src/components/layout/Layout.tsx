@@ -7,6 +7,7 @@ import theme from '@app/styles/theme';
 import Intro from '../Intro';
 import GeoBackground from '../GeoBackground';
 import useGsapAnimation from '@app/hooks/useGsapAnimation';
+import { flexColumn } from '@app/styles/mixins';
 
 const Root = styled.div`
   min-height: 100vh;
@@ -19,6 +20,8 @@ const Root = styled.div`
 `;
 
 const MainLayout = styled.main`
+  ${flexColumn};
+  gap: 40px;
   padding: 48px 0;
   flex: 1;
   width: 100%;

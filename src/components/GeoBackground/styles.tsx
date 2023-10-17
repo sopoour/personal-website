@@ -37,7 +37,6 @@ export const IntroContainer = styled.section`
   flex-flow: column wrap;
   height: 100vh;
   width: 100%;
-  z-index: -1;
   transition: all 0.75s ease-in-out;
   -webkit-transition: all 0.75s ease-in-out;
   gap: 16px;

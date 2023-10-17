@@ -35,8 +35,12 @@ const BurgerMenu = styled.button`
   align-items: center;
   display: flex;
   z-index: 100;
-  svg > path {
-    fill: ${theme.colors.fg.default};
+  svg {
+    width: 16px;
+    height: 16px;
+    > path {
+      fill: ${theme.colors.fg.default};
+    }
   }
   &:hover {
     border-radius: 100px !important;

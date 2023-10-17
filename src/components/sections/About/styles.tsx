@@ -33,7 +33,7 @@ export const Box = styled.div<{ $color: string }>`
   border-radius: 24px;
   background-color: ${theme.colors.bg.soft};
   box-shadow: 0 60px 50px -60px ${({ $color }) => $color};
-  width: 80%;
+  width: 85%;
   height: 275px;
   margin: 0 auto;
   padding: 32px 16px;

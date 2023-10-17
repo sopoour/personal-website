@@ -68,6 +68,14 @@ const Carousel = styled.div`
   }
 `;
 
+const ProjectSection = styled(Section)`
+  padding: 0;
+  > p {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+`;
+
 const Projects: FC = () => {
   const [activeCard, setActiveCard] = useState<number>(1);
   const { data } = useSWR<Project[]>('/api/projects', fetcher);
@@ -84,7 +92,7 @@ const Projects: FC = () => {
   }, [arrowLeftPressed, arrowRightPressed]);
 
   return (
-    <Section id="projects" $maxWidth={0} style={{ padding: 0 }} mobileTitle="Projects">
+    <ProjectSection id="projects" $maxWidth={0} mobileTitle="Projects">
       <Carousel className={'animate'}>
         <NavButton side="left" onClick={handlePrev} tabIndex={3}>
           <IoIosArrowBack />
@@ -102,7 +110,7 @@ const Projects: FC = () => {
           <IoIosArrowForward />
         </NavButton>
       </Carousel>
-    </Section>
+    </ProjectSection>
   );
 };
 

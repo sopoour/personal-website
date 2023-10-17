@@ -9,19 +9,18 @@ const maxContainerPadding = { mobile: 20, desktop: 24 };
 
 const SectionContainer = styled.section<{ $maxWidth?: number }>`
   ${flexColumn};
-  gap: 32px;
+  gap: 40px;
   width: 100%;
-  height: 100vh;
-  padding-left: ${maxContainerPadding.mobile}px;
-  padding-right: ${maxContainerPadding.mobile}px;
+  height: 100%;
+  padding: 32px ${maxContainerPadding.mobile}px;
   margin: 0 auto;
   position: relative;
   max-width: ${({ $maxWidth }) => $maxWidth || 1000}px;
 
   ${(props) => props.theme.media('md')`
-    padding-left: ${maxContainerPadding.desktop}px;
-    padding-right: ${maxContainerPadding.desktop}px;
+    padding: 40px ${maxContainerPadding.desktop}px;
     justify-content: center;
+    height: 100vh;
   `}
 `;
 
@@ -31,7 +30,7 @@ const MobileHeader = styled(Typography)`
   align-items: center;
   top: -1px;
   z-index: 5;
-  padding: 8px 20px;
+  padding: 8px 0px;
   font-size: 20px;
   font-weight: 700;
   width: 100%;

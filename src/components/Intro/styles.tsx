@@ -13,7 +13,7 @@ export const ContentWrapper = styled.div`
   margin: auto;
   width: 100%;
   align-items: center;
-  z-index: 1;
+  z-index: 10;
 
   ${theme.media('sm')`
     width: 32rem;
@@ -75,7 +75,6 @@ export const Title = styled(Typography)`
 
 export const ProfileImage = styled(Image)`
   height: auto;
-  z-index: 10;
   opacity: 0;
   width: 90%;
 
