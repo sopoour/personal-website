@@ -1,5 +1,4 @@
 import { FC, useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import { Project } from '@app/types';
 import { Card, DetailHeader, DetailsContainer, Links, ProjectThumbnail } from './styles';
 import Typography from '../Typography/Typography';
@@ -41,6 +40,7 @@ const ProjectCard: FC<Props> = ({ project, activeIndex, projectIndex }) => {
       $viewDetails={view}
       onClick={() => setView(true)}
       ref={ref}
+      tabIndex={5}
     >
       <DetailsContainer>
         <DetailHeader>

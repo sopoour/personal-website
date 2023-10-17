@@ -73,20 +73,9 @@ export const Title = styled(Typography)`
 `;
 
 export const ProfileImage = styled(Image)`
-  width: 100% !important;
-  height: auto !important;
-  animation: fadeInScale 2s forwards;
-  -webkit-animation: fadeInScale 2s forwards;
-  @keyframes fadeInScale {
-    0% {
-      opacity: 0;
-      transform: scale(0.2);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
+  height: auto;
+  z-index: 10;
+  opacity: 0;
 `;
 
 export const ScrollArrowFadeElement = styled(IoIosArrowDown)`

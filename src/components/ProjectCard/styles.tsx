@@ -75,7 +75,7 @@ const pseudoEffects = css`
     height: max-content;
     border-radius: 4px;
     padding: 4px 12px;
-    left: calc(40% - 20px);
+    left: calc(50% - 55px);
     background-color: ${theme.colors.bg.soft};
     color: ${theme.colors.bg.default};
   }
@@ -131,7 +131,6 @@ export const Card = styled.div<{
     translateX(calc(${direction} * -5rem))`};
   filter: ${({ $absOffset }) => `blur(calc(${$absOffset} * 0.75rem))`};
   ${transition};
-  transform-style: preserve-3d;
   ${ProjectThumbnail} {
     filter: ${({ $absOffset }) => `brightness(calc(100% - (${$absOffset} * 50%)))`};
   }
@@ -152,6 +151,15 @@ export const Card = styled.div<{
       bottom: 30%;
       opacity: 1;
     }
+  }
+
+  &:focus {
+    outline: 3px solid ${theme.colors.accent.pink};
+    border-radius: 2px;
+  }
+  &:focus:not(:focus-visible) {
+    outline: 0;
+    box-shadow: none;
   }
 
   ${({ $viewDetails }) => $viewDetails && viewedStyle};

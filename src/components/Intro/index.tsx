@@ -15,8 +15,14 @@ import GeoBackground from '../GeoBackground';
 const Intro: FC = () => {
   return (
     <GeoBackground>
-      <ContentWrapper>
-        <ProfileImage src={profile.src} width={400} height={305} alt="sophia auer avatar" />
+      <ContentWrapper id="intro">
+        <ProfileImage
+          src={profile.src}
+          width={400}
+          height={305}
+          alt="sophia auer avatar"
+          id="profile-intro"
+        />
         <Title
           fontWeight={700}
           as="h1"
