@@ -124,6 +124,7 @@ export const Card = styled.div<{
   margin: auto;
   cursor: pointer;
   border-radius: 10px;
+  transform-style: preserve-3d;
   transform: ${({ $absOffset, $offset, direction }) =>
     `rotateY(calc(${$offset} * 50deg)) 
     scaleY(calc(1 + ${$absOffset} * -0.4))
@@ -170,7 +171,6 @@ export const Card = styled.div<{
     position: static;
     scroll-snap-align: center;
     scroll-snap-stop: always;
-
     transform: unset;
     margin-right: 12px;
     display: inline-block;

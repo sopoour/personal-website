@@ -2,14 +2,19 @@ import { getMedia } from './media';
 
 const theme = {
   media: getMedia,
+  filters: {
+    backdrop: 'blur(8px)',
+  },
   colors: {
     bg: {
       default: '#111647',
       soft: '#BCC1EB',
+      defaultBlur: 'rgba(17, 22, 71, 0.75)',
+      softBlur: 'rgba(188, 193, 235, 0.75)',
     },
     fg: {
       default: '#FFFFFF',
-      contrast: '#000000',
+      contrast: '#111647',
       inactive: 'rgba(255, 255, 255, 0.75)',
     },
     accent: {

@@ -53,6 +53,7 @@ const Carousel = styled.div`
   // Mobile only
   @media only screen and (max-width: ${Breakpoints.xs}px) {
     ${flexRow};
+    margin: auto;
     width: 100%;
     height: 35rem;
     overflow-x: scroll;
@@ -83,7 +84,7 @@ const Projects: FC = () => {
   }, [arrowLeftPressed, arrowRightPressed]);
 
   return (
-    <Section id="projects" $maxWidth={0}>
+    <Section id="projects" $maxWidth={0} style={{ padding: 0 }} mobileTitle="Projects">
       <Carousel className={'animate'}>
         <NavButton side="left" onClick={handlePrev} tabIndex={3}>
           <IoIosArrowBack />
