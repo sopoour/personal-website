@@ -51,8 +51,23 @@ width: 275px;
 
 export const BulletWrapper = styled.ul`
   margin-left: 0;
-  padding-left: 16px;
+  padding-left: 28px;
+
   > li {
-    padding-left: 8px;
+    list-style: none;
+    position: relative;
+    font-size: 14px;
+    &::before {
+      content: '';
+      position: absolute;
+      left: -23px;
+      top: 25%;
+      width: 10px;
+      height: 10px;
+      transform: rotate(-45deg);
+
+      background: ${`linear-gradient(140deg, ${theme.colors.accent.green} , ${theme.colors.accent.orange})`};
+      opacity: 0.5;
+    }
   }
 `;
