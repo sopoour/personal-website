@@ -3,7 +3,7 @@ import { useMedia } from '@app/hooks/useMedia';
 import { Breakpoints } from '@app/styles/media';
 import { css, styled } from 'styled-components';
 import theme from '@app/styles/theme';
-import profile from '@app/assets/profile.png';
+import profile from '@app/assets/profile_design.png';
 import Image from 'next/image';
 import Typography from '../Typography/Typography';
 import Navigation from '../Navigation';
@@ -83,8 +83,8 @@ const Header = styled.div`
 `;
 
 const ProfileImage = styled(Image)`
-  border-radius: 24px;
-  box-shadow: 4px 4px 6px 0px ${theme.colors.accent.orange};
+  height: auto;
+  opacity: 1;
 `;
 
 type Props = {
@@ -99,7 +99,13 @@ const Sidebar: FC<Props> = ({ open, onClose }) => {
       <Backdrop onClick={onClose} $open={open} />
       <Content $open={open}>
         <Header>
-          <ProfileImage src={profile.src} width={100} height={100} alt="sophia auer avatar" />
+          <ProfileImage
+            src={profile.src}
+            width={200}
+            height={0}
+            alt="sophia auer avatar"
+            id="profile-sidebar"
+          />
           <Typography textalign="center" fontSize="20px">
             Soph. (they/them).
           </Typography>

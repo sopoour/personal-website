@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, ReactNode, useLayoutEffect, useState } from 'react';
 
 import { styled } from 'styled-components';
 import Header from './Header';
@@ -6,13 +6,7 @@ import Sidebar from '../Sidebar';
 import theme from '@app/styles/theme';
 import Intro from '../Intro';
 import GeoBackground from '../GeoBackground';
-import { IntroHeadliine } from '../Intro/styles';
-
-const Wrapper = styled.div`
-  height: 100vh;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-`;
+import useGsapAnimation from '@app/hooks/useGsapAnimation';
 
 const Root = styled.div`
   min-height: 100vh;
@@ -32,9 +26,6 @@ const MainLayout = styled.main`
   scroll-snap-align: center;
   scroll-snap-stop: always;
   height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
 
   ${theme.media('md')`
    position: relative;
@@ -51,10 +42,12 @@ type Props = {
 const Layout: FC<Props> = ({ children }) => {
   const [menuOpen, setOpenMenu] = useState<boolean>(false);
 
+  useGsapAnimation();
+
   return (
-    <Wrapper>
+    <>
       <Intro />
-      <Root>
+      <Root id="main">
         <Header onOpenMenu={() => setOpenMenu((prev) => !prev)} />
         <MainLayout>{children}</MainLayout>
         <Sidebar open={menuOpen} onClose={() => setOpenMenu(false)} />
@@ -64,7 +57,7 @@ const Layout: FC<Props> = ({ children }) => {
           Place here IntroHeader, the about me section and a good bye
         </p>
       </GeoBackground>
-    </Wrapper>
+    </>
   );
 };
 

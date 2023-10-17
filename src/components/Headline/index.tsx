@@ -25,7 +25,7 @@ const RotatingTitle = styled(SubTitle)<{ $stepNum: number }>`
   display: block;
   margin: 0;
   padding: 0;
-  animation: rotateText 7s infinite 7s;
+  animation: rotateText 8s infinite 7s;
   text-align: center;
 
   @keyframes rotateText {

@@ -69,7 +69,7 @@ const Carousel = styled.div`
 
 const Projects: FC = () => {
   const [activeCard, setActiveCard] = useState<number>(1);
-  const { data, isLoading } = useSWR<Project[]>('/api/projects', fetcher);
+  const { data } = useSWR<Project[]>('/api/projects', fetcher);
   const handleNext = () => data && setActiveCard((prevIndex) => (prevIndex + 1) % data.length);
   const handlePrev = () =>
     data && setActiveCard((prevIndex) => (prevIndex - 1 + data.length) % data.length);
@@ -81,8 +81,6 @@ const Projects: FC = () => {
     if (arrowLeftPressed) handlePrev();
     if (arrowRightPressed) handleNext();
   }, [arrowLeftPressed, arrowRightPressed]);
-
-  if (isLoading) return <p>Loading...</p>;
 
   return (
     <Section id="projects" $maxWidth={0}>

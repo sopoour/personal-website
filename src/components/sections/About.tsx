@@ -14,8 +14,8 @@ const FocusSpan = styled(Typography)`
 const About: FC = () => {
   return (
     <Section id="about">
-      <Headline />
-      <Typography className={'animate'}>
+      <Headline className={'animate'} />
+      <Typography>
         I&apos;m passionate about building{' '}
         <FocusSpan as="span" color={theme.colors.accent.pink}>
           accessible

@@ -31,7 +31,7 @@ const transformInitial = css`
   -webkit-transform: translateX(0) translateY(0) scale(1);
 `;
 
-export const IntroContainer = styled.div`
+export const IntroContainer = styled.section`
   background: ${theme.colors.bg.default};
   display: flex;
   flex-flow: column wrap;
@@ -52,8 +52,8 @@ export const IntroContainer = styled.div`
 `;
 
 export const LeftTop = styled(Geo1)`
-  top: -8%;
-  left: -40%;
+  top: -10%;
+  left: -50%;
   animation:
     appearTopLeft 12.5s linear,
     ${rotate1} 12.5s infinite;
@@ -83,8 +83,8 @@ export const LeftTop = styled(Geo1)`
 `;
 
 export const TopRight = styled(Geo2)`
-  top: -15%;
-  right: -15%;
+  top: -20%;
+  right: -20%;
   animation:
     appearTopRight 12.5s linear,
     ${rotate2} 12.5s infinite;
@@ -113,8 +113,8 @@ export const TopRight = styled(Geo2)`
 `;
 
 export const BottomLeft = styled(Geo3)`
-  bottom: -10%;
-  left: -20%;
+  bottom: -15%;
+  left: -30%;
   animation:
     appearBottomLeft 12.5s linear,
     ${rotate2} 12.5s infinite;
@@ -144,8 +144,8 @@ export const BottomLeft = styled(Geo3)`
 `;
 
 export const BottomRight = styled(Geo4)`
-  bottom: -15%;
-  right: -30%;
+  bottom: -20%;
+  right: -35%;
   animation:
     appearBottomRight 12.5s linear,
     ${rotate1} 12.5s infinite;
