@@ -1,0 +1,71 @@
+{
+    "id": "the-org-experience",
+    "title": "Frontend Developer",
+    "description": "I’ve been part of rebuilding the public facing pages as part of rebranding of The Org and migration to Next.js. Especially exciting was the implementation of a Mini Org Chart on the position page. At the end I’ve built the latest iteration of Vision, a sales enablement tool fostering The Org’s public org chart database. Features included a search with filters, saving lists, sidebars with more info and org chart iFrame connected to The Org org charts.",
+    "companyName": "The Org",
+    "companyLink": "https://theorg.com/",
+    "date": {
+        "current": false,
+        "startDate": "2022-01-10",
+        "endDate": "2023-07-31"
+    },
+    "location": "Copenhagen, Denmark",
+    "tags": [
+        {
+            "type": "tech",
+            "label": "TypeScript"
+        },
+        {
+            "type": "tech",
+            "label": "React"
+        },
+        {
+            "type": "tech",
+            "label": "Next.js"
+        },
+        {
+            "type": "tool",
+            "label": "Cypress"
+        },
+        {
+            "type": "tech",
+            "label": "GraphQL"
+        },
+        {
+            "type": "tool",
+            "label": "Vercel"
+        },
+        {
+            "type": "tool",
+            "label": "Figma"
+        },
+        {
+            "type": "tool",
+            "label": "Storybook"
+        },
+        {
+            "type": "tool",
+            "label": "Git/Github"
+        },
+        {
+            "type": "tool",
+            "label": "Framer Motion"
+        },
+        {
+            "type": "tech",
+            "label": "zustand"
+        },
+        {
+            "type": "skill",
+            "label": "DEI implementation"
+        },
+        {
+            "type": "skill",
+            "label": "Product Management"
+        },
+        {
+            "type": "skill",
+            "label": "Frontend Development"
+        }
+    ]
+}

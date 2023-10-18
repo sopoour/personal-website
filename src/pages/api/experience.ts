@@ -1,14 +1,18 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { Project } from '@app/types';
+import { Experience } from '@app/types';
 import parseJsonFiles from '@app/utils/parseJsonFiles';
 
 export default async function getProjects(
   req: NextApiRequest,
-  res: NextApiResponse<Project[] | { error: string }>,
+  res: NextApiResponse<Experience[] | { error: string }>,
 ) {
   try {
-    const mergedData = parseJsonFiles<Project>('data/projects').sort((a, b) =>
-      new Date(a.date) < new Date(b.date) ? 1 : new Date(a.date) > new Date(b.date) ? -1 : 0,
+    const mergedData = parseJsonFiles<Experience>('data/experiences').sort((a, b) =>
+      new Date(a.date.startDate) < new Date(b.date.startDate)
+        ? 1
+        : new Date(a.date.startDate) > new Date(b.date.startDate)
+        ? -1
+        : 0,
     );
 
     res.status(200).json(mergedData);

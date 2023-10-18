@@ -21,3 +21,18 @@ export type Project = {
   tags: Tag[];
   date: string;
 };
+
+export type Experience = {
+  id: string;
+  title: string;
+  description: string;
+  companyName: string;
+  companyLink: string;
+  date: {
+    current: boolean;
+    startDate: string;
+    endDate?: string;
+  };
+  location?: string;
+  tags: Tag[];
+};

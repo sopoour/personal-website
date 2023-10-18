@@ -5,6 +5,7 @@ import About from '@app/components/sections/About';
 import { gsap } from 'gsap';
 import { useLayoutEffect, useRef } from 'react';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import Experience from '@app/components/sections/Experience';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,6 +52,7 @@ const Home: NextPage = () => {
     <>
       <Projects />
       <About />
+      <Experience />
     </>
   );
 };

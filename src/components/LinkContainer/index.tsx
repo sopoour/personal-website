@@ -1,6 +1,6 @@
 import { flexRow } from '@app/styles/mixins';
 import { FC, useMemo } from 'react';
-import { styled } from 'styled-components';
+import { css, styled } from 'styled-components';
 import theme from '@app/styles/theme';
 import Link from 'next/link';
 import { IconLink } from '@app/types';
@@ -24,6 +24,19 @@ const Container = styled.span<{ hoverColour?: string; size?: 'small' | 'big' }>`
         fill: ${({ hoverColour }) => hoverColour ?? theme.colors.accent.green};
       }
     }
+
+    ${({ size }) =>
+      size === 'small' &&
+      css`
+        margin-bottom: 2px;
+
+        &:hover {
+          path {
+            fill: ${theme.colors.fg.default};
+            opacity: 1;
+          }
+        }
+      `}
   }
 `;
 

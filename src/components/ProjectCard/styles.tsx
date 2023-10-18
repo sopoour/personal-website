@@ -201,13 +201,4 @@ export const Card = styled.div<{
 
 export const Links = styled(LinkContainer)`
   gap: 10px;
-  margin-bottom: 4px;
-  svg {
-    &:hover {
-      path {
-        fill: ${theme.colors.fg.default};
-        opacity: 1;
-      }
-    }
-  }
 `;

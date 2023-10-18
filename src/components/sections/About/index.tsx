@@ -33,7 +33,7 @@ const aboutMeDetails = [
     bullets: [
       'good live music',
       'space for play',
-      'inclusive but artsy design',
+      'inclusive design',
       'honesty',
       'transparency',
       'creativity',
@@ -43,10 +43,12 @@ const aboutMeDetails = [
     id: 'thinking-box',
     title: 'Thinking about...',
     bullets: [
-      'next personal project',
-      'inclusive learning methods',
       'which LEGO set to build',
+      'next personal project',
+      'education improvements',
       'what instrument to learn',
+      'my purpose of existence',
+      'life and the universe',
     ],
   },
 ];
@@ -62,7 +64,7 @@ const About: FC = () => {
       {
         y: 0,
         opacity: 1,
-        stagger: 1,
+        stagger: 0.8,
         duration: 2,
         scrollTrigger: {
           trigger: '#box-wrapper',

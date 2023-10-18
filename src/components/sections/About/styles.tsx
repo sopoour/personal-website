@@ -44,7 +44,7 @@ export const Box = styled.div<{ $color: string }>`
   }
 
   ${theme.media('sm')`
-width: 275px;
+  width: 275px;
   
   `}
 `;
@@ -57,17 +57,18 @@ export const BulletWrapper = styled.ul`
     list-style: none;
     position: relative;
     font-size: 14px;
+    text-align: start;
+    line-height: 175%;
     &::before {
       content: '';
       position: absolute;
       left: -23px;
-      top: 25%;
+      top: 33%;
       width: 10px;
       height: 10px;
       transform: rotate(-45deg);
-
-      background: ${`linear-gradient(140deg, ${theme.colors.accent.green} , ${theme.colors.accent.orange})`};
-      opacity: 0.5;
+      border: 1.5px solid ${theme.colors.fg.contrast};
+      border-radius: 2px;
     }
   }
 `;

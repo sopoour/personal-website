@@ -1,0 +1,39 @@
+{
+    "id": "goodiebox-experience",
+    "title": "Product Manager",
+    "description": "Product managed the migration of 9 markets from an old platform (outsourced) to a new centralized tech platform built in-house. Optimized internal processes by building efficient tools (admin websites for customer service & logistics). I’ve been a support engineer for the customer success team and analyzed customer data by building dashboards in Amplitude.",
+    "companyName": "Goodiebox",
+    "companyLink": "https://bygoodiebox.com/gwp/da/",
+    "date": {
+        "current": false,
+        "startDate": "2020-09-01",
+        "endDate": "2021-08-31"
+    },
+    "location": "Copenhagen, Denmark",
+    "tags": [
+        {
+            "type": "tool",
+            "label": "JIRA"
+        },
+        {
+            "type": "skill",
+            "label": "Product Management"
+        },
+        {
+            "type": "tool",
+            "label": "Google Analytics"
+        },
+        {
+            "type": "tool",
+            "label": "Google Cloud Platform"
+        },
+        {
+            "type": "skill",
+            "label": "Product Analysis"
+        },
+        {
+            "type": "tool",
+            "label": "Amplitude"
+        }
+    ]
+}

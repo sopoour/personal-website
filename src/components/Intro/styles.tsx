@@ -6,6 +6,7 @@ import Typography from '../Typography/Typography';
 import { fadeIn, flexColumn } from '@app/styles/mixins';
 import { IoIosArrowDown } from 'react-icons/io';
 import Headline from '../Headline';
+import { Breakpoints } from '@app/styles/media';
 
 export const ContentWrapper = styled.div`
   ${flexColumn};
@@ -81,6 +82,11 @@ export const ProfileImage = styled(Image)`
   ${theme.media('xs')`
     width: 400px;
   `}
+
+  // Mobile only
+  @media only screen and (max-width: ${Breakpoints.xs}px) {
+    transform: none !important;
+  }
 `;
 
 export const ScrollArrowFadeElement = styled(IoIosArrowDown)`
