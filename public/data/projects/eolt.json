@@ -1,7 +1,7 @@
 {
   "id": "eolt",
-  "title": "Encylopedia of Ludic Terms (EoLT) - Freelance project for ITU",
-  "description": "This has been built for a research group at the IT University in Copenhagen. It's an encyclopedia for game studies where researchers can add articles explaining specific words in Game studies. You can both browse or search specific keywords to find the articles and each article has a table of content. This was one of my first projects using React and Contentful as CRM. ",
+  "title": "EoLT - Freelance project",
+  "description": "An encyclopedia for game studies built for a research group at IT University Copenhagen. Researchers can add articles explaining specific words in Game studies. You can both browse or search specific keywords to find the articles and each article has a table of content.",
   "date": "2021-11-15",
   "links": [
     {

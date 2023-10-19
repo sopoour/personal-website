@@ -17,8 +17,8 @@ type Props = {
 
 const ProjectCard: FC<Props> = ({ project, activeIndex, projectIndex }) => {
   const [view, setView] = useState<boolean>(false);
-  const ref = useRef<HTMLDivElement>(null);
-  const isDesktop = useMedia(Breakpoints.sm);
+  const ref = useRef<HTMLButtonElement>(null);
+  const isDesktop = useMedia(Breakpoints.xs);
 
   useEffect(() => setView(false), [activeIndex, projectIndex]);
   useClickOutside(ref, () => setView(false));
@@ -38,11 +38,12 @@ const ProjectCard: FC<Props> = ({ project, activeIndex, projectIndex }) => {
           : {}
       }
       $viewDetails={view}
-      onClick={() => setView(true)}
+      onClick={() => isDesktop && setView((prev) => !prev)}
       ref={ref}
-      tabIndex={5}
+      tabIndex={(activeIndex - projectIndex) / 3 === 0 ? 4 : 5}
+      aria-label={`${project.id}-project-card`}
     >
-      <DetailsContainer>
+      <DetailsContainer projectId={project.id}>
         <DetailHeader>
           <Typography fontWeight={700}>{project.title}</Typography>
           <Links iconLinks={project.links} size="small" tabIndex={5} />

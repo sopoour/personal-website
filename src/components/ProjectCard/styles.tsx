@@ -12,40 +12,59 @@ const transition = css`
   -o-transition: all 0.6s ease-in-out;
 `;
 
-export const DetailsContainer = styled.div`
-  opacity: 0;
-  ${transition};
+export const DetailsContainer = styled.div<{ projectId: string }>`
   ${flexColumn};
-  width: 80vw;
+  width: 85vw;
   padding: 20px;
   height: 100%;
-  gap: 8px;
-  background-color: #0b0e2b;
+  gap: 12px;
+  background-image: ${({ projectId }) =>
+    `linear-gradient(to bottom, rgba(11,14,43, 0.85), rgba(11,14,43, 0.85)), url(${`/data/images/${projectId}.png`})`};
+  background-position: center;
+  background-size: cover;
   border-radius: 10px;
 
-  ${theme.media('md')`
+  ${theme.media('xs')`
   box-shadow: 0 60px 50px -60px ${theme.colors.bg.soft};
   padding: 32px;
   width: 100%;
+  opacity: 0;
+  ${transition};
+  background-color: #0b0e2b;
+  background-image: none;
   `}
 `;
 
 export const DetailHeader = styled.div`
-  ${flexRow};
-  gap: 16px;
+  ${flexColumn};
+  gap: 12px;
+  justify-content: space-between;
+
+  > p {
+    font-size: 14px;
+  }
+
+  ${theme.media('xs')`
+    > p {
+      font-size: 16px;
+      ${flexRow};
+      gap: 16px;
+    }
+  `}
 `;
 
 export const ProjectThumbnail = styled(Image)`
   ${transition};
   opacity: 1;
   position: relative;
-
+  display: none;
   width: 100vw;
   height: 100%;
   border-radius: 10px;
 
-  ${theme.media('md')`
+  ${theme.media('xs')`
 box-shadow: 0 60px 50px -60px ${theme.colors.bg.soft};
+display: block;
   `}
 `;
 
@@ -64,7 +83,7 @@ const pseudoEffects = css`
     border-radius: 10px;
     width: 100%;
     height: 100%;
-    background: linear-gradient(0deg, rgba(17, 22, 71, 0.3) 40%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(0deg, rgba(17, 22, 71, 0.5) 30%, rgba(255, 255, 255, 0) 100%);
   }
 
   &::before {
@@ -88,7 +107,6 @@ const viewedStyle = css`
     // so I can use the links in the header
     z-index: -1;
   }
-  cursor: auto;
 
   ${DetailsContainer} {
     opacity: 1;
@@ -110,7 +128,7 @@ const viewedStyle = css`
   }
 `;
 
-export const Card = styled.div<{
+export const Card = styled.button<{
   $absOffset: number;
   $offset: number;
   direction: number;
@@ -122,7 +140,6 @@ export const Card = styled.div<{
   left: 0;
   right: 0;
   margin: auto;
-  cursor: pointer;
   border-radius: 10px;
   transform-style: preserve-3d;
   transform: ${({ $absOffset, $offset, direction }) =>
@@ -138,22 +155,6 @@ export const Card = styled.div<{
 
   ${pseudoEffects};
 
-  &:hover {
-    ${transition};
-    img {
-      transform: translateY(-20px);
-    }
-
-    &::after {
-      bottom: -10px;
-      opacity: 1;
-    }
-    &::before {
-      bottom: 30%;
-      opacity: 1;
-    }
-  }
-
   &:focus {
     outline: 3px solid ${theme.colors.accent.pink};
     border-radius: 2px;
@@ -168,24 +169,13 @@ export const Card = styled.div<{
   // Mobile only
   @media only screen and (max-width: ${Breakpoints.xs}px) {
     width: 100%;
-    position: static;
+    position: unset;
     scroll-snap-align: center;
     scroll-snap-stop: always;
     transform: unset;
     margin-right: 12px;
     display: inline-block;
     filter: unset;
-    ${pseudoEffects};
-    &::after {
-      bottom: -10px !important;
-      opacity: 1 !important;
-    }
-    &::before {
-      bottom: 30% !important;
-      opacity: 1 !important;
-    }
-
-    ${({ $viewDetails }) => $viewDetails && viewedStyle};
 
     ${ProjectThumbnail} {
       filter: unset;
@@ -197,8 +187,28 @@ export const Card = styled.div<{
       }
     }
   }
+
+  ${theme.media('xs')`
+    &:hover {
+      ${transition};
+      img {
+        transform: translateY(-20px);
+      }
+
+      &::after {
+        bottom: 20px;
+        opacity: 1;
+      }
+      &::before {
+        bottom: 30%;
+        opacity: 1;
+      }
+    }
+
+  `}
 `;
 
 export const Links = styled(LinkContainer)`
+  justify-content: flex-start;
   gap: 10px;
 `;

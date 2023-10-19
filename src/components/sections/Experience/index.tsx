@@ -46,6 +46,7 @@ const Experience: FC = () => {
                     <LinkContainer
                       iconLinks={[{ link: experience.companyLink, type: 'link' }]}
                       size="small"
+                      tabIndex={6}
                     />
                   </Header>
 

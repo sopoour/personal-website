@@ -1,0 +1,52 @@
+{
+  "id": "personal-website-v2",
+  "title": "Personal Website v2",
+  "description": "Freshly designed and implemented my personal website to showcase my projects, experiences and skills. It's also a playground to try out new animations with GSAP and simple keyframes. To make it easy to add new projects and experiences, I've built some readline-sync scripts.",
+  "date": "2023-11-15",
+  "links": [
+    {
+      "type": "link",
+      "id": "personal-website-v2-demo",
+      "link": "https://sophiaauer.me/"
+    },
+    {
+      "type": "github",
+      "id": "personal-website-v2-github",
+      "link": "https://github.com/sopoour/personal-website"
+    }
+  ],
+  "tags": [
+    {
+      "type": "tech",
+      "label": "Next.js"
+    },
+    {
+      "type": "tech",
+      "label": "React"
+    },
+    {
+      "type": "tool",
+      "label": "Figma"
+    },
+    {
+      "type": "tool",
+      "label": "Vercel"
+    },
+    {
+      "type": "tech",
+      "label": "GSAP"
+    },
+    {
+      "type": "tech",
+      "label": "Typescript"
+    },
+    {
+      "type": "skill",
+      "label": "Frontend Development"
+    },
+    {
+      "type": "skill",
+      "label": "Design"
+    }
+  ]
+}

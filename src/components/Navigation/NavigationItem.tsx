@@ -43,19 +43,23 @@ type Props = {
   onClickItem?: () => void;
 };
 
-const NavigationItem: FC<Props> = ({ item, onClickItem }) => (
-  <Item
-    id={item}
-    tabIndex={1}
-    activeClass="active"
-    to={item.toLowerCase().replace(/\s/g, '-')}
-    spy
-    smooth
-    duration={700}
-    onClick={onClickItem}
-  >
-    · · · {item}
-  </Item>
-);
+const NavigationItem: FC<Props> = ({ item, onClickItem }) => {
+  const navItemName = item.toLowerCase().replace(/\s/g, '-');
+  return (
+    <Item
+      id={item}
+      tabIndex={1}
+      activeClass="active"
+      to={navItemName}
+      spy
+      smooth
+      duration={700}
+      href={`#${navItemName}`}
+      onClick={onClickItem}
+    >
+      · · · {item}
+    </Item>
+  );
+};
 
 export default NavigationItem;
