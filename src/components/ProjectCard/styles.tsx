@@ -1,16 +1,9 @@
-import { flexColumn, flexRow } from '@app/styles/mixins';
+import { flexColumn, flexRow, slowTransition } from '@app/styles/mixins';
 import theme from '@app/styles/theme';
 import { css, styled } from 'styled-components';
 import LinkContainer from '../LinkContainer';
 import { Breakpoints } from '@app/styles/media';
 import Image from 'next/image';
-
-const transition = css`
-  transition: all 0.6s ease-in-out;
-  -webkit-transition: all 0.6s ease-in-out;
-  -moz-transition: all 0.6s ease-in-out;
-  -o-transition: all 0.6s ease-in-out;
-`;
 
 export const DetailsContainer = styled.div<{ projectId: string }>`
   ${flexColumn};
@@ -29,7 +22,7 @@ export const DetailsContainer = styled.div<{ projectId: string }>`
   padding: 32px;
   width: 100%;
   opacity: 0;
-  ${transition};
+  ${slowTransition};
   background-color: #0b0e2b;
   background-image: none;
   `}
@@ -45,16 +38,17 @@ export const DetailHeader = styled.div`
   }
 
   ${theme.media('xs')`
+  ${flexRow};
+  gap: 16px;
     > p {
       font-size: 16px;
-      ${flexRow};
-      gap: 16px;
+      
     }
   `}
 `;
 
 export const ProjectThumbnail = styled(Image)`
-  ${transition};
+  ${slowTransition};
   opacity: 1;
   position: relative;
   display: none;
@@ -75,7 +69,7 @@ const pseudoEffects = css`
     bottom: -10px;
     display: block;
     opacity: 0;
-    ${transition};
+    ${slowTransition};
   }
 
   &::after {
@@ -148,7 +142,7 @@ export const Card = styled.button<{
     translateZ(calc(${$absOffset} * -30rem))
     translateX(calc(${direction} * -5rem))`};
   filter: ${({ $absOffset }) => `blur(calc(${$absOffset} * 0.75rem))`};
-  ${transition};
+  ${slowTransition};
   ${ProjectThumbnail} {
     filter: ${({ $absOffset }) => `brightness(calc(100% - (${$absOffset} * 50%)))`};
   }
@@ -190,7 +184,7 @@ export const Card = styled.button<{
 
   ${theme.media('xs')`
     &:hover {
-      ${transition};
+      ${slowTransition};
       img {
         transform: translateY(-20px);
       }

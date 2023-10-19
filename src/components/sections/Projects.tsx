@@ -44,7 +44,7 @@ const NavButton = styled.button<{ side: 'left' | 'right' }>`
 
 const Carousel = styled.div`
   position: relative;
-  height: 30rem;
+  height: 32rem;
   width: 100%;
   perspective: 500px;
   margin: 0 auto;
@@ -77,7 +77,7 @@ const ProjectSection = styled(Section)`
 `;
 
 const Projects: FC = () => {
-  const [activeCard, setActiveCard] = useState<number>(1);
+  const [activeCard, setActiveCard] = useState<number>(2);
   const { data } = useSWR<Project[]>('/api/projects', fetcher);
   const handleNext = () => data && setActiveCard((prevIndex) => (prevIndex + 1) % data.length);
   const handlePrev = () =>

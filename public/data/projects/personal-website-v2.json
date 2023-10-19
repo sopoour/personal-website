@@ -1,7 +1,7 @@
 {
   "id": "personal-website-v2",
   "title": "Personal Website v2",
-  "description": "Freshly designed and implemented my personal website to showcase my projects, experiences and skills. It's also a playground to try out new animations with GSAP and simple keyframes. To make it easy to add new projects and experiences, I've built some readline-sync scripts.",
+  "description": "Designed in Figma and implemented with Next.js and styled-components showcasing my projects, experiences and skills. It's also a playground to try out new animations with GSAP and simple keyframes. To make it easy to add new projects and experiences, I've built some readline-sync scripts that outputs a JSON file.",
   "date": "2023-11-15",
   "links": [
     {
@@ -25,6 +25,14 @@
       "label": "React"
     },
     {
+      "type": "tech",
+      "label": "styled-components"
+    },
+    {
+      "type": "tech",
+      "label": "Typescript"
+    },
+    {
       "type": "tool",
       "label": "Figma"
     },
@@ -35,10 +43,6 @@
     {
       "type": "tech",
       "label": "GSAP"
-    },
-    {
-      "type": "tech",
-      "label": "Typescript"
     },
     {
       "type": "skill",

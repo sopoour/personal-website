@@ -66,7 +66,7 @@ export const Header = styled.span`
   gap: 16px;
 `;
 
-export const DownloadButton = styled.button`
+export const DownloadButton = styled.a`
   font-family: ${robotoMono.style.fontFamily};
   font-weight: 500;
   color: ${theme.colors.fg.default};

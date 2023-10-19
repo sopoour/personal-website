@@ -58,8 +58,8 @@ const Experience: FC = () => {
               </ExperienceContainer>
             </>
           ))}
-        <DownloadButton>
-          View full Resumé <IoIosArrowForward />
+        <DownloadButton href="data/soph_resume.pdf" target="_blank">
+          View full Résumé <IoIosArrowForward />
         </DownloadButton>
       </Container>
     </Section>

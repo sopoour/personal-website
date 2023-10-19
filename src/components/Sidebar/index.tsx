@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useState } from 'react';
 import { useMedia } from '@app/hooks/useMedia';
 import { Breakpoints } from '@app/styles/media';
 import { css, styled } from 'styled-components';
@@ -9,13 +9,10 @@ import Typography from '../Typography/Typography';
 import Navigation from '../Navigation';
 import LinkContainer from '../LinkContainer';
 import { IconLink } from '@app/types';
+import { flexColumn } from '@app/styles/mixins';
+import Email from '../Email';
 
-const links: IconLink[] = [
-  { type: 'github' },
-  { type: 'linkedin' },
-  { type: 'email' },
-  { type: 'instagram' },
-];
+const links: IconLink[] = [{ type: 'github' }, { type: 'linkedin' }, { type: 'instagram' }];
 
 const Backdrop = styled.div<{ $open?: boolean }>`
   position: fixed;
@@ -87,34 +84,39 @@ const ProfileImage = styled(Image)`
   opacity: 1;
 `;
 
+const BottomSection = styled.div`
+  ${flexColumn};
+  gap: 24px;
+`;
+
 type Props = {
   open?: boolean;
   onClose?: () => void;
 };
 
-const Sidebar: FC<Props> = ({ open, onClose }) => {
-  const isDesktop = useMedia(Breakpoints.sm);
-  return (
-    <>
-      <Backdrop onClick={onClose} $open={open} />
-      <Content $open={open}>
-        <Header>
-          <ProfileImage
-            src={profile.src}
-            width={200}
-            height={0}
-            alt="sophia auer avatar"
-            id="profile-sidebar"
-          />
-          <Typography textalign="center" fontSize="20px">
-            Soph. (they/them).
-          </Typography>
-        </Header>
-        <Navigation onClickItem={onClose} />
+const Sidebar: FC<Props> = ({ open, onClose }) => (
+  <>
+    <Backdrop onClick={onClose} $open={open} />
+    <Content $open={open}>
+      <Header>
+        <ProfileImage
+          src={profile.src}
+          width={200}
+          height={0}
+          alt="sophia auer avatar"
+          id="profile-sidebar"
+        />
+        <Typography textalign="center" fontSize="20px">
+          Soph. (they/them).
+        </Typography>
+      </Header>
+      <Navigation onClickItem={onClose} />
+      <BottomSection>
         <LinkContainer iconLinks={links} />
-      </Content>
-    </>
-  );
-};
+        <Email />
+      </BottomSection>
+    </Content>
+  </>
+);
 
 export default Sidebar;
