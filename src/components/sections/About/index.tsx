@@ -1,9 +1,6 @@
-import { flexColumn, flexRow } from '@app/styles/mixins';
 import { FC, useEffect } from 'react';
 import Typography from '../../Typography/Typography';
 import Section from '../../layout/Section';
-import styled from 'styled-components';
-import { robotoMono } from '@app/styles/fonts';
 import theme from '@app/styles/theme';
 import getAccentColour from '@app/utils/getAccentColour';
 

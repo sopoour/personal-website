@@ -34,10 +34,11 @@ const Container = styled.span`
 
 type Props = {
   tags: Tag[];
+  className?: string;
 };
 
-const Tags: FC<Props> = ({ tags }) => (
-  <Container>
+const Tags: FC<Props> = ({ tags, className }) => (
+  <Container className={className}>
     {tags.map((tag, index) => (
       <Tag key={tag.label + index} style={getColourTheme(tag.type)}>
         {tag.label}

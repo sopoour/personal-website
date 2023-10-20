@@ -1,6 +1,13 @@
 import { FC, useEffect, useRef, useState } from 'react';
 import { Project } from '@app/types';
-import { Card, DetailHeader, DetailsContainer, Links, ProjectThumbnail } from './styles';
+import {
+  Card,
+  DetailHeader,
+  DetailsContainer,
+  Links,
+  ProjectThumbnail,
+  TagsMobile,
+} from './styles';
 import Typography from '../Typography/Typography';
 import useClickOutside from '@app/hooks/useClickOutside';
 import Tags from '../Tags';
@@ -49,7 +56,7 @@ const ProjectCard: FC<Props> = ({ project, activeIndex, projectIndex }) => {
           <Links iconLinks={project.links} size="small" tabIndex={5} />
         </DetailHeader>
         <Typography fontSize={'14px'}>{project.description}</Typography>
-        <Tags tags={project.tags} />
+        <TagsMobile tags={project.tags} />
       </DetailsContainer>
       <ProjectThumbnail
         src={`/data/images/${project.id}.png`}

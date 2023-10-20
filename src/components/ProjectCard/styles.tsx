@@ -4,6 +4,7 @@ import { css, styled } from 'styled-components';
 import LinkContainer from '../LinkContainer';
 import { Breakpoints } from '@app/styles/media';
 import Image from 'next/image';
+import Tags from '../Tags';
 
 export const DetailsContainer = styled.div<{ projectId: string }>`
   ${flexColumn};
@@ -12,7 +13,7 @@ export const DetailsContainer = styled.div<{ projectId: string }>`
   height: 100%;
   gap: 12px;
   background-image: ${({ projectId }) =>
-    `linear-gradient(to bottom, rgba(11,14,43, 0.85), rgba(11,14,43, 0.85)), url(${`/data/images/${projectId}.png`})`};
+    `linear-gradient(to bottom, rgba(65,75,163, 0.75), rgba(11,14,43, 1)) , url(${`/data/images/${projectId}.png`})`};
   background-position: center;
   background-size: cover;
   border-radius: 10px;
@@ -205,4 +206,12 @@ export const Card = styled.button<{
 export const Links = styled(LinkContainer)`
   justify-content: flex-start;
   gap: 10px;
+`;
+
+export const TagsMobile = styled(Tags)`
+  @media only screen and (max-width: ${Breakpoints.xs}px) {
+    p {
+      filter: contrast(120%);
+    }
+  }
 `;
