@@ -34,7 +34,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const Line = styled.span`
-  width: 16px;
+  width: 18px;
   height: 2px;
   background-color: ${theme.colors.fg.default};
   display: block;
@@ -47,8 +47,8 @@ const Line = styled.span`
 const BurgerMenu = styled.button<{ $isActive: boolean }>`
   padding: 8px;
   opacity: 0;
-  width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
 
   align-items: center;
 
