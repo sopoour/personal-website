@@ -93,7 +93,7 @@ const Projects: FC = () => {
 
   return (
     <ProjectSection id="projects" $maxWidth={0} mobileTitle="Projects">
-      <Carousel className={'animate'}>
+      <Carousel className={'animate-scale'}>
         <NavButton side="left" onClick={handlePrev} tabIndex={3}>
           <IoIosArrowBack />
         </NavButton>

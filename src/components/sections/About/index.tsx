@@ -10,7 +10,7 @@ import getAccentColour from '@app/utils/getAccentColour';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
-import { Box, BoxWrapper, BulletWrapper, RobotMono, TextWrapper } from './styles';
+import { AboutContainer, Box, BoxWrapper, BulletWrapper, RobotMono, TextWrapper } from './styles';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -57,10 +57,11 @@ const About: FC = () => {
   useEffect(() => {
     // specific elements to be animated
     const boxes = gsap.utils.toArray('.box');
+    const textLines = gsap.utils.toArray('#text-wrapper > p');
 
     gsap.fromTo(
       boxes,
-      { y: 300, opacity: 0, duration: 2 },
+      { y: 200, opacity: 0, duration: 2 },
       {
         y: 0,
         opacity: 1,
@@ -69,18 +70,35 @@ const About: FC = () => {
         scrollTrigger: {
           trigger: '#box-wrapper',
           scrub: true,
-          start: 'top bottom',
-          end: 'top 20%',
+          start: 'top 120%',
+          end: '-50% top ',
           immediateRender: false,
         },
       },
     );
+
+    textLines.forEach((line: any) => {
+      gsap.fromTo(
+        line,
+        { y: 100, opacity: 0 },
+        {
+          y: -50,
+          opacity: 1,
+          scrollTrigger: {
+            trigger: line,
+            scrub: 0.5,
+            start: 'top 140%',
+            end: '-30% top',
+          },
+        },
+      );
+    });
   }, []);
 
   return (
     <Section id="about" mobileTitle="About">
-      <>
-        <TextWrapper className={'animate'}>
+      <AboutContainer>
+        <TextWrapper id={'text-wrapper'}>
           <Typography>
             I&apos;m passionate about building{' '}
             <RobotMono as="span" color={theme.colors.accent.pink}>
@@ -123,7 +141,7 @@ const About: FC = () => {
             </Box>
           ))}
         </BoxWrapper>
-      </>
+      </AboutContainer>
     </Section>
   );
 };

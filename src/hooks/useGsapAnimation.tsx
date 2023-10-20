@@ -79,10 +79,10 @@ const useGsapAnimation = () => {
     const sections = gsap.utils.toArray('section');
 
     sections.forEach((section: any) => {
-      const w = section.querySelector('.animate');
+      const as = section.querySelector('.animate-scale');
 
       gsap.fromTo(
-        w,
+        as,
         { scale: 0.7 },
         {
           scale: 1,

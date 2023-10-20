@@ -25,7 +25,7 @@ const Experience: FC = () => {
   const { data } = useSWR<Experience[]>('/api/experience', fetcher);
   return (
     <Section mobileTitle="Experience" id="experience">
-      <Container className="animate">
+      <Container className="animate-scale">
         {data &&
           data?.slice(0, 2).map((experience) => (
             <>

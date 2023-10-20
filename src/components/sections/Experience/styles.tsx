@@ -49,7 +49,7 @@ export const Container = styled.div`
   gap: 16px;
 
   > ${TimeWrapper}:not(:first-of-type) {
-    margin-top: 32px;
+    margin-top: 32px !important;
   }
 
   ${theme.media('sm')`

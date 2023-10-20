@@ -8,6 +8,15 @@ export const RobotMono = styled(Typography)`
   font-family: ${robotoMono.style.fontFamily};
 `;
 
+export const AboutContainer = styled.div`
+  ${flexColumn};
+  gap: 16px;
+
+  ${theme.media('sm')`
+    gap: 40px;
+  `}
+`;
+
 export const TextWrapper = styled.div`
   ${flexColumn};
   gap: 16px;
