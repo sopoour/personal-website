@@ -62,12 +62,12 @@ const About: FC = () => {
       {
         y: 0,
         opacity: 1,
-        stagger: 0.8,
+        stagger: 0.5,
         duration: 2,
         scrollTrigger: {
           trigger: '#box-wrapper',
           scrub: true,
-          start: 'top 120%',
+          start: 'top 75%',
           end: '-50% top ',
           immediateRender: false,
         },
@@ -84,7 +84,7 @@ const About: FC = () => {
           scrollTrigger: {
             trigger: line,
             scrub: 0.5,
-            start: 'top 140%',
+            start: 'top 120%',
             end: '-30% top',
           },
         },
@@ -111,13 +111,12 @@ const About: FC = () => {
             </RobotMono>{' '}
             products that have a positive impact on society and our environment. User experience and
             writing clean accessible code matter to me. I sweat the details while keeping in mind
-            the holistic product plan.
+            the holistic product experience.
           </Typography>
           <Typography>
             I&apos;m happiest when I&apos;m creating, exploring, and learning about how to make
-            things better. My <b>curiosity</b> is my leading driver to dive into different
-            programming languages, frontend frameworks, design systems, animations, accessibility
-            and much more.
+            things better. My curiosity is my leading driver to dive into different programming
+            languages, frontend frameworks, design systems, animations, accessibility and much more.
           </Typography>
           <Typography>
             My motto is to always follow whatever sparks that awe in you, then try it, break it and

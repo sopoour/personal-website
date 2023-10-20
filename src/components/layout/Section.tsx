@@ -1,4 +1,4 @@
-import { flexColumn, mobileOnly } from '@app/styles/mixins';
+import { flexColumn } from '@app/styles/mixins';
 import { FC, HTMLAttributes, ReactElement } from 'react';
 import styled from 'styled-components';
 import Typography from '../Typography/Typography';

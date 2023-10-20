@@ -49,7 +49,7 @@ const Layout: FC<Props> = ({ children }) => {
     <>
       <Intro />
       <Root id="main">
-        <Header onOpenMenu={() => setOpenMenu((prev) => !prev)} />
+        <Header onOpenMenu={() => setOpenMenu((prev) => !prev)} isOpen={menuOpen} />
         <MainLayout>{children}</MainLayout>
         <Sidebar open={menuOpen} onClose={() => setOpenMenu(false)} />
       </Root>

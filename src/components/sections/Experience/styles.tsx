@@ -1,5 +1,6 @@
 import Typography from '@app/components/Typography/Typography';
 import { robotoMono } from '@app/styles/fonts';
+import { Breakpoints } from '@app/styles/media';
 import { flexColumn, flexRow } from '@app/styles/mixins';
 import theme from '@app/styles/theme';
 import { styled } from 'styled-components';
@@ -48,17 +49,16 @@ export const Container = styled.div`
   grid-template-columns: 1fr;
   gap: 16px;
 
-  > ${TimeWrapper}:not(:first-of-type) {
-    margin-top: 32px !important;
-  }
-
   ${theme.media('sm')`
     grid-template-columns: max-content 1fr;
     gap: 40px 64px;
-    > ${TimeWrapper}:not(:first-of-type) {
-    margin-top: 0px;
-  }
   `}
+
+  @media only screen and (max-width: ${Breakpoints.sm}px) {
+    > ${TimeWrapper}:not(:first-of-type) {
+      margin-top: 32px;
+    }
+  }
 `;
 
 export const Header = styled.span`

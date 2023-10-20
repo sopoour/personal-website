@@ -7,6 +7,7 @@ import { slowTransition } from '@app/styles/mixins';
 
 const EmailText = styled(Typography)<{ $copied: boolean }>`
   position: relative;
+  font-weight: 500;
   ${slowTransition};
   &::after {
     content: '${({ $copied }) => ($copied ? 'Copied!' : 'Click to copy')}';
@@ -26,6 +27,7 @@ const EmailText = styled(Typography)<{ $copied: boolean }>`
   }
   &:hover {
     color: ${theme.colors.accent.green};
+    transform: scale(1.1);
     &::after {
       opacity: 1;
       bottom: -200%;
