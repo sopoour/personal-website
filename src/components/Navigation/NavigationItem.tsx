@@ -44,7 +44,7 @@ type Props = {
 };
 
 const NavigationItem: FC<Props> = ({ item, onClickItem }) => {
-  const navItemName = item.toLowerCase().replace(/\s/g, '-');
+  const navItemName = item.toLowerCase();
   return (
     <Item
       id={item}

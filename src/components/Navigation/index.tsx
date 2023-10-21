@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import NavigationItem from './NavigationItem';
 import { flexColumn } from '@app/styles/mixins';
 
-const navItems = ['Projects', 'Experience', 'About', 'Skills & Tools'];
+const navItems = ['Projects', 'Experience', 'Skills', 'About'];
 
 const Container = styled.nav`
   ${flexColumn};
