@@ -10,7 +10,6 @@ import theme from '@app/styles/theme';
 import getAccentColour from '@app/utils/getAccentColour';
 import Typography from '@app/components/Typography/Typography';
 import { robotoMono } from '@app/styles/fonts';
-import useIsInViewport from '@app/hooks/useIsInViewport';
 import { flexRow } from '@app/styles/mixins';
 
 const skills = [
@@ -88,12 +87,9 @@ const BallWrapper = styled.span<{ top?: string; left?: string }>`
 `;
 
 const Skills: FC = () => {
-  const ref = useRef<HTMLDivElement>(null);
   const getRand = (min: number, max: number) => {
     return Math.random() * (max - min) + min;
   };
-
-  const isInView = useIsInViewport(ref, { threshold: 0.5 });
 
   useEffect(() => {
     const tl = gsap?.timeline({
@@ -154,11 +150,11 @@ const Skills: FC = () => {
         gsap.to(ball, { zIndex: 0, scale: 1 });
       });
     });
-  }, [isInView]);
+  }, []);
 
   return (
     <Section mobileTitle="Skills" id="skills">
-      <RelativeWrapper ref={ref}>
+      <RelativeWrapper>
         {skills.map((skill, index) => (
           <BallWrapper
             key={skill}
