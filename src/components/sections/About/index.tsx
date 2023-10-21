@@ -77,7 +77,7 @@ const About: FC = () => {
     textLines.forEach((line: any) => {
       gsap.fromTo(
         line,
-        { y: 100, opacity: 0 },
+        { y: 200, opacity: 0 },
         {
           y: -50,
           opacity: 1,
