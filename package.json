@@ -10,8 +10,6 @@
     "generate-project": "node src/scripts/generate-project.js"
   },
   "dependencies": {
-    "@react-three/cannon": "^6.6.0",
-    "@react-three/fiber": "^8.14.6",
     "@svgr/webpack": "8.1.0",
     "date-fns": "2.30.0",
     "fs": "^0.0.1-security",
@@ -23,16 +21,7 @@
     "react-loading-skeleton": "3.3.1",
     "react-scroll": "1.9.0",
     "styled-components": "6.0.7",
-    "swr": "2.2.4",
-    "three": "0.157.0"
-  },
-  "otherPossibleDependencies": {
-    "//": "tools",
-    "react-markdown": "latest",
-    "rehype-slug": "latest",
-    "remark-gfm": "latest",
-    "swr": "latest",
-    "zustand": "latest"
+    "swr": "2.2.4"
   },
   "devDependencies": {
     "@babel/core": "7.21.0",
@@ -44,7 +33,6 @@
     "@types/react-infinite-scroll-component": "5.0.0",
     "@types/react-scroll": "^1.8.8",
     "@types/styled-components": "^5.1.28",
-    "@types/three": "^0.157.2",
     "babel-plugin-styled-components": "2.1.4",
     "cypress": "10.11.0",
     "cypress-recurse": "1.27.0",
