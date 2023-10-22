@@ -22,6 +22,7 @@ const Intro: FC = () => {
           height={305}
           alt="sophia auer avatar"
           id="profile-intro"
+          priority
         />
         <Title
           fontWeight={700}

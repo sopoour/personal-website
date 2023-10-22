@@ -11,27 +11,28 @@ import getAccentColour from '@app/utils/getAccentColour';
 import Typography from '@app/components/Typography/Typography';
 import { robotoMono } from '@app/styles/fonts';
 import { flexRow } from '@app/styles/mixins';
+import { Tag } from '@app/types';
 
 const skills = [
-  'Next.js',
-  'React',
-  'Typescript',
-  'Webflow',
-  'CSS',
-  'Python',
-  'GraphQL',
-  'Figma',
-  'MaterialUI',
-  'Radix UI',
-  'styled-components',
-  'Prisma',
-  'Contentful',
-  'Storybook',
-  'Cypress',
-  'Vercel',
-  'GSAP',
-  'Netlify',
-  'Node.js',
+  { type: 'tech', label: 'Next.js' },
+  { type: 'framework', label: 'React' },
+  { type: 'tech', label: 'Typescript' },
+  { type: 'tool', label: 'Webflow' },
+  { type: 'tech', label: 'CSS' },
+  { type: 'tech', label: 'Python' },
+  { type: 'tech', label: 'GraphQL' },
+  { type: 'tool', label: 'Figma' },
+  { type: 'framework', label: 'MaterialUI' },
+  { type: 'framework', label: 'Radix UI' },
+  { type: 'tech', label: 'styled-components' },
+  { type: 'tool', label: 'Prisma' },
+  { type: 'tool', label: 'Contentful' },
+  { type: 'tool', label: 'Storybook' },
+  { type: 'tool', label: 'Cypress' },
+  { type: 'tool', label: 'Vercel' },
+  { type: 'framework', label: 'GSAP' },
+  { type: 'tool', label: 'Netlify' },
+  { type: 'tech', label: 'Node.js' },
 ];
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -57,14 +58,11 @@ const BallVar = styled(Ball)<{ fill: string }>`
   }
 `;
 
-const BallWrapper = styled.span<{ top?: string; left?: string }>`
-  position: absolute;
+const BallWrapper = styled.span`
   width: 88px;
   height: 88px;
   margin: auto;
   opacity: 0;
-  top: ${({ top }) => top};
-  left: ${({ left }) => left};
   &:hover {
     cursor: pointer;
   }
@@ -97,9 +95,13 @@ const Skills: FC = () => {
       scrollTrigger: {
         trigger: '#skills',
         start: 'top center',
+        end: 'bottom bottom',
+        scrub: 10,
         toggleActions: 'play none none reverse',
       },
     });
+
+    tl.set('.ball', { x: () => getRand(-80, 80), y: () => getRand(-80, 80) });
 
     tl.fromTo(
       '.ball',
@@ -116,13 +118,6 @@ const Skills: FC = () => {
         stagger: 0.3,
       },
     );
-    tl.to('.ball', {
-      duration: 2,
-      ease: 'power1.inOut',
-      x: () => getRand(-80, 80),
-      y: () => getRand(-60, 60),
-      stagger: 0.3,
-    });
 
     tl.to('.ball', {
       duration: 2,
@@ -132,17 +127,10 @@ const Skills: FC = () => {
       y: 0,
     });
 
-    tl.to('.ball', {
-      duration: 5,
-      position: 'static',
-      ease: 'none',
-      stagger: 0.4,
-    });
-
     gsap.utils.toArray('.ball').forEach((ball: any) => {
       ball?.addEventListener('mouseenter', () => {
         tl.pause();
-        gsap.to(ball, { scale: 1.5, zIndex: 100 });
+        gsap.to(ball, { scale: 1.3, zIndex: 100 });
       });
 
       ball?.addEventListener('mouseleave', () => {
@@ -156,12 +144,7 @@ const Skills: FC = () => {
     <Section mobileTitle="Skills" id="skills">
       <RelativeWrapper>
         {skills.map((skill, index) => (
-          <BallWrapper
-            key={skill}
-            className="ball"
-            left={Math.random() * 100 + '%'}
-            top={Math.random() * 100 + '%'}
-          >
+          <BallWrapper key={skill.label} className="ball">
             <BallVar fill={getAccentColour(index)} />
             <Typography
               fontSize="12px"
@@ -169,7 +152,7 @@ const Skills: FC = () => {
               color={theme.colors.fg.contrast}
               className="text"
             >
-              {skill}
+              {skill.label}
             </Typography>
           </BallWrapper>
         ))}
