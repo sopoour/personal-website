@@ -1,8 +1,4 @@
-import { FC, useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
-
+import { FC, useEffect } from 'react';
 import Ball from './assets/ball.svg';
 import styled from 'styled-components';
 import Section from '@app/components/layout/Section';
@@ -11,33 +7,8 @@ import getAccentColour from '@app/utils/getAccentColour';
 import Typography from '@app/components/Typography/Typography';
 import { robotoMono } from '@app/styles/fonts';
 import { flexColumn, flexRow } from '@app/styles/mixins';
-import { Tag } from '@app/types';
-
-const types = ['tech', 'framework', 'tool'];
-
-const skills = [
-  { type: 'tech', label: 'Next.js' },
-  { type: 'framework', label: 'React' },
-  { type: 'tech', label: 'Typescript' },
-  { type: 'tool', label: 'Webflow' },
-  { type: 'tech', label: 'CSS' },
-  { type: 'tech', label: 'Python' },
-  { type: 'tech', label: 'GraphQL' },
-  { type: 'tool', label: 'Figma' },
-  { type: 'framework', label: 'MaterialUI' },
-  { type: 'framework', label: 'Radix UI' },
-  { type: 'tech', label: 'styled-components' },
-  { type: 'tool', label: 'Prisma' },
-  { type: 'tool', label: 'Contentful' },
-  { type: 'tool', label: 'Storybook' },
-  { type: 'tool', label: 'Cypress' },
-  { type: 'tool', label: 'Vercel' },
-  { type: 'framework', label: 'GSAP' },
-  { type: 'tool', label: 'Netlify' },
-  { type: 'tech', label: 'Node.js' },
-];
-
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+import runAnimations from './utils/runAnimations';
+import { skillTypes, skills } from './utils/data';
 
 const RelativeWrapper = styled.div`
   position: relative;
@@ -97,81 +68,15 @@ const Bucket = styled.div`
 `;
 
 const Skills: FC = () => {
-  const getRand = (min: number, max: number) => {
-    return Math.random() * (max - min) + min;
-  };
-
   useEffect(() => {
-    const tl = gsap?.timeline({
-      paused: true,
-      scrollTrigger: {
-        trigger: '#skills',
-        start: 'top 100%',
-        end: 'bottom bottom',
-        scrub: 10,
-        toggleActions: 'play none none reverse',
-      },
-    });
-
-    tl.set('.ball', { x: () => getRand(-100, 100), y: () => getRand(-80, 80) });
-
-    tl.fromTo(
-      '.ball',
-      {
-        scale: () => (getRand(1, 9) / 100.0).toFixed(2),
-        ease: 'power1.inOut',
-        opacity: 0,
-      },
-      {
-        scale: 1,
-        opacity: 1,
-        ease: 'power1.inOut',
-        duration: 2,
-        stagger: 0.6,
-      },
-    );
-
-    tl.to('.ball', {
-      duration: 2,
-      ease: 'power1.inOut',
-      stagger: 0.6,
-      x: 0,
-      y: 0,
-    });
-
-    tl.fromTo(
-      '.title',
-      {
-        opacity: 0,
-        y: -50,
-      },
-      {
-        duration: 0.5,
-        ease: 'power1.inOut',
-        opacity: 1,
-        stagger: 0.3,
-        y: 0,
-      },
-    );
-
-    gsap.utils.toArray('.ball').forEach((ball: any) => {
-      ball?.addEventListener('mouseenter', () => {
-        tl.pause();
-        gsap.to(ball, { scale: 1.2, zIndex: 100, opacity: 0.9 });
-      });
-
-      ball?.addEventListener('mouseleave', () => {
-        tl.resume();
-        gsap.to(ball, { zIndex: 0, scale: 1, opacity: 1 });
-      });
-    });
+    runAnimations();
   }, []);
 
   return (
     <Section mobileTitle="Skills" id="skills">
       <RelativeWrapper>
-        {types.map((type) => (
-          <Column key={type} className="column">
+        {skillTypes.map((type) => (
+          <Column key={type}>
             <Typography fontWeight={700} className="title">
               {type.charAt(0).toUpperCase() + type.slice(1)}
             </Typography>
