@@ -66,7 +66,7 @@ const About: FC = () => {
         duration: 2,
         scrollTrigger: {
           trigger: '#box-wrapper',
-          scrub: true,
+          scrub: 0.3,
           start: 'top 75%',
           end: '-50% top ',
           immediateRender: false,

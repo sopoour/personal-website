@@ -10,8 +10,10 @@ import theme from '@app/styles/theme';
 import getAccentColour from '@app/utils/getAccentColour';
 import Typography from '@app/components/Typography/Typography';
 import { robotoMono } from '@app/styles/fonts';
-import { flexRow } from '@app/styles/mixins';
+import { flexColumn, flexRow } from '@app/styles/mixins';
 import { Tag } from '@app/types';
+
+const types = ['tech', 'framework', 'tool'];
 
 const skills = [
   { type: 'tech', label: 'Next.js' },
@@ -39,17 +41,11 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const RelativeWrapper = styled.div`
   position: relative;
-  ${flexRow};
+  display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  width: 100%;
-  height: 50vh;
+  justify-content: space-evenly;
+  gap: 16px;
   margin: 0 auto;
-
-  ${theme.media('md')`
-  width: 75%;
-  height: 50%;
-  `}
 `;
 
 const BallVar = styled(Ball)<{ fill: string }>`
@@ -61,7 +57,7 @@ const BallVar = styled(Ball)<{ fill: string }>`
 const BallWrapper = styled.span`
   width: 88px;
   height: 88px;
-  margin: auto;
+
   opacity: 0;
   &:hover {
     cursor: pointer;
@@ -73,7 +69,6 @@ const BallWrapper = styled.span`
     text-align: center;
     height: max-content;
     font-weight: 500;
-    /*  inline-size: 80px; */
     overflow-wrap: break-word;
     hyphens: manual;
     left: 0;
@@ -82,6 +77,23 @@ const BallWrapper = styled.span`
     bottom: 0;
     margin: auto;
   }
+`;
+
+const Column = styled.div`
+  ${flexColumn};
+  gap: 32px;
+  align-items: center;
+  > ${Typography} {
+    opacity: 0;
+  }
+`;
+
+const Bucket = styled.div`
+  ${flexRow};
+  flex-wrap: wrap;
+  gap: 4px;
+  height: 25%;
+  max-width: 280px;
 `;
 
 const Skills: FC = () => {
@@ -94,14 +106,14 @@ const Skills: FC = () => {
       paused: true,
       scrollTrigger: {
         trigger: '#skills',
-        start: 'top center',
+        start: 'top 100%',
         end: 'bottom bottom',
         scrub: 10,
         toggleActions: 'play none none reverse',
       },
     });
 
-    tl.set('.ball', { x: () => getRand(-80, 80), y: () => getRand(-80, 80) });
+    tl.set('.ball', { x: () => getRand(-100, 100), y: () => getRand(-80, 80) });
 
     tl.fromTo(
       '.ball',
@@ -115,27 +127,42 @@ const Skills: FC = () => {
         opacity: 1,
         ease: 'power1.inOut',
         duration: 2,
-        stagger: 0.3,
+        stagger: 0.6,
       },
     );
 
     tl.to('.ball', {
       duration: 2,
       ease: 'power1.inOut',
-      stagger: 0.3,
+      stagger: 0.6,
       x: 0,
       y: 0,
     });
 
+    tl.fromTo(
+      '.title',
+      {
+        opacity: 0,
+        y: -50,
+      },
+      {
+        duration: 0.5,
+        ease: 'power1.inOut',
+        opacity: 1,
+        stagger: 0.3,
+        y: 0,
+      },
+    );
+
     gsap.utils.toArray('.ball').forEach((ball: any) => {
       ball?.addEventListener('mouseenter', () => {
         tl.pause();
-        gsap.to(ball, { scale: 1.3, zIndex: 100 });
+        gsap.to(ball, { scale: 1.2, zIndex: 100, opacity: 0.9 });
       });
 
       ball?.addEventListener('mouseleave', () => {
         tl.resume();
-        gsap.to(ball, { zIndex: 0, scale: 1 });
+        gsap.to(ball, { zIndex: 0, scale: 1, opacity: 1 });
       });
     });
   }, []);
@@ -143,18 +170,29 @@ const Skills: FC = () => {
   return (
     <Section mobileTitle="Skills" id="skills">
       <RelativeWrapper>
-        {skills.map((skill, index) => (
-          <BallWrapper key={skill.label} className="ball">
-            <BallVar fill={getAccentColour(index)} />
-            <Typography
-              fontSize="12px"
-              type={robotoMono.style.fontFamily}
-              color={theme.colors.fg.contrast}
-              className="text"
-            >
-              {skill.label}
+        {types.map((type) => (
+          <Column key={type} className="column">
+            <Typography fontWeight={700} className="title">
+              {type.charAt(0).toUpperCase() + type.slice(1)}
             </Typography>
-          </BallWrapper>
+            <Bucket>
+              {skills
+                .filter((skill) => skill.type === type)
+                .map((skill, index) => (
+                  <BallWrapper key={skill.label} className="ball">
+                    <BallVar fill={getAccentColour(index)} />
+                    <Typography
+                      fontSize="12px"
+                      type={robotoMono.style.fontFamily}
+                      color={theme.colors.fg.contrast}
+                      className="text"
+                    >
+                      {skill.label}
+                    </Typography>
+                  </BallWrapper>
+                ))}
+            </Bucket>
+          </Column>
         ))}
       </RelativeWrapper>
     </Section>

@@ -10,7 +10,6 @@ import useGsapAnimation from '@app/hooks/useGsapAnimation';
 import { flexColumn } from '@app/styles/mixins';
 
 const Root = styled.div`
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -26,7 +25,6 @@ const MainLayout = styled.main`
   flex: 1;
   width: 100%;
   margin: 0 auto;
-  height: 100vh;
 
   ${theme.media('md')`
    position: relative;

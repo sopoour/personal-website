@@ -107,7 +107,7 @@ const Sidebar: FC<Props> = ({ open, onClose }) => (
           id="profile-sidebar"
         />
         <Typography textalign="center" fontSize="20px">
-          Soph. (they/them).
+          Soph. <span style={{ fontSize: '12px' }}>(they/them).</span>
         </Typography>
       </Header>
       <Navigation onClickItem={onClose} />
