@@ -1,26 +1,24 @@
-# Own Next.js template/boiler plate for quicker setup
+<div align="center">
+  <img alt="Logo" src="https://raw.githubusercontent.com/sopoour/personal-website/main/src/assets/logo.png" width="100" />
+</div>
+<h1 align="center">
+ Personal Website - sophiaauer.me - v2
+</h1>
+<p align="center">
+  The second iteration of <a href="https://sophiaauer.me" target="_blank">sophiaauer.me</a> built with Next.js and hosted with Vercel
+</p>
+<p align="center">
+  Previous iteration: <a href="https://github.com/sopoour/sopoour.github.io" target="_blank">v1</a>
+</p>
 
-## Contains
+![demo](https://raw.githubusercontent.com/bchiang7/v4/main/src/assets/demo.png)
 
-### Tech stack
+## Tech stack overview
 
-1. styled-components for styling with global styles and theme
-2. next.js and react
-3. custom hooks for data fetching, media queries and more to come
-4. basic components (Typography, Date, MaxWidthContainer)
-5. layout set-up
-6. more utils, hooks and components will be added
-
-
-### Main packages
-
-1. styled-components
-2. eslint & prettier
-3. gsap for animations
-4. various types
-5. react icons
-6. react loading skeleton
-7. suggestions for Markdown, context and data fetching
+1. Typescript, React and Next.js using Next13 pages route 
+2. styled-components for styling with global styles and theme
+3. GSAP and keyframes for animations
+4. Project and experience data is stored in JSON files. It's fetched via Next.js API route and SWR.
 
 
 ## Getting Started
