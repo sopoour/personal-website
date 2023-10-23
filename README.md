@@ -11,7 +11,7 @@
   Previous iteration: <a href="https://github.com/sopoour/sopoour.github.io" target="_blank">v1</a>
 </p>
 
-![demo](https://raw.githubusercontent.com/bchiang7/v4/main/src/assets/demo.png)
+![demo](https://raw.githubusercontent.com/sopoour/personal-website/main/src/assets/demo.png)
 
 ## Tech stack overview
 
