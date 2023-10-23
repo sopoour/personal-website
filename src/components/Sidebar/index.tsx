@@ -97,7 +97,7 @@ type Props = {
 const Sidebar: FC<Props> = ({ open, onClose }) => (
   <>
     <Backdrop onClick={onClose} $open={open} />
-    <Content $open={open}>
+    <Content $open={open} id="sidebar">
       <Header>
         <ProfileImage
           src={profile.src}

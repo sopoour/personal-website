@@ -2,10 +2,13 @@ import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
+import { useMedia } from './useMedia';
+import { Breakpoints } from '@app/styles/media';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const useGsapAnimation = () => {
+  const isDesktop = useMedia(Breakpoints.md);
   useEffect(() => {
     // fadein profile into pic
     gsap
@@ -95,6 +98,25 @@ const useGsapAnimation = () => {
         },
       );
     });
+
+    // Change height of sidebar once the Projects section is reached - only for mobile
+    if (!isDesktop) {
+      gsap.fromTo(
+        '#sidebar',
+        {
+          display: 'flex',
+        },
+        {
+          display: 'none',
+          scrollTrigger: {
+            trigger: '#about',
+            start: 'bottom',
+            end: 'bottom',
+            scrub: true,
+          },
+        },
+      );
+    }
   }, []);
 };
 

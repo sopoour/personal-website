@@ -15,9 +15,24 @@ const Root = styled.div`
   position: relative;
   background-color: ${theme.colors.bg.default};
   z-index: 1;
+  & > :nth-child(2) {
+    order: 3;
+  }
+
+  & > :nth-child(3) {
+    order: 2;
+  }
 
   ${theme.media('md')`
    flex-direction: row;
+
+    & > :nth-child(2) {
+      order: 2;
+    }
+
+    & > :nth-child(3) {
+      order: 3;
+    }
   `}
 `;
 

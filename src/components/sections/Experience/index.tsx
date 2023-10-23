@@ -13,7 +13,6 @@ import {
   Container,
   DownloadButton,
   ExperienceContainer,
-  ExperienceItem,
   Header,
   TextWrapper,
   TimeWrapper,
