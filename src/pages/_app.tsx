@@ -3,16 +3,18 @@ import { AppProps } from 'next/app';
 import Layout from '@app/components/layout/Layout';
 import { GlobalStyle } from '@app/styles/global';
 import { ThemeProvider } from 'styled-components';
+import ShareImage from '../../public/share_image.png';
 import theme from '@app/styles/theme';
 import Head from 'next/head';
 
 const App = ({ Component, pageProps }: AppProps) => {
-  // TODO: Change description and title
-  const metaDescription = 'Sophias portfolio description';
-  const metaTitle = 'Sophias website';
+  const metaDescription = 'Personal Website by Sophia';
+  const metaTitle = 'Soph - Frontend Developer';
   return (
     <>
       <Head>
+        <title>Soph&apos;s Personal Website</title>
+        <meta key="image" itemProp="image" content={ShareImage.src} />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"
@@ -20,13 +22,11 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta charSet="utf-8" />
         <meta key="name" itemProp="name" content={metaTitle} />
         <meta key="description" name="description" content={metaDescription} />
-        <meta key="twitter:title" name="twitter:title" content={metaTitle} />
-        <meta key="twitter:description" name="twitter:description" content={metaDescription} />
-        <meta key="twitter:creator" name="twitter:creator" content="@theorghq" />
         <meta key="og:title" property="og:title" content={metaTitle} />
         <meta key="og:type" property="og:type" content="website" />
         <meta key="og:description" property="og:description" content={metaDescription} />
-        <meta key="og:site_name" property="og:site_name" content="Vision - The Org" />
+        <meta key="og:site_name" property="og:site_name" content="Sophia - Frontend Developer" />
+        <meta key="og:image" property="og:image" content={ShareImage.src} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ThemeProvider theme={theme}>
