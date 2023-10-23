@@ -1,8 +1,6 @@
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
-import { useMedia } from '@app/hooks/useMedia';
-import { Breakpoints } from '@app/styles/media';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -10,15 +8,13 @@ const getRand = (min: number, max: number) => {
   return Math.random() * (max - min) + min;
 };
 
-const runAnimations = () => {
+const runAnimations = (isDesktop?: boolean) => {
   const tl = gsap?.timeline({
-    paused: true,
     scrollTrigger: {
       trigger: '#skills',
-      start: 'top 100%',
-      end: 'bottom bottom',
+      start: isDesktop ? 'top 50%' : 'top 100%',
+      end: isDesktop ? 'bottom bottom' : 'bottom center',
       scrub: 4,
-      toggleActions: 'play none none reverse',
     },
   });
 
@@ -35,13 +31,14 @@ const runAnimations = () => {
       scale: 1,
       opacity: 1,
       ease: 'power1.inOut',
-      duration: 2,
-      stagger: 0.6,
+      duration: 1,
+      stagger: 0.1,
     },
   );
 
   tl.to('.ball', {
     duration: 2,
+    delay: 10,
     ease: 'power1.inOut',
     stagger: 0.6,
     x: 0,
@@ -58,7 +55,7 @@ const runAnimations = () => {
       duration: 0.5,
       ease: 'power1.inOut',
       opacity: 1,
-      stagger: 0.3,
+      stagger: 0.5,
       y: 0,
     },
   );

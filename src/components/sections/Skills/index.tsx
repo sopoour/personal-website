@@ -9,6 +9,8 @@ import { robotoMono } from '@app/styles/fonts';
 import { flexColumn, flexRow } from '@app/styles/mixins';
 import runAnimations from './utils/runAnimations';
 import { skillTypes, skills } from './utils/data';
+import { useMedia } from '@app/hooks/useMedia';
+import { Breakpoints } from '@app/styles/media';
 
 const RelativeWrapper = styled.div`
   position: relative;
@@ -69,9 +71,10 @@ const Bucket = styled.div`
 `;
 
 const Skills: FC = () => {
+  const isDesktop = useMedia(Breakpoints.sm);
   useEffect(() => {
-    runAnimations();
-  }, []);
+    runAnimations(isDesktop);
+  }, [isDesktop]);
 
   return (
     <Section mobileTitle="Skills" id="skills">
@@ -79,7 +82,10 @@ const Skills: FC = () => {
         {skillTypes.map((type) => (
           <Column key={type}>
             <Typography fontWeight={700} className="title">
-              {type.charAt(0).toUpperCase() + type.slice(1)}
+              {type
+                .split('-')
+                .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                .join(' ')}
             </Typography>
             <Bucket>
               {skills

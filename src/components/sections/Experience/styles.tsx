@@ -33,12 +33,20 @@ export const TimeWrapper = styled.div`
     content: ',';
   }
 
+  &:not(:first-of-type) {
+    margin-top: 32px;
+  }
+
   ${theme.media('sm')`
     ${flexColumn};
     align-items: flex-start;
 
     > ${Typography}:first-of-type::after {
     content: '';
+  }
+
+  &:not(:first-of-type) {
+    margin-top: 0;
   }
   `}
 `;
@@ -51,14 +59,8 @@ export const Container = styled.div`
 
   ${theme.media('sm')`
     grid-template-columns: max-content 1fr;
-    gap: 40px 64px;
+    gap: 40px 64px;    
   `}
-
-  @media only screen and (max-width: ${Breakpoints.sm}px) {
-    > ${TimeWrapper}:not(:first-of-type) {
-      margin-top: 32px;
-    }
-  }
 `;
 
 export const Header = styled.span`

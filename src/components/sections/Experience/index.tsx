@@ -1,9 +1,6 @@
 import { FC } from 'react';
-import styled from 'styled-components';
 import Section from '../../layout/Section';
-import { flexColumn, flexRow } from '@app/styles/mixins';
 import Typography from '../../Typography/Typography';
-import { robotoMono } from '@app/styles/fonts';
 import theme from '@app/styles/theme';
 import useSWR from 'swr';
 import { Experience } from '@app/types';
@@ -16,6 +13,7 @@ import {
   Container,
   DownloadButton,
   ExperienceContainer,
+  ExperienceItem,
   Header,
   TextWrapper,
   TimeWrapper,

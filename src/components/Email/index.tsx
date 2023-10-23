@@ -8,12 +8,14 @@ import { slowTransition } from '@app/styles/mixins';
 const EmailText = styled(Typography)<{ $copied: boolean }>`
   position: relative;
   font-weight: 500;
+  width: 200px;
+  margin: 0 auto;
   ${slowTransition};
   &::after {
     content: '${({ $copied }) => ($copied ? 'Copied!' : 'Click to copy')}';
     position: absolute;
     bottom: -300%;
-    left: 28%;
+    left: calc(50% - 50px);
     display: block;
     opacity: 0;
     font-weight: 500;

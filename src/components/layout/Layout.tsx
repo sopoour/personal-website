@@ -10,12 +10,15 @@ import useGsapAnimation from '@app/hooks/useGsapAnimation';
 import { flexColumn } from '@app/styles/mixins';
 
 const Root = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${flexColumn}
   width: 100%;
   position: relative;
   background-color: ${theme.colors.bg.default};
   z-index: 1;
+
+  ${theme.media('md')`
+   flex-direction: row;
+  `}
 `;
 
 const MainLayout = styled.main`
@@ -28,7 +31,6 @@ const MainLayout = styled.main`
 
   ${theme.media('md')`
    position: relative;
-    left: 300px;
     width: calc(100% - 300px);
     margin: 0;
   `}
@@ -46,10 +48,12 @@ const Layout: FC<Props> = ({ children }) => {
   return (
     <>
       <Intro />
-      <Root id="main">
-        <Header onOpenMenu={() => setOpenMenu((prev) => !prev)} isOpen={menuOpen} />
-        <MainLayout>{children}</MainLayout>
+      <Root id="main-root">
         <Sidebar open={menuOpen} onClose={() => setOpenMenu(false)} />
+        <MainLayout>
+          <Header onOpenMenu={() => setOpenMenu((prev) => !prev)} isOpen={menuOpen} />
+          {children}
+        </MainLayout>
       </Root>
       <GeoBackground>
         <p style={{ marginTop: '20%', marginLeft: '35%' }}>

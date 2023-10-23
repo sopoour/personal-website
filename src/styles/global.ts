@@ -5,7 +5,6 @@ import { montserrat } from './fonts';
 export const GlobalStyle = createGlobalStyle`
 
 html {
-  color: black;
   font-size: 14px;
   font-family: ${montserrat.style.fontFamily};
   box-sizing: border-box;
@@ -20,7 +19,7 @@ body {
   color: ${theme.colors.fg.default};
   -webkit-tap-highlight-color: transparent;
   overflow-x: hidden;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
 }
@@ -95,10 +94,6 @@ input:-webkit-autofill:active {
 
 input::-webkit-input-placeholder {
   line-height: normal !important;
-}
-
-input {
-  font-family: "Inter", sans-serif;
 }
 
 /*

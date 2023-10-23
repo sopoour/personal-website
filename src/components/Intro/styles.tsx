@@ -50,7 +50,7 @@ export const Title = styled(Typography)`
       width: 0;
     }
     to {
-      width: 23rem;
+      width: 24rem;
     }
   }
 
