@@ -1,6 +1,8 @@
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
+import { useMedia } from '@app/hooks/useMedia';
+import { Breakpoints } from '@app/styles/media';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -15,7 +17,7 @@ const runAnimations = () => {
       trigger: '#skills',
       start: 'top 100%',
       end: 'bottom bottom',
-      scrub: 10,
+      scrub: 4,
       toggleActions: 'play none none reverse',
     },
   });

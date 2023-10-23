@@ -15,7 +15,7 @@ const RelativeWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  gap: 16px;
+  gap: 24px;
   margin: 0 auto;
 `;
 
@@ -62,9 +62,10 @@ const Column = styled.div`
 const Bucket = styled.div`
   ${flexRow};
   flex-wrap: wrap;
+  justify-content: center;
   gap: 4px;
   height: 25%;
-  max-width: 280px;
+  max-width: 275px;
 `;
 
 const Skills: FC = () => {
