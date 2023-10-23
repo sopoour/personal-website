@@ -10,6 +10,7 @@ import { Breakpoints } from '@app/styles/media';
 import { flexRow, removeScrollBar } from '@app/styles/mixins';
 import useKeyPress from '@app/hooks/useKeyPress';
 import Section from '../layout/Section';
+import LinkButton from '../LinkButton';
 
 const NavButton = styled.button<{ side: 'left' | 'right' }>`
   color: white;
@@ -69,6 +70,8 @@ const Carousel = styled.div`
 `;
 
 const ProjectSection = styled(Section)`
+  gap: 48px;
+  align-items: center;
   padding: 0;
   > p {
     padding-left: 20px;
@@ -93,23 +96,26 @@ const Projects: FC = () => {
 
   return (
     <ProjectSection id="projects" $maxWidth={0} mobileTitle="Projects">
-      <Carousel className={'animate-scale'}>
-        <NavButton side="left" onClick={handlePrev} tabIndex={3} aria-label="navigation-left">
-          <IoIosArrowBack />
-        </NavButton>
-        {data &&
-          data?.map((project, index) => (
-            <ProjectCard
-              project={project}
-              key={project.id}
-              activeIndex={activeCard}
-              projectIndex={index}
-            />
-          ))}
-        <NavButton side="right" onClick={handleNext} tabIndex={4} aria-label="navigation-right">
-          <IoIosArrowForward />
-        </NavButton>
-      </Carousel>
+      <>
+        <Carousel className={'animate-scale'}>
+          <NavButton side="left" onClick={handlePrev} tabIndex={3} aria-label="navigation-left">
+            <IoIosArrowBack />
+          </NavButton>
+          {data &&
+            data?.map((project, index) => (
+              <ProjectCard
+                project={project}
+                key={project.id}
+                activeIndex={activeCard}
+                projectIndex={index}
+              />
+            ))}
+          <NavButton side="right" onClick={handleNext} tabIndex={4} aria-label="navigation-right">
+            <IoIosArrowForward />
+          </NavButton>
+        </Carousel>
+        <LinkButton label="View more on Github" link="https://github.com/sopoour" />
+      </>
     </ProjectSection>
   );
 };

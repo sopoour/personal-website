@@ -10,7 +10,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   const metaDescription =
     'Sophia Auer is a Frontend Developer who builds accessible, creative and inclusive products for the web.';
   const metaTitle = 'Sophia Auer';
-  const metaImage = 'https://sophia-auer.vercel.app/share_image.png';
+  const metaImage = 'https://sophia-auer.vercel.app/og.png';
   return (
     <>
       <Head>

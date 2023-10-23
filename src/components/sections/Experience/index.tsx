@@ -17,6 +17,7 @@ import {
   TextWrapper,
   TimeWrapper,
 } from './styles';
+import LinkButton from '@app/components/LinkButton';
 
 const Experience: FC = () => {
   const { data } = useSWR<Experience[]>('/api/experience', fetcher);
@@ -55,9 +56,7 @@ const Experience: FC = () => {
               </ExperienceContainer>
             </>
           ))}
-        <DownloadButton href="data/soph_resume.pdf" target="_blank">
-          View full Résumé <IoIosArrowForward />
-        </DownloadButton>
+        <LinkButton label="View full Résumé" link="data/soph_resume.pdf" />
       </Container>
     </Section>
   );

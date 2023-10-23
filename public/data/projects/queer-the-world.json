@@ -14,7 +14,7 @@
             "link": "https://github.com/sopoour/queer-the-world"
         }
     ],
-    "description": "This is currently WIP project that I'm mainly working on. I've scraped about 1K events from Wikipedia that I'm visualizing in different ways to make it easier to find queer events around the world all year long.",
+    "description": "This is currently WIP project. I've scraped about 1K events from Wikipedia that I'm visualizing in a map and plan to add other views as well to make it easier to find queer events around the world all year long.",
     "tags": [
         {
             "type": "skill",
