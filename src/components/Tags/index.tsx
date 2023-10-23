@@ -18,9 +18,9 @@ const getColourTheme = (type: TagType) => {
 };
 
 const Tag = styled(Typography)`
-  padding: 2px 6px;
+  padding: 1px 8px;
   border-radius: 100px;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   font-family: ${robotoMono.style.fontFamily};
 `;
