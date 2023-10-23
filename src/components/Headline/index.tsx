@@ -30,39 +30,24 @@ const RotatingTitle = styled(SubTitle)<{ $stepNum: number }>`
   text-align: center;
 
   @keyframes rotateText {
-    5% {
-      transform: translateY(-112%);
-    }
-    10% {
+    16% {
       transform: translateY(-100%);
     }
-    15% {
-      transform: translateY(-212%);
-    }
-    25% {
+    32% {
       transform: translateY(-200%);
     }
-    35% {
-      transform: translateY(-312%);
-    }
-    45% {
+    48% {
       transform: translateY(-300%);
     }
-    55% {
-      transform: translateY(-412%);
-    }
-    65% {
+
+    64% {
       transform: translateY(-400%);
     }
-    75% {
-      transform: translateY(-512%);
-    }
-    85% {
+
+    80% {
       transform: translateY(-500%);
     }
-    95% {
-      transform: translateY(-612%);
-    }
+
     100% {
       transform: translateY(-600%);
     }
@@ -95,7 +80,7 @@ const Headline: FC<Props> = ({ className }) => {
       <SubTitle as="h2">Frontend Developer and</SubTitle>
       <RotatingTitles>
         {titles.map((title, index) => (
-          <RotatingTitle key={title} color={getAccentColour(index)} $stepNum={index}>
+          <RotatingTitle key={title + index} color={getAccentColour(index)} $stepNum={index}>
             {title}
           </RotatingTitle>
         ))}

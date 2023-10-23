@@ -11,6 +11,7 @@ import LinkContainer from '../LinkContainer';
 import { IconLink } from '@app/types';
 import { flexColumn } from '@app/styles/mixins';
 import Email from '../Email';
+import { animateScroll, scroller } from 'react-scroll';
 
 const links: IconLink[] = [{ type: 'github' }, { type: 'linkedin' }, { type: 'instagram' }];
 
@@ -70,7 +71,7 @@ const Content = styled.header<{ $open?: boolean }>`
   ${() => theme.media('md')`transform: none;  opacity: 1; padding: 80px 32px; width: 300px;`}
 `;
 
-const Header = styled.div`
+const Header = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,7 +99,11 @@ const Sidebar: FC<Props> = ({ open, onClose }) => (
   <>
     <Backdrop onClick={onClose} $open={open} />
     <Content $open={open} id="sidebar">
-      <Header>
+      <Header
+        onClick={() => animateScroll.scrollTo(0, { smooth: true, duration: 800 })}
+        aria-label="Logo"
+        aria-description="On click scrolls you back to the top"
+      >
         <ProfileImage
           src={profile.src}
           width={200}

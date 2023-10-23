@@ -81,6 +81,7 @@ const About: FC = () => {
         {
           y: -50,
           opacity: 1,
+          delay: 2,
           scrollTrigger: {
             trigger: line,
             scrub: 0.5,
@@ -114,13 +115,13 @@ const About: FC = () => {
             the holistic product experience.
           </Typography>
           <Typography>
-            I&apos;m happiest when I&apos;m creating, exploring, and learning about how to make
-            things better. My curiosity is my leading driver to dive into different programming
-            languages, frontend frameworks, design systems, animations, accessibility and much more.
+            I have <b>5+ years of experience in the Tech industry</b>, first as{' '}
+            <b>Product Manager</b> and then as <b>Frontend Developer</b>. I&apos;m happiest when
+            I&apos;m creating, exploring, and learning how to make things better.
           </Typography>
           <Typography>
-            My motto is to always follow whatever sparks that awe in you, then try it, break it and
-            try again.
+            <b>Curiosity</b> is the main driver in both my career and personal life. My motto is to
+            always follow whatever sparks that awe in you, then try it, break it and try again.
           </Typography>
         </TextWrapper>
         <BoxWrapper id="box-wrapper">
