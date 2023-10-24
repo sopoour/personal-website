@@ -8,13 +8,13 @@ const getRand = (min: number, max: number) => {
   return Math.random() * (max - min) + min;
 };
 
-const runAnimations = (isDesktop?: boolean) => {
+const runAnimations = () => {
   const tl = gsap?.timeline({
     scrollTrigger: {
       trigger: '#skills',
-      start: isDesktop ? 'top 50%' : 'top 100%',
-      end: isDesktop ? 'bottom bottom' : 'bottom center',
-      scrub: 4,
+      start: 'top 50%',
+      end: 'bottom bottom',
+      scrub: 8,
     },
   });
 
@@ -31,16 +31,15 @@ const runAnimations = (isDesktop?: boolean) => {
       scale: 1,
       opacity: 1,
       ease: 'power1.inOut',
-      duration: 1,
+      duration: 0.5,
       stagger: 0.1,
     },
   );
 
   tl.to('.ball', {
-    duration: 2,
-    delay: 10,
+    duration: 0.5,
     ease: 'power1.inOut',
-    stagger: 0.6,
+    stagger: 0.2,
     x: 0,
     y: 0,
   });
@@ -63,12 +62,12 @@ const runAnimations = (isDesktop?: boolean) => {
   gsap.utils.toArray('.ball').forEach((ball: any) => {
     ball?.addEventListener('mouseenter', () => {
       tl.pause();
-      gsap.to(ball, { scale: 1.2, zIndex: 100, opacity: 0.9 });
+      gsap.to(ball, { scale: 1.2, zIndex: 100, duration: 0.5 });
     });
 
     ball?.addEventListener('mouseleave', () => {
       tl.resume();
-      gsap.to(ball, { zIndex: 0, scale: 1, opacity: 1 });
+      gsap.to(ball, { zIndex: 0, scale: 1, duration: 0.5 });
     });
   });
 };

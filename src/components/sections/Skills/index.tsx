@@ -9,8 +9,7 @@ import { robotoMono } from '@app/styles/fonts';
 import { flexColumn, flexRow } from '@app/styles/mixins';
 import runAnimations from './utils/runAnimations';
 import { skillTypes, skills } from './utils/data';
-import { useMedia } from '@app/hooks/useMedia';
-import { Breakpoints } from '@app/styles/media';
+import { gsap } from 'gsap';
 
 const RelativeWrapper = styled.div`
   position: relative;
@@ -71,10 +70,12 @@ const Bucket = styled.div`
 `;
 
 const Skills: FC = () => {
-  const isDesktop = useMedia(Breakpoints.sm);
   useEffect(() => {
-    runAnimations(isDesktop);
-  }, [isDesktop]);
+    let ctx = gsap.context(() => {
+      runAnimations();
+    });
+    return () => ctx.revert();
+  }, []);
 
   return (
     <Section mobileTitle="Skills" id="skills">

@@ -52,45 +52,47 @@ const aboutMeDetails = [
 
 const About: FC = () => {
   useEffect(() => {
-    // specific elements to be animated
-    const boxes = gsap.utils.toArray('.box');
-    const textLines = gsap.utils.toArray('#text-wrapper > p');
+    let ctx = gsap.context(() => {
+      const boxes = gsap.utils.toArray('.box');
+      const textLines = gsap.utils.toArray('#text-wrapper > p');
 
-    gsap.fromTo(
-      boxes,
-      { y: 200, opacity: 0, duration: 2 },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.5,
-        duration: 2,
-        scrollTrigger: {
-          trigger: '#box-wrapper',
-          scrub: 0.3,
-          start: 'top 75%',
-          end: '-50% top ',
-          immediateRender: false,
-        },
-      },
-    );
-
-    textLines.forEach((line: any) => {
       gsap.fromTo(
-        line,
-        { y: 200, opacity: 0 },
+        boxes,
+        { y: 200, opacity: 0, duration: 2 },
         {
-          y: -50,
+          y: 0,
           opacity: 1,
-          delay: 2,
+          stagger: 0.5,
+          duration: 2,
           scrollTrigger: {
-            trigger: line,
-            scrub: 0.5,
-            start: 'top 120%',
-            end: '-30% top',
+            trigger: '#box-wrapper',
+            scrub: 0.2,
+            start: 'top 100%',
+            end: '-50% top ',
+            immediateRender: false,
           },
         },
       );
+
+      textLines.forEach((line: any) => {
+        gsap.fromTo(
+          line,
+          { y: 100, opacity: 0 },
+          {
+            y: -50,
+            opacity: 1,
+            delay: 2,
+            scrollTrigger: {
+              trigger: line,
+              scrub: 0.5,
+              start: 'top 120%',
+              end: '-30% top',
+            },
+          },
+        );
+      });
     });
+    return () => ctx.revert();
   }, []);
 
   return (
