@@ -12,7 +12,7 @@ export type Props = {
   fontSizeSm?: string;
   type?: string;
   lineHeight?: string;
-  textalign?: TextAlign;
+  $textalign?: TextAlign;
   fontWeight?: FontWeight;
   color?: string;
   whiteSpace?: WhiteSpace;
@@ -24,7 +24,7 @@ const Typography = styled.p<Props>`
   font-size: ${({ fontSize }) => fontSize || '16px'};
   font-family: ${({ type }) => type};
   line-height: ${({ lineHeight }) => lineHeight || '1.5'};
-  text-align: ${({ textalign }) => textalign || 'start'};
+  text-align: ${({ $textalign }) => $textalign || 'start'};
   font-weight: ${({ fontWeight }) => fontWeight || 400};
   color: ${({ color, theme }) => color || theme.colors.fg.default};
   white-space: ${({ whiteSpace }) => whiteSpace || 'pre-wrap'};

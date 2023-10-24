@@ -93,7 +93,7 @@ const Header: React.FC<Props> = ({ onOpenMenu, isOpen }) => {
   useEffect(() => {
     let logoTl2 = gsap.timeline({
       scrollTrigger: {
-        trigger: '#header',
+        trigger: '#mobile-header',
         start: 'top top',
         end: 'bottom bottom',
         scrub: 1,
@@ -113,8 +113,14 @@ const Header: React.FC<Props> = ({ onOpenMenu, isOpen }) => {
   }, []);
 
   return (
-    <HeaderWrapper aria-label="Mobile header" id="header">
-      <BurgerMenu type="button" onClick={onOpenMenu} id="burger-menu" $isActive={isOpen}>
+    <HeaderWrapper aria-label="Mobile header" id="mobile-header">
+      <BurgerMenu
+        onClick={onOpenMenu}
+        id="burger-menu"
+        $isActive={isOpen}
+        aria-label="Burger Menu button"
+        aria-description="Burger Menu that is only visble on mobile"
+      >
         <Line />
         <Line />
         <Line />

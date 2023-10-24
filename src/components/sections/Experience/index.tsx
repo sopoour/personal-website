@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, Fragment } from 'react';
 import Section from '../../layout/Section';
 import Typography from '../../Typography/Typography';
 import theme from '@app/styles/theme';
@@ -26,7 +26,7 @@ const Experience: FC = () => {
       <Container className="animate-scale">
         {data &&
           data?.slice(0, 2).map((experience) => (
-            <>
+            <Fragment key={experience.id}>
               <TimeWrapper>
                 <Typography>{`${toMonthAndYear(new Date(experience.date.startDate))} - ${
                   experience.date.current
@@ -54,7 +54,7 @@ const Experience: FC = () => {
                 </TextWrapper>
                 <Tags tags={experience.tags} />
               </ExperienceContainer>
-            </>
+            </Fragment>
           ))}
         <LinkButton label="View full Résumé" link="data/soph_resume.pdf" />
       </Container>

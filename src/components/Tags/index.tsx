@@ -20,7 +20,6 @@ const getColourTheme = (type: TagType) => {
 const Tag = styled(Typography)`
   padding: 1px 8px;
   border-radius: 100px;
-  font-size: 12px;
   font-weight: 700;
   font-family: ${robotoMono.style.fontFamily};
 `;
@@ -40,7 +39,7 @@ type Props = {
 const Tags: FC<Props> = ({ tags, className }) => (
   <Container className={className}>
     {tags.map((tag, index) => (
-      <Tag key={tag.label + index} style={getColourTheme(tag.type)}>
+      <Tag key={tag.label + index} style={getColourTheme(tag.type)} fontSize="12px">
         {tag.label}
       </Tag>
     ))}

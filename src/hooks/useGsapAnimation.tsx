@@ -80,24 +80,26 @@ const useGsapAnimation = () => {
 
       // specific elements to be animated
       const sections = gsap.utils.toArray('section');
-
-      sections.forEach((section: any) => {
-        const as = section.querySelector('.animate-scale');
-
-        gsap.fromTo(
-          as,
-          { scale: 0.7 },
-          {
-            scale: 1,
-            scrollTrigger: {
-              start: 'top bottom',
-              end: 'bottom bottom',
-              trigger: section,
-              scrub: 1,
-            },
-          },
-        );
-      });
+      if (sections) {
+        sections.forEach((section: any) => {
+          const as = section.querySelector('.animate-scale');
+          if (as) {
+            gsap.fromTo(
+              as,
+              { scale: 0.7 },
+              {
+                scale: 1,
+                scrollTrigger: {
+                  start: 'top bottom',
+                  end: 'bottom bottom',
+                  trigger: section,
+                  scrub: 1,
+                },
+              },
+            );
+          }
+        });
+      }
 
       // Change height of sidebar once the Projects section is reached - only for mobile
       if (!isDesktop) {

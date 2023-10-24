@@ -12,7 +12,7 @@ import useKeyPress from '@app/hooks/useKeyPress';
 import Section from '../layout/Section';
 import LinkButton from '../LinkButton';
 
-const NavButton = styled.button<{ side: 'left' | 'right' }>`
+const NavButton = styled.button<{ $side: 'left' | 'right' }>`
   color: white;
   font-size: 3rem;
   position: absolute;
@@ -27,8 +27,8 @@ const NavButton = styled.button<{ side: 'left' | 'right' }>`
   border: unset;
   color: ${theme.colors.fg.default};
   transition: all 0.3s ease-in-out;
-  ${({ side }) =>
-    side === 'left'
+  ${({ $side }) =>
+    $side === 'left'
       ? css`
           transform: translate(-100%, -50%);
           left: 15%;
@@ -98,7 +98,7 @@ const Projects: FC = () => {
     <ProjectSection id="projects" $maxWidth={0} mobileTitle="Projects">
       <>
         <Carousel className={'animate-scale'}>
-          <NavButton side="left" onClick={handlePrev} tabIndex={3} aria-label="navigation-left">
+          <NavButton $side="left" onClick={handlePrev} tabIndex={3} aria-label="navigation-left">
             <IoIosArrowBack />
           </NavButton>
           {data &&
@@ -110,7 +110,7 @@ const Projects: FC = () => {
                 projectIndex={index}
               />
             ))}
-          <NavButton side="right" onClick={handleNext} tabIndex={4} aria-label="navigation-right">
+          <NavButton $side="right" onClick={handleNext} tabIndex={4} aria-label="navigation-right">
             <IoIosArrowForward />
           </NavButton>
         </Carousel>

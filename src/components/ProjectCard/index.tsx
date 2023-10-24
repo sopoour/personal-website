@@ -50,7 +50,7 @@ const ProjectCard: FC<Props> = ({ project, activeIndex, projectIndex }) => {
       tabIndex={(activeIndex - projectIndex) / 3 === 0 ? 4 : 5}
       aria-label={`${project.id}-project-card`}
     >
-      <DetailsContainer projectId={project.id}>
+      <DetailsContainer $projectId={project.id}>
         <DetailHeader>
           <Typography fontWeight={700}>{project.title}</Typography>
           <Links iconLinks={project.links} size="small" tabIndex={5} />
@@ -61,8 +61,8 @@ const ProjectCard: FC<Props> = ({ project, activeIndex, projectIndex }) => {
       <ProjectThumbnail
         src={`/data/images/${project.id}.png`}
         alt={`${project.title} - Project thumbnail`}
-        objectFit="cover"
         fill
+        sizes="(max-width: 768px) 100vw"
       />
     </Card>
   );

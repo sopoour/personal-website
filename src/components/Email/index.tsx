@@ -54,7 +54,7 @@ const Email: FC<Props> = ({ fontSize }) => {
   };
   return (
     <EmailText
-      textalign="center"
+      $textalign="center"
       fontSize={fontSize ?? '12px'}
       style={{ marginTop: '-10px' }}
       as="button"

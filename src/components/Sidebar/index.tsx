@@ -1,6 +1,4 @@
-import { FC, ReactNode, useState } from 'react';
-import { useMedia } from '@app/hooks/useMedia';
-import { Breakpoints } from '@app/styles/media';
+import { FC } from 'react';
 import { css, styled } from 'styled-components';
 import theme from '@app/styles/theme';
 import profile from '@app/assets/profile_design.png';
@@ -11,7 +9,7 @@ import LinkContainer from '../LinkContainer';
 import { IconLink } from '@app/types';
 import { flexColumn } from '@app/styles/mixins';
 import Email from '../Email';
-import { animateScroll, scroller } from 'react-scroll';
+import { animateScroll } from 'react-scroll';
 
 const links: IconLink[] = [{ type: 'github' }, { type: 'linkedin' }, { type: 'instagram' }];
 
@@ -81,6 +79,7 @@ const Header = styled.button`
 `;
 
 const ProfileImage = styled(Image)`
+  width: 100%;
   height: auto;
   opacity: 1;
 `;
@@ -107,11 +106,12 @@ const Sidebar: FC<Props> = ({ open, onClose }) => (
         <ProfileImage
           src={profile.src}
           width={200}
-          height={0}
+          height={200}
           alt="sophia auer avatar"
           id="profile-sidebar"
+          priority
         />
-        <Typography textalign="center" fontSize="20px">
+        <Typography $textalign="center" fontSize="20px">
           Soph. <span style={{ fontSize: '12px' }}>(they/them).</span>
         </Typography>
       </Header>

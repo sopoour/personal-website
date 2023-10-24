@@ -6,14 +6,14 @@ import { Breakpoints } from '@app/styles/media';
 import Image from 'next/image';
 import Tags from '../Tags';
 
-export const DetailsContainer = styled.div<{ projectId: string }>`
+export const DetailsContainer = styled.div<{ $projectId: string }>`
   ${flexColumn};
   width: 85vw;
   padding: 20px;
   height: 100%;
   gap: 12px;
-  background-image: ${({ projectId }) =>
-    `linear-gradient(to bottom, rgba(65,75,163, 0.75), rgba(11,14,43, 1)) , url(${`/data/images/${projectId}.png`})`};
+  background-image: ${({ $projectId }) =>
+    `linear-gradient(to bottom, rgba(65,75,163, 0.75), rgba(11,14,43, 1)) , url(${`/data/images/${$projectId}.png`})`};
   background-position: center;
   background-size: cover;
   border-radius: 10px;
@@ -51,6 +51,7 @@ export const DetailHeader = styled.div`
 export const ProjectThumbnail = styled(Image)`
   ${slowTransition};
   opacity: 1;
+  object-fit: cover;
   position: relative;
   display: none;
   width: 100vw;
