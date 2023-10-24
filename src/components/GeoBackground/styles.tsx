@@ -56,7 +56,7 @@ export const TopRight = styled(Geo2)`
 
 export const BottomLeft = styled(Geo3)`
   bottom: -15%;
-  left: -35%;
+  left: -40%;
 
   ${theme.media('sm')`
     bottom: -8%;
