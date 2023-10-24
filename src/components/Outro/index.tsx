@@ -84,8 +84,7 @@ const Outro: FC = () => {
             ease: 'back',
             scrollTrigger: {
               trigger: '#outro',
-              start: 'top 125%',
-              scrub: 1,
+              start: 'top 100%',
             },
           },
         );

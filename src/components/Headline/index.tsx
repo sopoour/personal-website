@@ -5,6 +5,7 @@ import { robotoMono } from '@app/styles/fonts';
 import { fadeIn, flexColumn, flexRow } from '@app/styles/mixins';
 import theme from '@app/styles/theme';
 import getAccentColour from '@app/utils/getAccentColour';
+import { Breakpoints } from '@app/styles/media';
 
 const Container = styled.div`
   ${flexColumn};
@@ -26,9 +27,12 @@ const RotatingTitle = styled(SubTitle)`
   display: block;
   margin: 0;
   padding: 0;
-  color: ${theme.colors.bg.soft};
   animation: rotateText 8s infinite 7s;
   text-align: center;
+
+  @media only screen and (max-width: ${Breakpoints.xs}px) {
+    color: ${theme.colors.bg.soft};
+  }
 
   @keyframes rotateText {
     16% {
@@ -81,7 +85,7 @@ const Headline: FC<Props> = ({ className }) => {
       <SubTitle as="h2">Frontend Developer and</SubTitle>
       <RotatingTitles>
         {titles.map((title, index) => (
-          <RotatingTitle key={title + index} as="h3">
+          <RotatingTitle key={title + index} as="h3" color={getAccentColour(index)}>
             {title}
           </RotatingTitle>
         ))}
