@@ -25,8 +25,8 @@ export const IntroContainer = styled.section`
 `;
 
 export const LeftTop = styled(Geo1)`
-  top: -10%;
-  left: -50%;
+  top: -15%;
+  left: -55%;
 
   ${theme.media('sm')`
     top: -2%;
@@ -40,8 +40,8 @@ export const LeftTop = styled(Geo1)`
 `;
 
 export const TopRight = styled(Geo2)`
-  top: -20%;
-  right: -20%;
+  top: -25%;
+  right: -25%;
 
   ${theme.media('sm')`
     top: -10%;
@@ -56,7 +56,7 @@ export const TopRight = styled(Geo2)`
 
 export const BottomLeft = styled(Geo3)`
   bottom: -15%;
-  left: -30%;
+  left: -35%;
 
   ${theme.media('sm')`
     bottom: -8%;
@@ -70,8 +70,8 @@ export const BottomLeft = styled(Geo3)`
 `;
 
 export const BottomRight = styled(Geo4)`
-  bottom: -20%;
-  right: -35%;
+  bottom: -25%;
+  right: -40%;
 
   ${theme.media('sm')`
     bottom: -5%;
