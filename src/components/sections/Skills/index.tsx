@@ -10,6 +10,8 @@ import { flexColumn, flexRow } from '@app/styles/mixins';
 import runAnimations from './utils/runAnimations';
 import { skillTypes, skills } from './utils/data';
 import { gsap } from 'gsap';
+import { useMedia } from '@app/hooks/useMedia';
+import { Breakpoints } from '@app/styles/media';
 
 const RelativeWrapper = styled.div`
   position: relative;
@@ -70,12 +72,13 @@ const Bucket = styled.div`
 `;
 
 const Skills: FC = () => {
+  const isDesktop = useMedia(Breakpoints.sm);
   useEffect(() => {
     let ctx = gsap.context(() => {
-      runAnimations();
+      runAnimations(isDesktop);
     });
     return () => ctx.revert();
-  }, []);
+  }, [isDesktop]);
 
   return (
     <Section mobileTitle="Skills" id="skills">

@@ -8,12 +8,12 @@ const getRand = (min: number, max: number) => {
   return Math.random() * (max - min) + min;
 };
 
-const runAnimations = () => {
+const runAnimations = (isDesktop: boolean) => {
   const tl = gsap?.timeline({
     scrollTrigger: {
       trigger: '#skills',
       start: 'top 50%',
-      end: 'bottom bottom',
+      end: isDesktop ? 'bottom bottom' : 'bottom center',
       scrub: 8,
     },
   });
