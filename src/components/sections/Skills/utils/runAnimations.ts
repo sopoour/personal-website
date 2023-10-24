@@ -12,9 +12,9 @@ const runAnimations = (isDesktop: boolean) => {
   const tl = gsap?.timeline({
     scrollTrigger: {
       trigger: '#skills',
-      start: isDesktop ? 'top 50%' : 'top 100%',
+      start: isDesktop ? 'top 50%' : 'top 150%',
       end: isDesktop ? 'bottom bottom' : 'bottom center',
-      scrub: 8,
+      scrub: isDesktop ? 8 : 0,
     },
   });
 
