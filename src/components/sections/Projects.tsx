@@ -98,7 +98,12 @@ const Projects: FC = () => {
     <ProjectSection id="projects" $maxWidth={0} mobileTitle="Projects">
       <>
         <Carousel className={'animate-scale'}>
-          <NavButton $side="left" onClick={handlePrev} tabIndex={3} aria-label="navigation-left">
+          <NavButton
+            $side="left"
+            onClick={handlePrev}
+            tabIndex={3}
+            aria-labelledby="navigation-left"
+          >
             <IoIosArrowBack />
           </NavButton>
           {data &&
@@ -110,7 +115,12 @@ const Projects: FC = () => {
                 projectIndex={index}
               />
             ))}
-          <NavButton $side="right" onClick={handleNext} tabIndex={4} aria-label="navigation-right">
+          <NavButton
+            $side="right"
+            onClick={handleNext}
+            tabIndex={4}
+            aria-labelledby="navigation-right"
+          >
             <IoIosArrowForward />
           </NavButton>
         </Carousel>
