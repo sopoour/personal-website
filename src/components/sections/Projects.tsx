@@ -73,7 +73,7 @@ const ProjectSection = styled(Section)`
   gap: 48px;
   align-items: center;
   padding: 0;
-  > p {
+  > h2 {
     padding-left: 20px;
     padding-right: 20px;
   }
