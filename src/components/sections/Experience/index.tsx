@@ -44,7 +44,6 @@ const Experience: FC = () => {
                     <LinkContainer
                       iconLinks={[{ link: experience.companyLink, type: 'link' }]}
                       size="small"
-                      tabIndex={6}
                     />
                   </Header>
 
@@ -56,7 +55,11 @@ const Experience: FC = () => {
               </ExperienceContainer>
             </Fragment>
           ))}
-        <LinkButton label="View full Résumé" link="data/soph_resume.pdf" />
+        <LinkButton
+          label="View full Résumé"
+          link="data/soph_resume.pdf"
+          aria-description="This link opens a PDF in a new tab"
+        />
       </Container>
     </Section>
   );

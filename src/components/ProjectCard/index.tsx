@@ -47,13 +47,12 @@ const ProjectCard: FC<Props> = ({ project, activeIndex, projectIndex }) => {
       $viewDetails={view}
       onClick={() => isDesktop && setView((prev) => !prev)}
       ref={ref}
-      tabIndex={(activeIndex - projectIndex) / 3 === 0 ? 4 : 5}
       aria-label={`${project.id}-project-card`}
     >
       <DetailsContainer $projectId={project.id}>
         <DetailHeader>
           <Typography fontWeight={700}>{project.title}</Typography>
-          <Links iconLinks={project.links} size="small" tabIndex={5} />
+          <Links iconLinks={project.links} size="small" />
         </DetailHeader>
         <Typography fontSize={'14px'}>{project.description}</Typography>
         <TagsMobile tags={project.tags} />

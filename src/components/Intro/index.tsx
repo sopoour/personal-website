@@ -36,7 +36,6 @@ const Intro: FC = () => {
         <ScrollArrowContainer
           onClick={() => scroller.scrollTo('projects', { smooth: true, duration: 800 })}
           title="Scroll down button"
-          tabIndex={1}
         >
           <IoIosArrowDown />
           <ScrollArrowFadeElement />

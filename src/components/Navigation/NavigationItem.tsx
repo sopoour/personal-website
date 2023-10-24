@@ -48,7 +48,6 @@ const NavigationItem: FC<Props> = ({ item, onClickItem }) => {
   return (
     <Item
       id={item}
-      tabIndex={1}
       activeClass="active"
       to={navItemName}
       spy

@@ -96,7 +96,7 @@ const Outro: FC = () => {
   return (
     <GeoBackground>
       <ContentWrapper id="outro">
-        <Title fontSize="60px" id="title">
+        <Title fontSize="60px" id="title" as="h2">
           Let&apos;s Chat ✌️
         </Title>
         <Question>Need a passionate Frontend Developer to help out?</Question>

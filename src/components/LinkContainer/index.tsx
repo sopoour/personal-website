@@ -61,7 +61,6 @@ type Props = {
   size?: Size;
   ariaLabel?: string;
   className?: string;
-  tabIndex?: number;
 };
 
 const LinkContainer: FC<Props> = ({
@@ -70,7 +69,6 @@ const LinkContainer: FC<Props> = ({
   hoverColour,
   ariaLabel,
   size = 'medium',
-  tabIndex = 2,
 }) => {
   const links = useMemo(
     () =>
@@ -115,13 +113,7 @@ const LinkContainer: FC<Props> = ({
       {links?.map(
         (item) =>
           item.link && (
-            <Link
-              href={item.link}
-              key={item.id}
-              target="_blank"
-              aria-label={item.id}
-              tabIndex={tabIndex}
-            >
+            <Link href={item.link} key={item.id} target="_blank" aria-label={item.id}>
               {item.icon}
             </Link>
           ),

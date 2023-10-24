@@ -33,7 +33,7 @@ const Container = styled.a`
 type Props = {
   label: string;
   link: string;
-};
+} & HTMLAttributes<unknown>;
 
 const LinkButton: FC<Props> = ({ label, link }) => (
   <Container href={link} target="_blank">

@@ -107,7 +107,7 @@ const Sidebar: FC<Props> = ({ open, onClose }) => (
           src={profile.src}
           width={200}
           height={200}
-          alt="sophia auer avatar"
+          alt="sophia auer sidebar avatar"
           id="profile-sidebar"
           priority
         />

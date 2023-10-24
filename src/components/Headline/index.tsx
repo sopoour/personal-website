@@ -81,7 +81,9 @@ const Headline: FC<Props> = ({ className }) => {
       <SubTitle as="h2">Frontend Developer and</SubTitle>
       <RotatingTitles>
         {titles.map((title, index) => (
-          <RotatingTitle key={title + index}>{title}</RotatingTitle>
+          <RotatingTitle key={title + index} as="h3">
+            {title}
+          </RotatingTitle>
         ))}
       </RotatingTitles>
     </Container>
