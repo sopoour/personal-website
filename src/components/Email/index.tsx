@@ -8,7 +8,7 @@ import { slowTransition } from '@app/styles/mixins';
 const EmailText = styled(Typography)<{ $copied: boolean }>`
   position: relative;
   font-weight: 500;
-  width: 200px;
+  width: max-content;
   margin: 0 auto;
   ${slowTransition};
   &::after {
@@ -19,6 +19,7 @@ const EmailText = styled(Typography)<{ $copied: boolean }>`
     display: block;
     opacity: 0;
     font-weight: 500;
+    font-size: 12px;
     width: 104px;
     height: max-content;
     border-radius: 4px;

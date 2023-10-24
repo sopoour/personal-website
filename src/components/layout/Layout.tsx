@@ -8,6 +8,7 @@ import Intro from '../Intro';
 import GeoBackground from '../GeoBackground';
 import useGsapAnimation from '@app/hooks/useGsapAnimation';
 import { flexColumn } from '@app/styles/mixins';
+import Outro from '../Outro';
 
 const Root = styled.div`
   ${flexColumn}
@@ -70,11 +71,7 @@ const Layout: FC<Props> = ({ children }) => {
           {children}
         </MainLayout>
       </Root>
-      <GeoBackground>
-        <p style={{ marginTop: '20%', marginLeft: '35%' }}>
-          Place here IntroHeader, the about me section and a good bye
-        </p>
-      </GeoBackground>
+      <Outro />
     </>
   );
 };

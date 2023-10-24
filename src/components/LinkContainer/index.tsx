@@ -6,13 +6,28 @@ import Link from 'next/link';
 import { IconLink } from '@app/types';
 import { FaEnvelope, FaExternalLinkAlt, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
-const Container = styled.span<{ hoverColour?: string; size?: 'small' | 'big' }>`
+type Size = 'small' | 'medium' | 'big';
+
+const getSize = (size: Size) => {
+  switch (size) {
+    case 'small':
+      return '16px';
+    case 'medium':
+      return '20px';
+    case 'big':
+      return '35px';
+    default:
+      return '20px';
+  }
+};
+
+const Container = styled.span<{ hoverColour?: string; size: Size }>`
   ${flexRow};
   gap: 16px;
   justify-content: center;
   svg {
-    width: ${({ size }) => (size === 'big' ? '20px' : '14px')};
-    height: ${({ size }) => (size === 'big' ? '20px' : '14px')};
+    width: ${({ size }) => getSize(size)};
+    height: ${({ size }) => getSize(size)};
     transition: all 0.3s ease-in-out;
     path {
       fill: ${theme.colors.bg.soft};
@@ -43,7 +58,7 @@ const Container = styled.span<{ hoverColour?: string; size?: 'small' | 'big' }>`
 type Props = {
   iconLinks: IconLink[];
   hoverColour?: string;
-  size?: 'small' | 'big';
+  size?: Size;
   ariaLabel?: string;
   className?: string;
   tabIndex?: number;
@@ -54,7 +69,7 @@ const LinkContainer: FC<Props> = ({
   className,
   hoverColour,
   ariaLabel,
-  size,
+  size = 'medium',
   tabIndex = 2,
 }) => {
   const links = useMemo(
