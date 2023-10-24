@@ -57,9 +57,17 @@ export const Container = styled.div`
   grid-template-columns: 1fr;
   gap: 16px;
 
+  > a {
+    margin-top: 32px;
+  }
+
   ${theme.media('sm')`
     grid-template-columns: max-content 1fr;
-    gap: 40px 64px;    
+    gap: 40px 64px;   
+    
+    > a {
+      margin-top: 0;
+    }
   `}
 `;
 

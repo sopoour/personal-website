@@ -22,10 +22,11 @@ const SubTitle = styled(Typography)`
   `}
 `;
 
-const RotatingTitle = styled(SubTitle)<{ $stepNum: number }>`
+const RotatingTitle = styled(SubTitle)`
   display: block;
   margin: 0;
   padding: 0;
+  color: ${theme.colors.bg.soft};
   animation: rotateText 8s infinite 7s;
   text-align: center;
 
@@ -80,9 +81,7 @@ const Headline: FC<Props> = ({ className }) => {
       <SubTitle as="h2">Frontend Developer and</SubTitle>
       <RotatingTitles>
         {titles.map((title, index) => (
-          <RotatingTitle key={title + index} color={getAccentColour(index)} $stepNum={index}>
-            {title}
-          </RotatingTitle>
+          <RotatingTitle key={title + index}>{title}</RotatingTitle>
         ))}
       </RotatingTitles>
     </Container>

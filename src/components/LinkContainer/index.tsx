@@ -43,7 +43,7 @@ const Container = styled.span<{ hoverColour?: string; size: Size }>`
     ${({ size }) =>
       size === 'small' &&
       css`
-        margin-bottom: 2px;
+        margin-bottom: 3px;
 
         &:hover {
           path {

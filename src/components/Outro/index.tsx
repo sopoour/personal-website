@@ -41,7 +41,6 @@ const Title = styled(Typography)`
 
 const OutroDescription = styled(Typography)`
   text-align: center;
-  font-weight: 500;
   line-height: 175%;
   font-size: 16px;
 
@@ -59,7 +58,7 @@ const Question = styled(OutroDescription)`
   font-family: ${robotoMono.style.fontFamily};
 
   color: ${theme.colors.accent.green};
-
+  font-weight: 500;
   ${theme.media('sm')`
     font-size: 18px;
   `}
