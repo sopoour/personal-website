@@ -8,17 +8,18 @@ const getRand = (min: number, max: number) => {
   return Math.random() * (max - min) + min;
 };
 
-const runAnimations = (isDesktop: boolean) => {
+const runAnimations = () => {
   const tl = gsap?.timeline({
     scrollTrigger: {
       trigger: '#skills',
-      start: isDesktop ? 'top 50%' : 'top 150%',
-      end: isDesktop ? 'bottom bottom' : 'bottom center',
-      scrub: isDesktop ? 8 : 0,
+      start: 'top 50%',
+      end: 'bottom bottom',
+      scrub: 8,
     },
   });
 
-  tl.set('.ball', { x: () => getRand(-100, 100), y: () => getRand(-80, 80) });
+  tl.set('.ball', { x: () => getRand(-100, 100), y: () => getRand(-80, 80), opacity: 0 });
+  tl.set('.title', { opacity: 0 });
 
   tl.fromTo(
     '.ball',

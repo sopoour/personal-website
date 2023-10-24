@@ -31,8 +31,7 @@ const BallVar = styled(Ball)<{ fill: string }>`
 const BallWrapper = styled.span`
   width: 88px;
   height: 88px;
-
-  opacity: 0;
+  position: relative;
   &:hover {
     cursor: pointer;
   }
@@ -57,9 +56,6 @@ const Column = styled.div`
   ${flexColumn};
   gap: 32px;
   align-items: center;
-  > ${Typography} {
-    opacity: 0;
-  }
 `;
 
 const Bucket = styled.div`
@@ -75,7 +71,7 @@ const Skills: FC = () => {
   const isDesktop = useMedia(Breakpoints.sm);
   useEffect(() => {
     let ctx = gsap.context(() => {
-      runAnimations(isDesktop);
+      if (isDesktop) runAnimations();
     });
     return () => ctx.revert();
   }, [isDesktop]);
