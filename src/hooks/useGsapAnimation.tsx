@@ -102,7 +102,7 @@ const useGsapAnimation = () => {
       }
 
       // Change height of sidebar once the Projects section is reached - only for mobile
-      /* if (!isDesktop) {
+      if (!isDesktop) {
         gsap.fromTo(
           '#sidebar',
           {
@@ -118,10 +118,10 @@ const useGsapAnimation = () => {
             },
           },
         );
-      } */
+      }
     });
     return () => ctx.revert();
-  }, []);
+  }, [isDesktop]);
 };
 
 export default useGsapAnimation;
