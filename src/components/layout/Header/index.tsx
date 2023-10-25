@@ -32,18 +32,40 @@ const HeaderWrapper = styled.div`
   `}
 `;
 
-const Line = styled.span`
+const Line = styled.span<{ $isActive: boolean }>`
   width: 18px;
   height: 2px;
   background-color: ${theme.colors.fg.default};
   display: block;
   margin: 0 auto;
-  -webkit-transition: transform 0.3s ease-in-out;
-  -o-transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+
+  ${({ $isActive }) =>
+    $isActive &&
+    css`
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(1) {
+        -webkit-transform: translateY(6px) rotate(45deg);
+        -ms-transform: translateY(6px) rotate(45deg);
+        -o-transform: translateY(6px) rotate(45deg);
+        transform: translateY(6px) rotate(45deg);
+      }
+
+      &:nth-child(3) {
+        -webkit-transform: translateY(-4px) rotate(-45deg);
+        -ms-transform: translateY(-4px) rotate(-45deg);
+        -o-transform: translateY(-4px) rotate(-45deg);
+        transform: translateY(-4px) rotate(-45deg);
+      }
+    `}
 `;
 
-const BurgerMenu = styled.button<{ $isActive: boolean }>`
+const BurgerMenu = styled.button`
   padding: 8px;
   width: 35px;
   height: 35px;
@@ -56,32 +78,10 @@ const BurgerMenu = styled.button<{ $isActive: boolean }>`
   z-index: 100;
 
   &:hover {
-    ${Line} {
-      background-color: ${theme.colors.accent.green};
+    > ${Line} {
+      background-color: ${theme.colors.accent.green} !important;
     }
   }
-
-  ${({ $isActive }) =>
-    $isActive &&
-    css`
-      ${Line}:nth-child(2) {
-        opacity: 0;
-      }
-
-      ${Line}:nth-child(1) {
-        -webkit-transform: translateY(6px) rotate(45deg);
-        -ms-transform: translateY(6px) rotate(45deg);
-        -o-transform: translateY(6px) rotate(45deg);
-        transform: translateY(6px) rotate(45deg);
-      }
-
-      ${Line}:nth-child(3) {
-        -webkit-transform: translateY(-4px) rotate(-45deg);
-        -ms-transform: translateY(-4px) rotate(-45deg);
-        -o-transform: translateY(-4px) rotate(-45deg);
-        transform: translateY(-4px) rotate(-45deg);
-      }
-    `}
 `;
 
 const Header: React.FC = () => {
@@ -105,13 +105,12 @@ const Header: React.FC = () => {
       <BurgerMenu
         onClick={setOpen}
         id="burger-menu"
-        $isActive={open}
         aria-label="Burger Menu button"
         aria-description="Burger Menu that is only visble on mobile"
       >
-        <Line />
-        <Line />
-        <Line />
+        <Line $isActive={open} />
+        <Line $isActive={open} />
+        <Line $isActive={open} />
       </BurgerMenu>
     </HeaderWrapper>
   );
