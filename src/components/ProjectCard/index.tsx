@@ -10,7 +10,6 @@ import {
 } from './styles';
 import Typography from '../Typography/Typography';
 import useClickOutside from '@app/hooks/useClickOutside';
-import Tags from '../Tags';
 import { useMedia } from '@app/hooks/useMedia';
 import { Breakpoints } from '@app/styles/media';
 

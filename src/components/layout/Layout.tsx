@@ -57,17 +57,15 @@ type Props = {
 };
 
 const Layout: FC<Props> = ({ children }) => {
-  const [menuOpen, setOpenMenu] = useState<boolean>(false);
-
   useGsapAnimation();
 
   return (
     <>
       <Intro />
       <Root id="main-root">
-        <Sidebar open={menuOpen} onClose={() => setOpenMenu(false)} />
+        <Sidebar />
         <MainLayout>
-          <Header onOpenMenu={() => setOpenMenu((prev) => !prev)} isOpen={menuOpen} />
+          <Header />
           {children}
         </MainLayout>
       </Root>

@@ -1,11 +1,10 @@
-import Typography from '@app/components/Typography/Typography';
 import theme from '@app/styles/theme';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { css, styled } from 'styled-components';
-import { FaBars, FaCross } from 'react-icons/fa';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { flexColumn } from '@app/styles/mixins';
+import useSidebar from '@app/hooks/useSidebar';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,7 +45,6 @@ const Line = styled.span`
 
 const BurgerMenu = styled.button<{ $isActive: boolean }>`
   padding: 8px;
-  opacity: 0;
   width: 35px;
   height: 35px;
 
@@ -57,8 +55,10 @@ const BurgerMenu = styled.button<{ $isActive: boolean }>`
   gap: 3px;
   z-index: 100;
 
-  &:hover:not(:focus) {
-    filter: brightness(0.8);
+  &:hover {
+    ${Line} {
+      background-color: ${theme.colors.accent.green};
+    }
   }
 
   ${({ $isActive }) =>
@@ -84,14 +84,13 @@ const BurgerMenu = styled.button<{ $isActive: boolean }>`
     `}
 `;
 
-type Props = {
-  onOpenMenu: () => void;
-  isOpen: boolean;
-};
-
-const Header: React.FC<Props> = ({ onOpenMenu, isOpen }) => {
+const Header: React.FC = () => {
+  const { open, setOpen } = useSidebar((state) => state);
   useEffect(() => {
-    let logoTl2 = gsap.timeline({
+    gsap.set('#burger-menu', { opacity: 0 });
+    gsap.to('#burger-menu', {
+      duration: 1,
+      opacity: 1,
       scrollTrigger: {
         trigger: '#mobile-header',
         start: 'top top',
@@ -99,25 +98,14 @@ const Header: React.FC<Props> = ({ onOpenMenu, isOpen }) => {
         scrub: 1,
       },
     });
-
-    logoTl2.fromTo(
-      '#burger-menu',
-      {
-        opacity: 0,
-      },
-      {
-        duration: 1,
-        opacity: 1,
-      },
-    );
   }, []);
 
   return (
     <HeaderWrapper aria-label="Mobile header" id="mobile-header">
       <BurgerMenu
-        onClick={onOpenMenu}
+        onClick={setOpen}
         id="burger-menu"
-        $isActive={isOpen}
+        $isActive={open}
         aria-label="Burger Menu button"
         aria-description="Burger Menu that is only visble on mobile"
       >

@@ -10,9 +10,10 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 type Props = {
   children: React.ReactElement;
   className?: string;
+  ariaLabel: string;
 };
 
-const GeoBackground: FC<Props> = ({ children, className }) => {
+const GeoBackground: FC<Props> = ({ children, className, ariaLabel }) => {
   useEffect(() => {
     let ctx = gsap.context(() => {
       const geos = gsap.utils.toArray('.geo');
@@ -103,7 +104,7 @@ const GeoBackground: FC<Props> = ({ children, className }) => {
   }, []);
 
   return (
-    <IntroContainer className={className}>
+    <IntroContainer className={className} aria-label={ariaLabel}>
       <LeftTop id="left-top" className="geo" />
       <BottomLeft id="bottom-left" className="geo" />
       <BottomRight id="bottom-right" className="geo" />

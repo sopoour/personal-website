@@ -11,6 +11,7 @@ import { IconLink } from '@app/types';
 import LinkContainer from '../LinkContainer';
 import Email from '../Email';
 import { robotoMono } from '@app/styles/fonts';
+import { Breakpoints } from '@app/styles/media';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -90,7 +91,7 @@ const Outro: FC = () => {
     return () => ctx.revert();
   }, []);
   return (
-    <GeoBackground>
+    <GeoBackground ariaLabel="Outro">
       <ContentWrapper id="outro">
         <Title fontSize="60px" id="title" as="h2">
           Let&apos;s Chat ✌️

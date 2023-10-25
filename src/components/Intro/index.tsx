@@ -14,7 +14,7 @@ import GeoBackground from '../GeoBackground';
 
 const Intro: FC = () => {
   return (
-    <GeoBackground>
+    <GeoBackground ariaLabel="Introduction">
       <ContentWrapper id="intro">
         <ProfileImage
           src={profile.src}
