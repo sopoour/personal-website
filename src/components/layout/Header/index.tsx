@@ -63,10 +63,6 @@ const Line = styled.span<{ $isActive: boolean }>`
         transform: translateY(-4px) rotate(-45deg);
       }
     `}
-
-  &:hover {
-    background-color: ${theme.colors.accent.green} !important;
-  }
 `;
 
 const BurgerMenu = styled.button`
