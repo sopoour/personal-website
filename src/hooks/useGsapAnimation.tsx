@@ -121,7 +121,7 @@ const useGsapAnimation = () => {
       }
     });
     return () => ctx.revert();
-  }, []);
+  }, [isDesktop]);
 };
 
 export default useGsapAnimation;

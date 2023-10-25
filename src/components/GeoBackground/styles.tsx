@@ -5,7 +5,7 @@ import Geo2 from '@app/assets/geo2.svg';
 import Geo3 from '@app/assets/geo3.svg';
 import Geo4 from '@app/assets/geo4.svg';
 
-export const IntroContainer = styled.section`
+export const IntroContainer = styled.div`
   background: ${theme.colors.bg.default};
   display: flex;
   flex-flow: column wrap;

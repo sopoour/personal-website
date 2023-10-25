@@ -56,7 +56,7 @@ const Carousel = styled.div`
     ${flexRow};
     margin: auto;
     width: 100%;
-    height: 35rem;
+    height: 36rem;
     overflow-x: scroll;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;

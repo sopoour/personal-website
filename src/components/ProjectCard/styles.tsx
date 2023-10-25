@@ -13,10 +13,12 @@ export const DetailsContainer = styled.div<{ $projectId: string }>`
   height: 100%;
   gap: 12px;
   background-image: ${({ $projectId }) =>
-    `linear-gradient(to bottom, rgba(65,75,163, 0.75), rgba(11,14,43, 1)) , url(${`/data/images/${$projectId}.png`})`};
+    `linear-gradient(to bottom, rgba(65,75,163, 0.8), rgba(11,14,43, 1)) , url(${`/data/images/${$projectId}.png`})`};
   background-position: center;
   background-size: cover;
   border-radius: 10px;
+  position: relative;
+  z-index: 2;
 
   ${theme.media('xs')`
   box-shadow: 0 60px 50px -60px ${theme.colors.bg.soft};
@@ -207,6 +209,18 @@ export const Card = styled.button<{
 export const Links = styled(LinkContainer)`
   justify-content: flex-start;
   gap: 10px;
+
+  @media only screen and (max-width: ${Breakpoints.xs}px) {
+    a > svg > path {
+      fill: ${theme.colors.fg.default};
+    }
+
+    > a:hover {
+      > svg > path {
+        fill: ${theme.colors.bg.soft};
+      }
+    }
+  }
 `;
 
 export const TagsMobile = styled(Tags)`

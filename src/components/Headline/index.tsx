@@ -75,7 +75,7 @@ const Headline: FC<Props> = ({ className }) => {
     'Star Wars fan 🚀',
     'LEGO architect 👷',
     'bookworm 📚',
-    'mindfulness advocator 🧘',
+    'underground poet 📜',
     'astronomy nerd 🛰️',
     'wannabe artist 🎹🎸🎨',
   ];

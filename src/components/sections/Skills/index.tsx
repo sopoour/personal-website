@@ -78,7 +78,7 @@ const Skills: FC = () => {
 
   return (
     <Section mobileTitle="Skills" id="skills">
-      <RelativeWrapper>
+      <RelativeWrapper className={!isDesktop ? 'animate-scale' : ''}>
         {skillTypes.map((type) => (
           <Column key={type}>
             <Typography fontWeight={700} className="title">
