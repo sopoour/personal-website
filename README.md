@@ -21,6 +21,10 @@
 4. Project and experience data is stored in JSON files. It's fetched via Next.js API route and SWR.
 
 
+## Planned features
+1. Work with react-pdf to generate pdf resume based on website data
+2. Adding a blog/separate page for my art (paintings & poems)
+
 ## Getting Started
 
 Run the development server:
