@@ -106,10 +106,10 @@ const BottomSection = styled.div`
 `;
 
 const Sidebar: FC = () => {
-  const { open, setOpen } = useSidebar((state) => state);
+  const { open, close } = useSidebar((state) => state);
   return (
     <>
-      <Backdrop onClick={setOpen} $open={open} />
+      <Backdrop onClick={close} $open={open} />
       <Content $open={open} id="sidebar" aria-label="sidebar">
         <Header
           onClick={() => animateScroll.scrollTo(0, { smooth: true, duration: 800 })}
@@ -128,7 +128,7 @@ const Sidebar: FC = () => {
             Sophia Auer (Soph)
           </Typography>
         </Header>
-        <Navigation onClickItem={setOpen} />
+        <Navigation onClickItem={close} />
         <BottomSection>
           <LinkContainer iconLinks={links} />
           <Email />
