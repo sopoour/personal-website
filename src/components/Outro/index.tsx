@@ -12,6 +12,7 @@ import LinkContainer from '../LinkContainer';
 import Email from '../Email';
 import { robotoMono } from '@app/styles/fonts';
 import { Breakpoints } from '@app/styles/media';
+import { useMedia } from '@app/hooks/useMedia';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,32 +65,29 @@ const Question = styled(OutroDescription)`
 `;
 
 const Outro: FC = () => {
+  const isDesktop = useMedia(Breakpoints.sm);
   useEffect(() => {
     let ctx = gsap.context(() => {
       const title = document.getElementById('title');
       if (title) {
         const titleSplit = new SplitType(title, { types: 'chars' });
         const titleChars = titleSplit.chars;
-        gsap.set(titleChars, { opacity: 0, y: 80 });
-        gsap.fromTo(
-          titleChars,
-          { opacity: 0, y: 200 },
-          {
-            duration: 1,
-            opacity: 1,
-            y: 0,
-            stagger: 0.05,
-            ease: 'back',
-            scrollTrigger: {
-              trigger: '#outro',
-              start: 'top 100%',
-            },
+        gsap.set(titleChars, { opacity: 0, y: 200 });
+        gsap.to(titleChars, {
+          duration: 1,
+          opacity: 1,
+          y: 0,
+          stagger: 0.05,
+          ease: 'back',
+          scrollTrigger: {
+            trigger: '#outro',
+            start: isDesktop ? 'top 100%' : 'top 150%',
           },
-        );
+        });
       }
     });
     return () => ctx.revert();
-  }, []);
+  }, [isDesktop]);
   return (
     <GeoBackground ariaLabel="Outro">
       <ContentWrapper id="outro">

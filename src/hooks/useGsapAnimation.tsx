@@ -112,8 +112,8 @@ const useGsapAnimation = () => {
             display: 'none',
             scrollTrigger: {
               trigger: '#about',
-              start: 'bottom',
-              end: 'bottom',
+              start: 'bottom 100%',
+              end: 'bottom 100%',
               scrub: true,
             },
           },
