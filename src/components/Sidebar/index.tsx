@@ -21,21 +21,6 @@ const Backdrop = styled.div<{ $open?: boolean }>`
   padding: 40px 0;
   z-index: 5;
 
-  &:before {
-    content: '';
-    position: inherit;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: rgba(17, 22, 71, 0.1);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    display: block;
-    z-index: -1;
-  }
-
   ${({ $open }) =>
     $open &&
     css`
@@ -43,8 +28,17 @@ const Backdrop = styled.div<{ $open?: boolean }>`
         cursor: pointer;
       }
       &:before {
-        opacity: 1;
-        transition: all 150ms ease-in-out;
+        content: '';
+        position: inherit;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(17, 22, 71, 0.1);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        display: block;
+        z-index: -1;
       }
     `}
 `;
