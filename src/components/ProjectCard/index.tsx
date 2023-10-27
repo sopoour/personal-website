@@ -30,9 +30,8 @@ const ProjectCard: FC<Props> = ({ project, activeIndex, projectIndex }) => {
   const arrowLeftPressed = useKeyPress('ArrowLeft');
   useClickOutside(ref, () => setView(false));
 
-  useEffect(() => {
-    setView(false);
-  }, [activeIndex, projectIndex]);
+  // if any of the indexes change, turn around the card
+  useEffect(() => setView(false), [activeIndex, projectIndex]);
 
   useEffect(() => {
     // if user uses arrows to navigate then make sure the correct card is in focus so onEnter it turns
