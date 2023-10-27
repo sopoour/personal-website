@@ -76,12 +76,6 @@ const BurgerMenu = styled.button`
   ${flexColumn};
   gap: 3px;
   z-index: 100;
-
-  &:hover {
-    > ${Line} {
-      background-color: ${theme.colors.accent.green} !important;
-    }
-  }
 `;
 
 const Header: React.FC = () => {

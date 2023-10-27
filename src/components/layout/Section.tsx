@@ -1,8 +1,8 @@
-import { flexColumn } from '@app/styles/mixins';
+import { flexColumn, flexRow } from '@app/styles/mixins';
 import { FC, HTMLAttributes, ReactElement } from 'react';
 import styled from 'styled-components';
 import Typography from '../Typography/Typography';
-import Header, { HEADER_HEIGHT } from './Header';
+import { HEADER_HEIGHT } from './Header';
 import theme from '@app/styles/theme';
 
 const maxContainerPadding = { mobile: 20, desktop: 24 };
@@ -25,9 +25,8 @@ const SectionContainer = styled.section<{ $maxWidth?: number }>`
 `;
 
 const MobileHeader = styled(Typography)`
-  display: flex;
+  ${flexRow}
   position: sticky;
-  align-items: center;
   top: -1px;
   z-index: 5;
   padding: 8px 0px;

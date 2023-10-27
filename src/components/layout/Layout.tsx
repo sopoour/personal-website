@@ -1,12 +1,11 @@
-import React, { FC, ReactNode, useLayoutEffect, useState } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import { styled } from 'styled-components';
 import Header from './Header';
 import Sidebar from '../Sidebar';
 import theme from '@app/styles/theme';
 import Intro from '../Intro';
-import GeoBackground from '../GeoBackground';
-import useGsapAnimation from '@app/hooks/useGsapAnimation';
+import useGlobalGsapAnimation from '@app/hooks/useGlobalGsapAnimation';
 import { flexColumn } from '@app/styles/mixins';
 import Outro from '../Outro';
 
@@ -57,7 +56,7 @@ type Props = {
 };
 
 const Layout: FC<Props> = ({ children }) => {
-  useGsapAnimation();
+  useGlobalGsapAnimation();
 
   return (
     <>

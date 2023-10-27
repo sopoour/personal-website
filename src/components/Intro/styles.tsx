@@ -82,11 +82,6 @@ export const ProfileImage = styled(Image)`
   ${theme.media('xs')`
     width: 400px;
   `}
-
-  // Mobile only
-  @media only screen and (max-width: ${Breakpoints.xs}px) {
-    transform: none !important;
-  }
 `;
 
 export const ScrollArrowFadeElement = styled(IoIosArrowDown)`
