@@ -2,10 +2,11 @@ import { robotoMono } from '@app/styles/fonts';
 import { flexRow } from '@app/styles/mixins';
 import theme from '@app/styles/theme';
 import { IoIosArrowForward } from 'react-icons/io';
-import { FC, HTMLAttributeAnchorTarget, HTMLAttributes, ReactElement } from 'react';
+import { FC, HTMLAttributes } from 'react';
 import { styled } from 'styled-components';
+import Link from 'next/link';
 
-const Container = styled.a`
+const Container = styled(Link)`
   font-family: ${robotoMono.style.fontFamily};
   font-weight: 500;
   color: ${theme.colors.fg.default};

@@ -12,38 +12,36 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { scroller } from 'react-scroll';
 import GeoBackground from '../GeoBackground';
 
-const Intro: FC = () => {
-  return (
-    <GeoBackground ariaLabel="Introduction">
-      <ContentWrapper id="intro">
-        <ProfileImage
-          src={profile.src}
-          width={400}
-          height={305}
-          alt="sophia auer avatar"
-          id="profile-intro"
-          priority
-        />
-        <Title
-          fontWeight={700}
-          as="h1"
-          aria-label="Personal Website by Sophia Auer"
-          title="Personal Website by Sophia Auer"
-        >
-          Hi! I&apos;m Soph. <span>(they/them).</span>
-        </Title>
-        <IntroHeadliine />
-        <ScrollArrowContainer
-          onClick={() => scroller.scrollTo('projects', { smooth: true, duration: 800 })}
-          title="Scroll down button"
-        >
-          <IoIosArrowDown />
-          <ScrollArrowFadeElement />
-          <ScrollArrowFadeElement />
-        </ScrollArrowContainer>
-      </ContentWrapper>
-    </GeoBackground>
-  );
-};
+const Intro: FC = () => (
+  <GeoBackground ariaLabel="Introduction">
+    <ContentWrapper id="intro">
+      <ProfileImage
+        src={profile.src}
+        width={400}
+        height={305}
+        alt="sophia auer avatar"
+        id="profile-intro"
+        priority
+      />
+      <Title
+        fontWeight={700}
+        as="h1"
+        aria-label="Personal Website by Sophia Auer"
+        title="Personal Website by Sophia Auer"
+      >
+        Hi! I&apos;m Soph. <span>(they/them).</span>
+      </Title>
+      <IntroHeadliine />
+      <ScrollArrowContainer
+        onClick={() => scroller.scrollTo('projects', { smooth: true, duration: 800 })}
+        title="Scroll down button"
+      >
+        <IoIosArrowDown />
+        <ScrollArrowFadeElement />
+        <ScrollArrowFadeElement />
+      </ScrollArrowContainer>
+    </ContentWrapper>
+  </GeoBackground>
+);
 
 export default Intro;

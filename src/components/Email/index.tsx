@@ -2,7 +2,6 @@ import { FC, useState } from 'react';
 import Typography from '../Typography/Typography';
 import styled from 'styled-components';
 import theme from '@app/styles/theme';
-import css from 'styled-jsx/css';
 import { slowTransition } from '@app/styles/mixins';
 
 const EmailText = styled(Typography)<{ $copied: boolean }>`
@@ -52,6 +51,7 @@ const Email: FC<Props> = ({ fontSize }) => {
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
+
   return (
     <EmailText
       $textalign="center"

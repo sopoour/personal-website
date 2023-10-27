@@ -12,6 +12,7 @@ import Typography from '../Typography/Typography';
 import useClickOutside from '@app/hooks/useClickOutside';
 import { useMedia } from '@app/hooks/useMedia';
 import { Breakpoints } from '@app/styles/media';
+import useKeyPress from '@app/hooks/useKeyPress';
 
 const MAX_VISIBILITY = 3;
 
@@ -25,9 +26,18 @@ const ProjectCard: FC<Props> = ({ project, activeIndex, projectIndex }) => {
   const [view, setView] = useState<boolean>(false);
   const ref = useRef<HTMLButtonElement>(null);
   const isDesktop = useMedia(Breakpoints.xs);
-
-  useEffect(() => setView(false), [activeIndex, projectIndex]);
+  const arrowRightPressed = useKeyPress('ArrowRight');
+  const arrowLeftPressed = useKeyPress('ArrowLeft');
   useClickOutside(ref, () => setView(false));
+
+  // if any of the indexes change, turn around the card
+  useEffect(() => setView(false), [activeIndex, projectIndex]);
+
+  useEffect(() => {
+    // if user uses arrows to navigate then make sure the correct card is in focus so onEnter it turns
+    if (activeIndex === projectIndex && (arrowLeftPressed || arrowRightPressed))
+      return ref.current?.focus();
+  }, [activeIndex, projectIndex, arrowLeftPressed, arrowRightPressed]);
 
   return (
     <Card

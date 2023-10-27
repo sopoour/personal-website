@@ -19,7 +19,7 @@ body {
   color: ${theme.colors.fg.default};
   -webkit-tap-highlight-color: transparent;
   overflow-x: hidden;
-  /* min-height: 100vh; */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -53,7 +53,8 @@ a {
   outline: none;
   &:focus {
     outline: 3px solid ${theme.colors.accent.pink};
-    border-radius: 2px;
+    outline-offset: 4px;
+    border-radius: 10px;
   }
   &:focus:not(:focus-visible) {
   outline: 0;

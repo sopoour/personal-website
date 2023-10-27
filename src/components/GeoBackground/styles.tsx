@@ -1,9 +1,9 @@
 import theme from '@app/styles/theme';
 import styled from 'styled-components';
-import Geo1 from '@app/assets/geo1.svg';
-import Geo2 from '@app/assets/geo2.svg';
-import Geo3 from '@app/assets/geo3.svg';
-import Geo4 from '@app/assets/geo4.svg';
+import Geo1 from './assets/geo1.svg';
+import Geo2 from './assets/geo2.svg';
+import Geo3 from './assets/geo3.svg';
+import Geo4 from './assets/geo4.svg';
 
 export const IntroContainer = styled.div`
   background: ${theme.colors.bg.default};
