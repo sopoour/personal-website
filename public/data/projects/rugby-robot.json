@@ -1,0 +1,48 @@
+{
+  "id": "rugby-robot",
+  "title": "Mobile Robotics: Rugby Robot",
+  "description": "This is the final project hand-in of my attended course \"Advanced Robotics\" at IT University of Copenhagen. We combined image processing, LIDAR and behavior-based controlling of a mobile robot. We used as basic the Thymio II together with a Raspberry Pi, PiCamera and LIDAR.",
+  "date": "2019-11-15",
+  "links": [
+    {
+      "type": "link",
+      "id": "rugby-robot-demo",
+      "link": "https://drive.google.com/file/d/1Xk79zztPtCFkVwunY8qMNFCdwm-LavDb/view"
+    },
+    {
+      "type": "github",
+      "id": "rugby-robot-github",
+      "link": "https://github.com/sopoour/robotics/tree/master/Thymio/FinalProject"
+    }
+  ],
+  "tags": [
+    {
+      "type": "tech",
+      "label": "Python"
+    },
+    {
+      "type": "skill",
+      "label": "Embedded Programming"
+    },
+    {
+      "type": "skill",
+      "label": "Robotics"
+    },
+    {
+      "type": "tech",
+      "label": "OpenCV"
+    },
+    {
+      "type": "tool",
+      "label": "Raspberry Pi"
+    },
+    {
+      "type": "tool",
+      "label": "LIDAR"
+    },
+    {
+      "type": "tool",
+      "label": "Thymio II"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "edge-computing",
+  "title": "Edge Computing with Computer Vision for E-Scooter",
+  "description": "As part of a research group we've developed Computer Vision Edge framework to ensure the safety of E-Scooters. We've built a prototype in Azure with a VM predicting the outcome \"sidewalk\" or \"no sidewalk\" to ensure E-scooters not driving on sidewalks. You can read more in the paper.",
+  "date": "2019-06-15",
+  "links": [
+    {
+      "type": "link",
+      "id": "edge-computing-demo",
+      "link": "https://drive.google.com/file/d/1g7mkTR3SFrYWpUgMH084L_AZ-_ubGMK3/view?usp=sharing"
+    }
+  ],
+  "tags": [
+    {
+      "type": "tech",
+      "label": "Azure Cloud Services"
+    },
+    {
+      "type": "tech",
+      "label": "Azure Custom Vision"
+    },
+    {
+      "type": "tech",
+      "label": "Edge computing"
+    },
+    {
+      "type": "skill",
+      "label": "Research"
+    }
+  ]
+}
