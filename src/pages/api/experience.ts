@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { Experience } from '@app/types';
 import parseJsonFiles from '@app/utils/parseJsonFiles';
 
-export default async function getProjects(
+export default async function getExperiences(
   req: NextApiRequest,
   res: NextApiResponse<Experience[] | { error: string }>,
 ) {

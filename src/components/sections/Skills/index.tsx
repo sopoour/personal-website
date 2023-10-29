@@ -1,5 +1,5 @@
 import { FC, useEffect } from 'react';
-import Ball from './assets/ball.svg';
+
 import styled from 'styled-components';
 import Section from '@app/components/layout/Section';
 import theme from '@app/styles/theme';
@@ -12,60 +12,7 @@ import { skillTypes, skills } from './utils/data';
 import { gsap } from 'gsap';
 import { useMedia } from '@app/hooks/useMedia';
 import { Breakpoints } from '@app/styles/media';
-
-const RelativeWrapper = styled.div`
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 24px;
-  margin: 0 auto;
-`;
-
-const BallVar = styled(Ball)<{ fill: string }>`
-  circle:first-of-type {
-    fill: ${({ fill }) => fill};
-  }
-`;
-
-const BallWrapper = styled.span`
-  width: 88px;
-  height: 88px;
-  position: relative;
-  &:hover {
-    cursor: pointer;
-  }
-
-  ${Typography} {
-    position: absolute;
-    width: 88px;
-    text-align: center;
-    height: max-content;
-    font-weight: 500;
-    overflow-wrap: break-word;
-    hyphens: manual;
-    left: 0;
-    right: 0;
-    top: -15%;
-    bottom: 0;
-    margin: auto;
-  }
-`;
-
-const Column = styled.div`
-  ${flexColumn};
-  gap: 32px;
-  align-items: center;
-`;
-
-const Bucket = styled.div`
-  ${flexRow};
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 4px;
-  height: 25%;
-  max-width: 275px;
-`;
+import { BallVar, BallWrapper, Bucket, Column, Wrapper } from './styles';
 
 const Skills: FC = () => {
   const isDesktop = useMedia(Breakpoints.sm);
@@ -78,7 +25,7 @@ const Skills: FC = () => {
 
   return (
     <Section mobileTitle="Skills" id="skills">
-      <RelativeWrapper className={!isDesktop ? 'animate-scale' : ''}>
+      <Wrapper className={!isDesktop ? 'animate-scale' : ''}>
         {skillTypes.map((type) => (
           <Column key={type}>
             <Typography fontWeight={700} className="title">
@@ -106,7 +53,7 @@ const Skills: FC = () => {
             </Bucket>
           </Column>
         ))}
-      </RelativeWrapper>
+      </Wrapper>
     </Section>
   );
 };

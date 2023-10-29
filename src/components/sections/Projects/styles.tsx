@@ -5,7 +5,6 @@ import theme from '@app/styles/theme';
 import { css, styled } from 'styled-components';
 
 export const NavButton = styled.button<{ $side: 'left' | 'right' }>`
-  color: white;
   font-size: 3rem;
   position: absolute;
   display: flex;
@@ -13,10 +12,6 @@ export const NavButton = styled.button<{ $side: 'left' | 'right' }>`
   justify-content: center;
   top: 50%;
   z-index: 2;
-  cursor: pointer;
-  user-select: none;
-  background: unset;
-  border: unset;
   color: ${theme.colors.fg.default};
   transition: all 0.3s ease-in-out;
   ${({ $side }) =>
