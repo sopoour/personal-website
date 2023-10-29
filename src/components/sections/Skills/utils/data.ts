@@ -8,6 +8,7 @@ export const skills = [
 
   { type: 'tech-stack', label: 'CSS' },
   { type: 'tech-stack', label: 'GraphQL' },
+  { type: 'tech-stack', label: 'REST API' },
   { type: 'tools', label: 'Figma' },
   { type: 'libraries', label: 'MaterialUI' },
   { type: 'libraries', label: 'Radix UI' },
@@ -20,6 +21,7 @@ export const skills = [
   { type: 'tools', label: 'Vercel' },
   { type: 'libraries', label: 'GSAP' },
   { type: 'libraries', label: 'SWR' },
+  { type: 'libraries', label: 'zustand' },
   { type: 'tools', label: 'Netlify' },
   { type: 'tools', label: 'Webflow' },
   { type: 'tech-stack', label: 'Node.js' },

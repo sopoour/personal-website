@@ -5,7 +5,6 @@ import { GlobalStyle } from '@app/styles/global';
 import { ThemeProvider } from 'styled-components';
 import theme from '@app/styles/theme';
 import Head from 'next/head';
-import Sidebar from '@app/components/Sidebar';
 
 const App = ({ Component, pageProps }: AppProps) => {
   const metaDescription =
@@ -30,7 +29,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-
         <Layout>
           <Component {...pageProps} />
         </Layout>
