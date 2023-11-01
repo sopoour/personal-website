@@ -11,7 +11,7 @@ const EmailText = styled(Typography)<{ $copied: boolean }>`
   width: max-content;
   margin: 0 auto;
   text-decoration: none;
-
+  cursor: pointer;
   ${slowTransition};
   &::after {
     content: '${({ $copied }) => ($copied ? 'Copied!' : 'Click to copy')}';
