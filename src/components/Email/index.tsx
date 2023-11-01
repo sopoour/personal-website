@@ -3,12 +3,15 @@ import Typography from '../Typography/Typography';
 import styled from 'styled-components';
 import theme from '@app/styles/theme';
 import { slowTransition } from '@app/styles/mixins';
+import copy from 'copy-to-clipboard';
 
 const EmailText = styled(Typography)<{ $copied: boolean }>`
   position: relative;
   font-weight: 500;
   width: max-content;
   margin: 0 auto;
+  text-decoration: none;
+
   ${slowTransition};
   &::after {
     content: '${({ $copied }) => ($copied ? 'Copied!' : 'Click to copy')}';
@@ -43,12 +46,8 @@ type Props = {
 
 const Email: FC<Props> = ({ fontSize }) => {
   const [copied, setCopied] = useState<boolean>(false);
-  const copy = (text: string) => {
-    if (!navigator) {
-      return;
-    }
-
-    navigator.clipboard.writeText(text);
+  const copyEmail = (text: string) => {
+    copy(text);
     setCopied(true);
   };
 
@@ -56,11 +55,11 @@ const Email: FC<Props> = ({ fontSize }) => {
     <EmailText
       $textalign="center"
       fontSize={fontSize ?? '12px'}
-      style={{ marginTop: '-10px' }}
-      as="button"
-      onClick={() => copy('sophia.auer@gmail.com')}
+      as="a"
+      onClick={() => copyEmail('sophia.auer@gmail.com')}
       $copied={copied}
       onMouseLeave={() => setCopied(false)}
+      aria-label="Copy email address"
     >
       sophia.auer@gmail.com
     </EmailText>
