@@ -13,16 +13,16 @@ const EmailText = styled(Typography)<{ $copied: boolean }>`
   &::after {
     content: '${({ $copied }) => ($copied ? 'Copied!' : 'Click to copy')}';
     position: absolute;
-    bottom: -300%;
+    bottom: -200%;
     left: calc(50% - 50px);
     display: block;
     opacity: 0;
     font-weight: 500;
-    font-size: 12px;
-    width: 104px;
+    font-size: 10px;
+    width: 95px;
     height: max-content;
     border-radius: 4px;
-    padding: 4px 12px;
+    padding: 2px 6px;
     border: 1px solid ${theme.colors.fg.inactive};
     color: ${theme.colors.fg.inactive};
     ${slowTransition};
@@ -32,7 +32,7 @@ const EmailText = styled(Typography)<{ $copied: boolean }>`
     transform: scale(1.1);
     &::after {
       opacity: 1;
-      bottom: -200%;
+      bottom: -150%;
     }
   }
 `;
@@ -60,6 +60,7 @@ const Email: FC<Props> = ({ fontSize }) => {
       as="button"
       onClick={() => copy('sophia.auer@gmail.com')}
       $copied={copied}
+      onMouseLeave={() => setCopied(false)}
     >
       sophia.auer@gmail.com
     </EmailText>
