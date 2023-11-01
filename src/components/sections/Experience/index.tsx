@@ -4,19 +4,11 @@ import Typography from '../../Typography/Typography';
 import theme from '@app/styles/theme';
 import useSWR from 'swr';
 import { Experience } from '@app/types';
-import { IoIosArrowForward } from 'react-icons/io';
 import { fetcher } from '@app/hooks/fetch/useFetch';
 import Tags from '../../Tags';
 import { toMonthAndYear } from '@app/utils/formatDate';
 import LinkContainer from '../../LinkContainer';
-import {
-  Container,
-  DownloadButton,
-  ExperienceContainer,
-  Header,
-  TextWrapper,
-  TimeWrapper,
-} from './styles';
+import { Container, ExperienceContainer, Header, TextWrapper, TimeWrapper } from './styles';
 import LinkButton from '@app/components/LinkButton';
 
 const Experience: FC = () => {

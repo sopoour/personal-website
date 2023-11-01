@@ -1,12 +1,9 @@
 import { FC, useEffect } from 'react';
-
-import styled from 'styled-components';
 import Section from '@app/components/layout/Section';
 import theme from '@app/styles/theme';
 import getAccentColour from '@app/utils/getAccentColour';
 import Typography from '@app/components/Typography/Typography';
 import { robotoMono } from '@app/styles/fonts';
-import { flexColumn, flexRow } from '@app/styles/mixins';
 import runAnimations from './utils/runAnimations';
 import { skillTypes, skills } from './utils/data';
 import { gsap } from 'gsap';
