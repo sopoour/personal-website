@@ -21,6 +21,7 @@ export const IntroContainer = styled.div`
   > svg {
     position: fixed;
     flex-shrink: 0;
+    opacity: 0;
   }
 `;
 
