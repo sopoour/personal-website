@@ -17,7 +17,8 @@ export const BallVar = styled(Ball)<{ fill: string }>`
   }
 `;
 
-export const BallWrapper = styled.span`
+export const BallWrapper = styled.li`
+  list-style: none;
   width: 88px;
   height: 88px;
   position: relative;
@@ -35,7 +36,7 @@ export const BallWrapper = styled.span`
     hyphens: manual;
     left: 0;
     right: 0;
-    top: -15%;
+    top: -10%;
     bottom: 0;
     margin: auto;
   }
@@ -47,11 +48,13 @@ export const Column = styled.div`
   align-items: center;
 `;
 
-export const Bucket = styled.div`
+export const Bucket = styled.ul`
   ${flexRow};
   flex-wrap: wrap;
   justify-content: center;
   gap: 4px;
   height: 25%;
   max-width: 275px;
+  margin: 0;
+  padding: 0;
 `;

@@ -4,7 +4,7 @@ import { flexColumn, flexRow } from '@app/styles/mixins';
 import theme from '@app/styles/theme';
 import { styled } from 'styled-components';
 
-export const RobotMono = styled(Typography)`
+export const RobotMono = styled.li`
   font-family: ${robotoMono.style.fontFamily};
 `;
 
@@ -47,7 +47,7 @@ export const Box = styled.div<{ $color: string }>`
   margin: 0 auto;
   padding: 32px 16px;
 
-  p,
+  h3,
   li {
     color: ${theme.colors.fg.contrast} !important;
   }

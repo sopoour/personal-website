@@ -22,9 +22,12 @@ const Tag = styled(Typography)`
   border-radius: 100px;
   font-weight: 700;
   font-family: ${robotoMono.style.fontFamily};
+  list-style: none;
 `;
 
-const Container = styled.span`
+const Container = styled.ul`
+  margin: 0;
+  padding: 0;
   ${flexRow};
   gap: 8px;
   flex-wrap: wrap;
@@ -37,9 +40,9 @@ type Props = {
 };
 
 const Tags: FC<Props> = ({ tags, className }) => (
-  <Container className={className}>
+  <Container className={className} aria-label="Skill tags">
     {tags.map((tag, index) => (
-      <Tag key={tag.label + index} style={getColourTheme(tag.type)} fontSize="12px">
+      <Tag key={tag.label + index} style={getColourTheme(tag.type)} fontSize="12px" as="li">
         {tag.label}
       </Tag>
     ))}

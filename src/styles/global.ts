@@ -150,4 +150,20 @@ fieldset {
 textarea {
   resize: vertical;
 }
+
+/* 
+* utility classes 
+*/
+
+// visually hide any element accesibly (e.g. you need an h1 element on a page but don't wanna visually show it)
+
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
 `;

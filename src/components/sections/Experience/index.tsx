@@ -30,7 +30,7 @@ const Experience: FC = () => {
               <ExperienceContainer>
                 <TextWrapper>
                   <Header>
-                    <Typography fontWeight={700}>
+                    <Typography fontWeight={700} as="h3">
                       {experience.title} @ {experience.companyName}
                     </Typography>
                     <LinkContainer
@@ -38,7 +38,6 @@ const Experience: FC = () => {
                       size="small"
                     />
                   </Header>
-
                   <Typography color={theme.colors.bg.soft} fontSize="14px">
                     {experience.description}
                   </Typography>

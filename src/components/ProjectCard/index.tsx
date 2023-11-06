@@ -57,6 +57,7 @@ const ProjectCard: FC<Props> = ({ project, activeIndex, projectIndex }) => {
       onClick={() => isDesktop && setView((prev) => !prev)}
       ref={ref}
       aria-label={`${project.id}-project-card`}
+      tabIndex={activeIndex === projectIndex ? 0 : -1}
     >
       <DetailsContainer $projectId={project.id}>
         <DetailHeader>
