@@ -50,7 +50,12 @@ type Props = {
 
 const Section: FC<Props> = ({ children, className, $maxWidth, mobileTitle, ...props }) => {
   return (
-    <SectionContainer $maxWidth={$maxWidth} className={className} {...props}>
+    <SectionContainer
+      $maxWidth={$maxWidth}
+      className={className}
+      {...props}
+      aria-label={mobileTitle}
+    >
       <MobileHeader as="h2">{mobileTitle}</MobileHeader>
       {children}
     </SectionContainer>

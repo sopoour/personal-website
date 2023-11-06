@@ -25,18 +25,18 @@ const Skills: FC = () => {
       <Wrapper className={!isDesktop ? 'animate-scale' : ''}>
         {skillTypes.map((type) => (
           <Column key={type}>
-            <Typography fontWeight={700} className="title">
+            <Typography fontWeight={700} className="title" as="h3">
               {type
                 .split('-')
                 .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
                 .join(' ')}
             </Typography>
-            <Bucket>
+            <Bucket aria-label={'skill-bucket-' + type}>
               {skills
                 .filter((skill) => skill.type === type)
                 .map((skill, index) => (
-                  <BallWrapper key={skill.label} className="ball">
-                    <BallVar fill={getAccentColour(index)} />
+                  <BallWrapper key={skill.label} className="ball" aria-label={skill.label}>
+                    <BallVar fill={getAccentColour(index)} aria-hidden focusable={false} />
                     <Typography
                       fontSize="12px"
                       type={robotoMono.style.fontFamily}

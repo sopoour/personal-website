@@ -129,10 +129,14 @@ const About: FC = () => {
         <BoxWrapper id="box-wrapper">
           {aboutMeDetails.map((box, index) => (
             <Box key={box.id} $color={getAccentColour(index)} className={'box'}>
-              <Typography fontWeight={700}>{box.title}</Typography>
-              <BulletWrapper>
+              <Typography fontWeight={700} as="h3">
+                {box.title}
+              </Typography>
+              <BulletWrapper
+                aria-label={box.title.replace('...', '').replace(' ', '-').toLowerCase() + '-list'}
+              >
                 {box.bullets.map((bullet) => (
-                  <RobotMono as="li" key={bullet}>
+                  <RobotMono as="li" key={bullet} aria-label={bullet}>
                     {bullet}
                   </RobotMono>
                 ))}

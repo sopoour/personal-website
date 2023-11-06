@@ -96,15 +96,11 @@ const Header: React.FC = () => {
 
   return (
     <HeaderWrapper aria-label="Mobile header" id="mobile-header">
-      <BurgerMenu
-        onClick={setOpen}
-        id="burger-menu"
-        aria-label="Burger Menu button"
-        aria-description="Burger Menu that is only visble on mobile"
-      >
+      <BurgerMenu onClick={setOpen} id="burger-menu" aria-expanded={false}>
         <Line $isActive={open} />
         <Line $isActive={open} />
         <Line $isActive={open} />
+        <span className="sr-only">Menu</span>
       </BurgerMenu>
     </HeaderWrapper>
   );
