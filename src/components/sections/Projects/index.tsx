@@ -27,9 +27,13 @@ const Projects: FC = () => {
     <ProjectSection id="projects" $maxWidth={0} mobileTitle="Projects">
       <>
         <Carousel className={'animate-scale'} aria-label="carousel">
-          <NavButton $side="left" onClick={handlePrev}>
+          <NavButton $side="left" onClick={handlePrev} tabIndex={0}>
             <IoIosArrowBack focusable="false" aria-hidden="true" />
             <span className="sr-only">Left Navigation</span>
+          </NavButton>
+          <NavButton $side="right" onClick={handleNext} tabIndex={0}>
+            <IoIosArrowForward focusable="false" aria-hidden="true" />
+            <span className="sr-only">Right Navigation</span>
           </NavButton>
           {data &&
             data?.map((project, index) => (
@@ -40,10 +44,6 @@ const Projects: FC = () => {
                 projectIndex={index}
               />
             ))}
-          <NavButton $side="right" onClick={handleNext}>
-            <IoIosArrowForward focusable="false" aria-hidden="true" />
-            <span className="sr-only">Right Navigation</span>
-          </NavButton>
         </Carousel>
         <LinkButton label="View more on Github" link="https://github.com/sopoour" />
       </>
