@@ -1,7 +1,6 @@
 import { FC, useState } from 'react';
 import Typography from '../Typography/Typography';
 import styled from 'styled-components';
-import theme from '@app/styles/theme';
 import { slowTransition } from '@app/styles/mixins';
 import copy from 'copy-to-clipboard';
 
@@ -26,12 +25,12 @@ const EmailText = styled(Typography)<{ $copied: boolean }>`
     height: max-content;
     border-radius: 4px;
     padding: 2px 6px;
-    border: 1px solid ${theme.colors.fg.inactive};
-    color: ${theme.colors.fg.inactive};
+    border: 1px solid ${({ theme }) => theme.colors.fg.defaultBlur};
+    color: ${({ theme }) => theme.colors.fg.defaultBlur};
     ${slowTransition};
   }
   &:hover {
-    color: ${theme.colors.accent.green};
+    color: ${({ theme }) => theme.colors.accent.green};
     transform: scale(1.1);
     &::after {
       opacity: 1;

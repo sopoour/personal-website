@@ -1,7 +1,6 @@
 import Section from '@app/components/layout/Section';
 import { Breakpoints } from '@app/styles/media';
 import { flexRow, removeScrollBar } from '@app/styles/mixins';
-import theme from '@app/styles/theme';
 import { css, styled } from 'styled-components';
 
 export const NavButton = styled.button<{ $side: 'left' | 'right' }>`
@@ -12,7 +11,7 @@ export const NavButton = styled.button<{ $side: 'left' | 'right' }>`
   justify-content: center;
   top: 50%;
   z-index: 2;
-  color: ${theme.colors.fg.default};
+  color: ${({ theme }) => theme.colors.fg.default};
   transition: all 0.3s ease-in-out;
   ${({ $side }) =>
     $side === 'left'
@@ -26,7 +25,7 @@ export const NavButton = styled.button<{ $side: 'left' | 'right' }>`
         `};
 
   &:hover {
-    color: ${theme.colors.accent.pink};
+    color: ${({ theme }) => theme.colors.accent.pink};
   }
 `;
 

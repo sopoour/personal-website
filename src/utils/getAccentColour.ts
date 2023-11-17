@@ -1,10 +1,6 @@
-import theme from '@app/styles/theme';
+import { AccentColours } from '@app/styles/theme';
 
-const titleColours = [
-  theme.colors.accent.pink,
-  theme.colors.accent.green,
-  theme.colors.accent.orange,
-];
+const titleColours = [AccentColours.pink, AccentColours.green, AccentColours.orange];
 
 const getAccentColour = (index: number) => titleColours[index % 3];
 

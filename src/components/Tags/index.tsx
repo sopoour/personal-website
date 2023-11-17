@@ -2,18 +2,18 @@ import { FC } from 'react';
 import styled from 'styled-components';
 import Typography from '../Typography/Typography';
 import { Tag, TagType } from '@app/types';
-import theme from '@app/styles/theme';
 import { robotoMono } from '@app/styles/fonts';
 import { flexRow } from '@app/styles/mixins';
+import { AccentColours } from '@app/styles/theme';
 
 const getColourTheme = (type: TagType) => {
   switch (type) {
     case 'tech':
-      return { color: theme.colors.accent.green, backgroundColor: theme.colors.accent.greenSoft };
+      return { color: AccentColours.green, backgroundColor: AccentColours.greenSoft };
     case 'tool':
-      return { color: theme.colors.accent.pink, backgroundColor: theme.colors.accent.pinkSoft };
+      return { color: AccentColours.pink, backgroundColor: AccentColours.pinkSoft };
     case 'skill':
-      return { color: theme.colors.accent.orange, backgroundColor: theme.colors.accent.orangeSoft };
+      return { color: AccentColours.orange, backgroundColor: AccentColours.orangeSoft };
   }
 };
 
