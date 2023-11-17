@@ -1,7 +1,7 @@
-import theme from '@app/styles/theme';
 import { css, styled } from 'styled-components';
 import Image from 'next/image';
 import { flexColumn } from '@app/styles/mixins';
+import { Within } from '@theme-toggles/react';
 
 export const Backdrop = styled.div<{ $open?: boolean }>`
   position: fixed;
@@ -38,7 +38,7 @@ export const Content = styled.header<{ $open?: boolean }>`
   top: 0;
   bottom: 0;
   height: 100vh;
-  background: ${theme.colors.bg.default};
+  background: ${({ theme }) => theme.colors.bg.default};
   z-index: 10;
   transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;
@@ -59,8 +59,7 @@ export const Content = styled.header<{ $open?: boolean }>`
       -webkit-transform: translate3d(0, 0, 0);
       opacity: 1;
     `}
-  ${() =>
-    theme.media('md')`
+  ${({ theme }) => theme.media('md')`
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
     opacity: 1; 

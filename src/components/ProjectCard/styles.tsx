@@ -1,5 +1,4 @@
 import { flexColumn, flexRow, slowTransition } from '@app/styles/mixins';
-import theme from '@app/styles/theme';
 import { css, styled } from 'styled-components';
 import LinkContainer from '../LinkContainer';
 import { Breakpoints } from '@app/styles/media';
@@ -20,7 +19,7 @@ export const DetailsContainer = styled.div<{ $projectId: string }>`
   position: relative;
   z-index: 2;
 
-  ${theme.media('xs')`
+  ${({ theme }) => theme.media('xs')`
   box-shadow: 0 60px 50px -60px ${theme.colors.bg.soft};
   padding: 32px;
   width: 100%;
@@ -40,7 +39,7 @@ export const DetailHeader = styled.div`
     font-size: 14px;
   }
 
-  ${theme.media('xs')`
+  ${({ theme }) => theme.media('xs')`
   ${flexRow};
   gap: 16px;
     > p {
@@ -60,7 +59,7 @@ export const ProjectThumbnail = styled(Image)`
   height: 100%;
   border-radius: 10px;
 
-  ${theme.media('xs')`
+  ${({ theme }) => theme.media('xs')`
 box-shadow: 0 60px 50px -60px ${theme.colors.bg.soft};
 display: block;
   `}
@@ -93,8 +92,8 @@ const pseudoEffects = css`
     border-radius: 4px;
     padding: 4px 12px;
     left: calc(50% - 55px);
-    background-color: ${theme.colors.bg.soft};
-    color: ${theme.colors.bg.default};
+    background-color: ${({ theme }) => theme.colors.bg.soft};
+    color: ${({ theme }) => theme.colors.bg.default};
   }
 `;
 
@@ -154,7 +153,7 @@ export const Card = styled.button<{
   ${pseudoEffects};
 
   &:focus {
-    outline: 3px solid ${theme.colors.accent.pink};
+    outline: 3px solid ${({ theme }) => theme.colors.accent.pink};
     border-radius: 2px;
   }
   &:focus:not(:focus-visible) {
@@ -186,7 +185,7 @@ export const Card = styled.button<{
     }
   }
 
-  ${theme.media('xs')`
+  ${({ theme }) => theme.media('xs')`
     &:hover {
       ${slowTransition};
       img {
@@ -212,12 +211,12 @@ export const Links = styled(LinkContainer)`
 
   @media only screen and (max-width: ${Breakpoints.xs}px) {
     a > svg > path {
-      fill: ${theme.colors.fg.default};
+      fill: ${({ theme }) => theme.colors.fg.default};
     }
 
     > a:hover {
       > svg > path {
-        fill: ${theme.colors.bg.soft};
+        fill: ${({ theme }) => theme.colors.bg.soft};
       }
     }
   }

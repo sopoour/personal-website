@@ -1,14 +1,20 @@
 import { FC, Fragment } from 'react';
 import Section from '../../layout/Section';
 import Typography from '../../Typography/Typography';
-import theme from '@app/styles/theme';
 import useSWR from 'swr';
 import { Experience } from '@app/types';
 import { fetcher } from '@app/hooks/fetch/useFetch';
 import Tags from '../../Tags';
 import { toMonthAndYear } from '@app/utils/formatDate';
 import LinkContainer from '../../LinkContainer';
-import { Container, ExperienceContainer, Header, TextWrapper, TimeWrapper } from './styles';
+import {
+  Container,
+  Description,
+  ExperienceContainer,
+  Header,
+  TextWrapper,
+  TimeWrapper,
+} from './styles';
 import LinkButton from '@app/components/LinkButton';
 
 const Experience: FC = () => {
@@ -38,9 +44,7 @@ const Experience: FC = () => {
                       size="small"
                     />
                   </Header>
-                  <Typography color={theme.colors.bg.soft} fontSize="14px">
-                    {experience.description}
-                  </Typography>
+                  <Description fontSize="14px">{experience.description}</Description>
                 </TextWrapper>
                 <Tags tags={experience.tags} />
               </ExperienceContainer>

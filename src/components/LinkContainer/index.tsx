@@ -1,7 +1,6 @@
 import { flexRow } from '@app/styles/mixins';
 import { FC, useMemo } from 'react';
 import { css, styled } from 'styled-components';
-import theme from '@app/styles/theme';
 import Link from 'next/link';
 import { IconLink } from '@app/types';
 import { FaEnvelope, FaExternalLinkAlt, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
@@ -30,13 +29,13 @@ const Container = styled.span<{ hoverColour?: string; size: Size }>`
     height: ${({ size }) => getSize(size)};
     transition: all 0.3s ease-in-out;
     path {
-      fill: ${theme.colors.bg.soft};
+      fill: ${({ theme }) => theme.colors.bg.soft};
     }
     &:hover {
       cursor: pointer;
       transform: scale(1.1);
       path {
-        fill: ${({ hoverColour }) => hoverColour ?? theme.colors.accent.green};
+        fill: ${({ hoverColour, theme }) => hoverColour ?? theme.colors.accent.green};
       }
     }
 
@@ -47,7 +46,7 @@ const Container = styled.span<{ hoverColour?: string; size: Size }>`
 
         &:hover {
           path {
-            fill: ${theme.colors.fg.default};
+            fill: ${({ theme }) => theme.colors.fg.default};
             opacity: 1;
           }
         }

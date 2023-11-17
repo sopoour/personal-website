@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import theme from './theme';
 import { montserrat } from './fonts';
 
 export const GlobalStyle = createGlobalStyle`
@@ -15,8 +14,8 @@ html {
 
 body {
   margin: 0;
-  background-color: ${theme.colors.bg.default};
-  color: ${theme.colors.fg.default};
+  background-color: ${({ theme }) => theme.colors.bg.default};
+  color: ${({ theme }) => theme.colors.fg.default};
   -webkit-tap-highlight-color: transparent;
   overflow-x: hidden;
   min-height: 100vh;
@@ -52,7 +51,7 @@ a {
   font-size: inherit;
   outline: none;
   &:focus {
-    outline: 3px solid ${theme.colors.accent.pink};
+    outline: 3px solid ${({ theme }) => theme.colors.accent.pink};
     outline-offset: 4px;
     border-radius: 10px;
   }
@@ -69,14 +68,14 @@ button {
 }
 
 a {
-  color: ${theme.colors.fg.default};
+  color: ${({ theme }) => theme.colors.fg.default};
 }
 
 p {
   font-size: 16px;
   line-height: 1.25;
   :focus {
-    outline: 3px solid ${theme.colors.accent.pink}
+    outline: 3px solid ${({ theme }) => theme.colors.accent.pink}
   }
 }
 

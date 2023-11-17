@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
 import Typography from '../../Typography/Typography';
 import Section from '../../layout/Section';
-import theme from '@app/styles/theme';
+import { AccentColours } from '@app/styles/theme';
 import getAccentColour from '@app/utils/getAccentColour';
 
 import { gsap } from 'gsap';
@@ -101,15 +101,15 @@ const About: FC = () => {
         <TextWrapper id={'text-wrapper'}>
           <Typography>
             I&apos;m passionate about building{' '}
-            <RobotMono as="span" color={theme.colors.accent.pink}>
+            <RobotMono as="span" color={AccentColours.pink}>
               accessible
             </RobotMono>
             ,{' '}
-            <RobotMono as="span" color={theme.colors.accent.green}>
+            <RobotMono as="span" color={AccentColours.green}>
               creative
             </RobotMono>{' '}
             and{' '}
-            <RobotMono as="span" color={theme.colors.accent.orange}>
+            <RobotMono as="span" color={AccentColours.orange}>
               inclusive
             </RobotMono>{' '}
             products that have a positive impact on society and our environment. User experience and

@@ -39,6 +39,7 @@ export const BallWrapper = styled.li`
     top: -10%;
     bottom: 0;
     margin: auto;
+    color: ${({ theme }) => theme.colors.fg.contrast};
   }
 `;
 

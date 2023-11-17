@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import theme from '@app/styles/theme';
 import { robotoMono } from '@app/styles/fonts';
 import { Link } from 'react-scroll';
 
@@ -10,7 +9,7 @@ const Item = styled(Link)`
   transition: all 0.5s;
   font-size: 14px;
   font-family: ${robotoMono.style.fontFamily};
-  color: ${theme.colors.fg.inactive};
+  color: ${({ theme }) => theme.colors.fg.defaultBlur};
   &::before {
     content: '· ';
     position: relative;
@@ -24,7 +23,7 @@ const Item = styled(Link)`
 
   &:hover,
   &.active {
-    color: ${theme.colors.accent.green};
+    color: ${({ theme }) => theme.colors.accent.green};
     transform: translateX(20px);
     &::before {
       content: '· ';
@@ -33,7 +32,7 @@ const Item = styled(Link)`
     }
   }
 
-  ${theme.media('md')`
+  ${({ theme }) => theme.media('md')`
     font-size: 16px;
   `}
 `;

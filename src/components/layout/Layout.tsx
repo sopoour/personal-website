@@ -3,7 +3,6 @@ import React, { FC, ReactNode } from 'react';
 import { styled } from 'styled-components';
 import Header from './Header';
 import Sidebar from '../Sidebar';
-import theme from '@app/styles/theme';
 import Intro from '../Intro';
 import useGlobalGsapAnimation from '@app/hooks/useGlobalGsapAnimation';
 import { flexColumn } from '@app/styles/mixins';
@@ -13,7 +12,7 @@ const Root = styled.div`
   ${flexColumn}
   width: 100%;
   position: relative;
-  background-color: ${theme.colors.bg.default};
+  background-color: ${({ theme }) => theme.colors.bg.default};
   z-index: 1;
   & > :nth-child(2) {
     order: 3;
@@ -23,7 +22,7 @@ const Root = styled.div`
     order: 2;
   }
 
-  ${theme.media('md')`
+  ${({ theme }) => theme.media('md')`
    flex-direction: row;
 
     & > :nth-child(2) {
@@ -44,7 +43,7 @@ const MainLayout = styled.main`
   width: 100%;
   margin: 0 auto;
 
-  ${theme.media('md')`
+  ${({ theme }) => theme.media('md')`
    position: relative;
     width: calc(100% - 300px);
     margin: 0;

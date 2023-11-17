@@ -2,7 +2,6 @@ import { flexColumn } from '@app/styles/mixins';
 import { styled } from 'styled-components';
 import Typography from '../Typography/Typography';
 import { robotoMono } from '@app/styles/fonts';
-import theme from '@app/styles/theme';
 import { Breakpoints } from '@app/styles/media';
 
 export const Container = styled.div`
@@ -16,7 +15,7 @@ export const SubTitle = styled(Typography)`
   font-family: ${robotoMono.style.fontFamily};
   font-size: 20px;
 
-  ${theme.media('sm')`
+  ${({ theme }) => theme.media('sm')`
     font-size: 24px;
   `}
 `;
@@ -29,7 +28,7 @@ export const RotatingTitle = styled(SubTitle)`
   text-align: center;
 
   @media only screen and (max-width: ${Breakpoints.xs}px) {
-    color: ${theme.colors.bg.soft};
+    color: ${({ theme }) => theme.colors.bg.soft};
   }
 
   @keyframes rotateText {

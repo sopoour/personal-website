@@ -3,7 +3,6 @@ import { FC, HTMLAttributes, ReactElement } from 'react';
 import styled from 'styled-components';
 import Typography from '../Typography/Typography';
 import { HEADER_HEIGHT } from './Header';
-import theme from '@app/styles/theme';
 
 const maxContainerPadding = { mobile: 20, desktop: 24 };
 
@@ -36,7 +35,7 @@ const MobileHeader = styled(Typography)`
   min-height: ${HEADER_HEIGHT}px;
   pointer-events: none;
 
-  ${theme.media('md')`
+  ${({ theme }) => theme.media('md')`
     display: none;
   `}
 `;

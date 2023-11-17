@@ -1,4 +1,3 @@
-import theme from '@app/styles/theme';
 import React, { useEffect } from 'react';
 import { css, styled } from 'styled-components';
 import { gsap } from 'gsap';
@@ -23,10 +22,10 @@ const HeaderWrapper = styled.div`
   opacity: 1;
   transition: all 300ms ease-in-out;
   transform: none;
-  background-color: ${theme.colors.bg.defaultBlur};
-  backdrop-filter: ${theme.filters.backdrop};
+  background-color: ${({ theme }) => theme.colors.bg.defaultBlur};
+  backdrop-filter: ${({ theme }) => theme.filters.backdrop};
 
-  ${theme.media('md')`
+  ${({ theme }) => theme.media('md')`
     transform: translateY(-100%);
     opacity: 0;
   `}
@@ -35,7 +34,7 @@ const HeaderWrapper = styled.div`
 const Line = styled.span<{ $isActive: boolean }>`
   width: 18px;
   height: 2px;
-  background-color: ${theme.colors.fg.default};
+  background-color: ${({ theme }) => theme.colors.fg.default};
   display: block;
   margin: 0 auto;
   -webkit-transition: all 0.3s ease-in-out;

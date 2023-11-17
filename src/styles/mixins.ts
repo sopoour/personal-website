@@ -1,5 +1,4 @@
 import { css, keyframes } from 'styled-components';
-import theme from './theme';
 
 export const removeScrollBar = css`
   &::-webkit-scrollbar {
@@ -28,14 +27,14 @@ export const flexColumn = css`
 
 export const mobileOnly = css`
   display: block;
-  ${theme.media('sm')`
+  ${({ theme }) => theme.media('sm')`
     display: none;
   `}
 `;
 
 export const desktopOnly = css`
   display: none;
-  ${theme.media('sm')`
+  ${({ theme }) => theme.media('sm')`
     display: initial;
   `}
 `;
