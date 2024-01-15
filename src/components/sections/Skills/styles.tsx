@@ -45,7 +45,6 @@ export const Column = styled.div`
   ${flexColumn};
   gap: 32px;
   align-items: center;
-  justify-content: flex-start;
 `;
 
 export const Bucket = styled.ul`
