@@ -6,6 +6,7 @@ import Typography from '@app/components/Typography/Typography';
 export const Wrapper = styled.div`
   ${flexRow};
   flex-wrap: wrap;
+  align-items: flex-start !important;
   justify-content: space-evenly;
   gap: 24px;
   margin: 0 auto;
@@ -46,6 +47,7 @@ export const Column = styled.div`
   ${flexColumn};
   gap: 32px;
   align-items: center;
+  justify-content: flex-start;
 `;
 
 export const Bucket = styled.ul`

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate-project": "node src/scripts/generate-project.js"
+    "generate-project": "node src/scripts/generate-project.js",
+    "generate-experience": "node src/scripts/generate-experience.js"
   },
   "dependencies": {
     "@svgr/webpack": "8.1.0",

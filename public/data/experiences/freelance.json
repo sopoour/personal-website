@@ -1,0 +1,78 @@
+{
+  "date": {
+    "startDate": "2023-09-10",
+    "endDate": "",
+    "current": true
+  },
+  "id": "freelance",
+  "title": "Frontend Freelancer",
+  "companyLink": "https://www.sophiaauer.me/",
+  "description": "I'm passionate about building simple solutions either with no-code platforms like Webflow or from scratch in Next.js, React and Typescript (or Vue.js and Nuxt.js) while using CMS like Contentful to ensure control over the content by the client. I make sure to document all the development process to ensure high transparency for the client. Hit me up if you're in need of a new website or more complex web solutions. I have also experience in working with Figma and proficient in providing Design support as well.",
+  "location": "Remote",
+  "tags": [
+    {
+      "type": "tech",
+      "label": "Next.js"
+    },
+    {
+      "type": "tech",
+      "label": "Typescript"
+    },
+    {
+      "type": "tech",
+      "label": "Javascript"
+    },
+    {
+      "type": "tech",
+      "label": "CSS"
+    },
+    {
+      "type": "tool",
+      "label": "Contentful"
+    },
+    {
+      "type": "tool",
+      "label": "Webflow"
+    },
+    {
+      "type": "tech",
+      "label": "GraphQL"
+    },
+    {
+      "type": "tech",
+      "label": "REST API"
+    },
+    {
+      "type": "tech",
+      "label": "Node.js"
+    },
+    {
+      "type": "tech",
+      "label": "Vue.js"
+    },
+    {
+      "type": "tech",
+      "label": "Nuxt.js"
+    },
+    {
+      "type": "tool",
+      "label": "Figma"
+    },
+    {
+      "type": "skill",
+      "label": "Frontend"
+    },
+    {
+      "type": "skill",
+      "label": "Product Management"
+    },
+    {
+      "type": "skill",
+      "label": "Design"
+    },
+    {
+      "type": "skill",
+      "label": "CMS Management"
+    }
+  ]
+}
