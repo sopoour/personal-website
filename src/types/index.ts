@@ -26,7 +26,7 @@ export type Experience = {
   id: string;
   title: string;
   description: string;
-  companyName: string;
+  companyName?: string;
   companyLink: string;
   date: {
     current: boolean;

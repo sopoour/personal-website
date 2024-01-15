@@ -2,16 +2,16 @@ export const skillTypes = ['tech-stack', 'libraries', 'tools'];
 
 export const skills = [
   { type: 'tech-stack', label: 'Next.js' },
-  { type: 'tech-stack', label: 'React' },
+  { type: 'tech-stack', label: 'React.js' },
   { type: 'tech-stack', label: 'Typescript' },
   { type: 'tools', label: 'Git/Github' },
-
   { type: 'tech-stack', label: 'CSS' },
   { type: 'tech-stack', label: 'GraphQL' },
   { type: 'tech-stack', label: 'REST API' },
   { type: 'tools', label: 'Figma' },
   { type: 'libraries', label: 'MaterialUI' },
   { type: 'libraries', label: 'Radix UI' },
+  { type: 'libraries', label: 'Tailwind' },
   { type: 'libraries', label: 'styled-components' },
   { type: 'libraries', label: 'Framer Motion' },
   { type: 'tools', label: 'Prisma' },
@@ -26,4 +26,7 @@ export const skills = [
   { type: 'tools', label: 'Webflow' },
   { type: 'tech-stack', label: 'Node.js' },
   { type: 'tech-stack', label: 'Python' },
+  { type: 'tech-stack', label: 'Vue.js' },
+  { type: 'tech-stack', label: 'Nuxt.js' },
+  { type: 'tools', label: 'Prismic' },
 ];
