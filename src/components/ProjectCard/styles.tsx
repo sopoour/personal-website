@@ -4,6 +4,8 @@ import LinkContainer from '../LinkContainer';
 import { Breakpoints } from '@app/styles/media';
 import Image from 'next/image';
 import Tags from '../Tags';
+import Typography from '../Typography/Typography';
+import { darkTheme } from '@app/styles/theme';
 
 export const DetailsContainer = styled.div<{ $projectId: string }>`
   ${flexColumn};
@@ -19,6 +21,13 @@ export const DetailsContainer = styled.div<{ $projectId: string }>`
   position: relative;
   z-index: 2;
 
+  ${Typography} {
+    color: ${darkTheme.colors.fg.default};
+  }
+
+  path {
+    fill: ${darkTheme.colors.fg.default} !important;
+  }
   ${({ theme }) => theme.media('xs')`
   box-shadow: 0 60px 50px -60px ${theme.colors.bg.soft};
   padding: 32px;
@@ -27,7 +36,7 @@ export const DetailsContainer = styled.div<{ $projectId: string }>`
   ${slowTransition};
   background-color: #0b0e2b;
   background-image: none;
-  `}
+  `};
 `;
 
 export const DetailHeader = styled.div`

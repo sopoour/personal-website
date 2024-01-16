@@ -48,7 +48,7 @@ export const Box = styled.div<{ $color: string }>`
 
   h3,
   li {
-    color: ${({ theme }) => theme.colors.fg.contrast} !important;
+    color: ${({ theme }) => theme.colors.bg.contrast} !important;
   }
 
   ${({ theme }) => theme.media('sm')`
@@ -75,7 +75,7 @@ export const BulletWrapper = styled.ul`
       width: 10px;
       height: 10px;
       transform: rotate(-45deg);
-      border: 1.5px solid ${({ theme }) => theme.colors.fg.contrast};
+      border: 1.5px solid ${({ theme }) => theme.colors.bg.contrast};
       border-radius: 2px;
     }
   }

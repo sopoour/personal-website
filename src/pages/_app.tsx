@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AppProps } from 'next/app';
 import Layout from '@app/components/layout/Layout';
 import { GlobalStyle } from '@app/styles/global';
@@ -8,11 +8,21 @@ import { darkTheme, lightTheme } from '@app/styles/theme';
 import useThemeSwitch from '@app/hooks/useThemeSwitch';
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const { theme } = useThemeSwitch((state) => state);
+  const { theme, setSpecificTheme } = useThemeSwitch((state) => state);
   const metaDescription =
     'Sophia Auer is a Frontend Developer who builds accessible, creative and inclusive products for the web.';
   const metaTitle = 'Sophia Auer';
   const metaImage = 'https://sophia-auer.vercel.app/og.png';
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (mediaQuery) {
+      setSpecificTheme('dark');
+    } else {
+      setSpecificTheme('light');
+    }
+  }, []);
+
   return (
     <>
       <Head>

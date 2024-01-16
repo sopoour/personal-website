@@ -24,8 +24,10 @@ const Toggle = styled(Within)`
 `;
 
 const ThemeToggle: FC = () => {
-  const { setTheme } = useThemeSwitch((state) => state);
-  return <Toggle duration={900} title="Theme Switch" onToggle={setTheme} />;
+  const { setTheme, theme } = useThemeSwitch((state) => state);
+  return (
+    <Toggle duration={900} title="Theme Switch" onToggle={setTheme} toggled={theme === 'light'} />
+  );
 };
 
 export default ThemeToggle;

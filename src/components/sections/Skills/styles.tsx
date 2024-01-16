@@ -2,6 +2,7 @@ import { flexColumn, flexRow } from '@app/styles/mixins';
 import { styled } from 'styled-components';
 import Ball from './assets/ball.svg';
 import Typography from '@app/components/Typography/Typography';
+import { lightTheme } from '@app/styles/theme';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -39,7 +40,7 @@ export const BallWrapper = styled.li`
     top: -10%;
     bottom: 0;
     margin: auto;
-    color: ${({ theme }) => theme.colors.fg.contrast};
+    color: ${lightTheme.colors.fg.default};
   }
 `;
 
