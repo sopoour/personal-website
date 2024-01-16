@@ -4,6 +4,7 @@ import Ball from './assets/ball.svg';
 import Typography from '@app/components/Typography/Typography';
 
 export const Wrapper = styled.div`
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 24px;
