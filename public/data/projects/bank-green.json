@@ -1,7 +1,7 @@
 {
   "id": "bank-green",
   "title": "Bank.Green",
-  "description": "Working with a group of volunteers united by the belief that our banks must change – quickly. People across the world are working on solutions to the planet’s environmental problems, while their personal money is quietly being poured into industries that damage the environment. On bank.green you can find out whether your bank is using your money in a sustainable way without funding the climate chaos. We have the power collectively to change our banking system because it will not change itself. At the end Banks live and die on their reputations.",
+  "description": "Working with a group of volunteers united by the belief that our banks must change – quickly. People across the world are working on solutions to the planet’s environmental problems, while their personal money is quietly being poured into industries that damage the environment. On bank.green you can find out whether your bank is using your money in a sustainable way without funding the climate chaos.",
   "date": "2023-11-15",
   "links": [
     {
@@ -30,7 +30,7 @@
     },
     {
       "type": "tech",
-      "label": "Javascript"
+      "label": "Typescript"
     },
     {
       "type": "skill",

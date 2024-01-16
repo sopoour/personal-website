@@ -37,7 +37,8 @@ const Experience: FC = () => {
                 <TextWrapper>
                   <Header>
                     <Typography fontWeight={700} as="h3">
-                      {experience.title} @ {experience.companyName}
+                      {experience.title}
+                      {experience.companyName ? ` @ ${experience.companyName}` : ''}
                     </Typography>
                     <LinkContainer
                       iconLinks={[{ link: experience.companyLink, type: 'link' }]}
