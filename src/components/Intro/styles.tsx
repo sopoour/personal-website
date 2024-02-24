@@ -27,11 +27,12 @@ export const Title = styled(Typography)`
   font-size: 30px;
   animation:
     typewriterMobile 4s steps(30) 2s 1 normal both,
-    cursor 700ms steps(30) 8;
+    cursor 700ms steps(25) 8;
   -webkit-animation:
     typewriterMobile 4s steps(30) 2s 1 normal both,
-    cursor 700ms steps(30) 8;
+    cursor 700ms steps(25) 8;
   border-right: 2px solid ${theme.colors.bg.default};
+  border-right: 2px solid ${({ theme }) => theme.colors.bg.default};
   > span {
     font-size: 20px;
   }
@@ -41,7 +42,7 @@ export const Title = styled(Typography)`
       width: 0;
     }
     to {
-      width: 29rem;
+      width: 24rem;
     }
   }
 

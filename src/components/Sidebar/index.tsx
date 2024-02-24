@@ -31,7 +31,7 @@ const Sidebar: FC = () => {
             priority
           />
           <Typography $textalign="center" fontSize="18px">
-            Sophia Auer (Soph)
+            Sophia Auer (Fio / Soph)
           </Typography>
         </Header>
         <Navigation onClickItem={close} />

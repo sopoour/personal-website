@@ -8,8 +8,8 @@ import Head from 'next/head';
 
 const App = ({ Component, pageProps }: AppProps) => {
   const metaDescription =
-    'Sophia Auer is a Frontend Developer who builds accessible, creative and inclusive products for the web.';
-  const metaTitle = 'Sophia Auer';
+    'Sophia (Fio) Auer is a Frontend Developer who builds accessible, creative and inclusive products for the web.';
+  const metaTitle = 'Sophia (Fio) Auer';
   const metaImage = 'https://sophia-auer.vercel.app/og.png';
   return (
     <>
@@ -23,7 +23,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta key="og:title" property="og:title" content={metaTitle} />
         <meta key="og:type" property="og:type" content="website" />
         <meta key="og:description" property="og:description" content={metaDescription} />
-        <meta key="og:site_name" property="og:site_name" content="Sophia - Frontend Developer" />
+        <meta key="og:site_name" property="og:site_name" content="Fio - Frontend Developer" />
         <meta key="og:image" property="og:image" content={metaImage} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
