@@ -1,5 +1,3 @@
-import dayjs from 'dayjs';
-
 export const monthNames = [
   'January',
   'February',
@@ -14,14 +12,6 @@ export const monthNames = [
   'November',
   'December',
 ];
-
-export function formatDate(date: Date) {
-  return dayjs(date).format('MMM D, YYYY');
-}
-
-export function formatDateWithoutYear(date: Date) {
-  return dayjs(date).format('MMM D');
-}
 
 export function toMonthAndYear(date: Date): string {
   const month = monthNames[date.getUTCMonth()];
