@@ -19,7 +19,7 @@ const Intro: FC = () => (
         src={profile.src}
         width={400}
         height={305}
-        alt="sophia auer avatar"
+        alt="fio auer avatar"
         id="profile-intro"
         priority
       />
@@ -29,7 +29,7 @@ const Intro: FC = () => (
         aria-label="Personal Website by Sophia Auer"
         title="Personal Website by Sophia Auer"
       >
-        Hi! I&apos;m Soph. <span>(they/them).</span>
+        Hi! I&apos;m Fio. <span>(they/he).</span>
       </Title>
       <IntroHeadliine />
       <ScrollArrowContainer
