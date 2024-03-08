@@ -5,8 +5,8 @@ import { styled } from 'styled-components';
 import '@theme-toggles/react/css/Within.css';
 
 const Toggle = styled(Within)`
-  position: absolute;
-  top: 20px;
+  margin-top: -30px;
+  margin-bottom: -50px;
   svg {
     width: 2rem;
     height: 2rem;
@@ -32,7 +32,7 @@ const ThemeToggle: FC<Props> = ({ onClick }) => {
   return (
     <Toggle
       duration={900}
-      title="Theme Switch"
+      title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Theme`}
       onToggle={() => {
         setTheme();
         if (onClick) onClick();

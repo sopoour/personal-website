@@ -1,7 +1,6 @@
 import { css, styled } from 'styled-components';
 import Image from 'next/image';
 import { flexColumn } from '@app/styles/mixins';
-import { Within } from '@theme-toggles/react';
 
 export const Backdrop = styled.div<{ $open?: boolean }>`
   position: fixed;

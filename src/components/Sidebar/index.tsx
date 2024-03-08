@@ -19,7 +19,6 @@ const Sidebar: FC = () => {
     <>
       <Backdrop onClick={close} $open={open} />
       <Content $open={open} id="sidebar" aria-label="sidebar">
-        <ThemeToggle onClick={close} />
         <Header
           onClick={() => animateScroll.scrollTo(0, { smooth: true, duration: 800 })}
           aria-label="Logo"
@@ -42,6 +41,7 @@ const Sidebar: FC = () => {
           <LinkContainer iconLinks={links} />
           <Email />
         </BottomSection>
+        <ThemeToggle onClick={close} />
       </Content>
     </>
   );
