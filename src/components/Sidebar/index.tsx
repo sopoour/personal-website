@@ -19,7 +19,7 @@ const Sidebar: FC = () => {
     <>
       <Backdrop onClick={close} $open={open} />
       <Content $open={open} id="sidebar" aria-label="sidebar">
-        <ThemeToggle />
+        <ThemeToggle onClick={close} />
         <Header
           onClick={() => animateScroll.scrollTo(0, { smooth: true, duration: 800 })}
           aria-label="Logo"

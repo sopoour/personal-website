@@ -4,16 +4,18 @@ import Typography from '../Typography/Typography';
 import { Tag, TagType } from '@app/types';
 import { robotoMono } from '@app/styles/fonts';
 import { flexRow } from '@app/styles/mixins';
-import { AccentColours } from '@app/styles/theme';
+import { AccentColours, DarkAccentColours } from '@app/styles/theme';
+import useThemeSwitch from '@app/hooks/useThemeSwitch';
+import useAccentColour from '@app/hooks/useAccentColour';
 
-const getColourTheme = (type: TagType) => {
+const getColourTheme = (type: TagType, theme: typeof AccentColours | typeof DarkAccentColours) => {
   switch (type) {
     case 'tech':
-      return { color: AccentColours.green, backgroundColor: AccentColours.greenSoft };
+      return { color: theme.green, backgroundColor: theme.greenSoft };
     case 'tool':
-      return { color: AccentColours.pink, backgroundColor: AccentColours.pinkSoft };
+      return { color: theme.pink, backgroundColor: theme.pinkSoft };
     case 'skill':
-      return { color: AccentColours.orange, backgroundColor: AccentColours.orangeSoft };
+      return { color: theme.orange, backgroundColor: theme.orangeSoft };
   }
 };
 
@@ -39,14 +41,23 @@ type Props = {
   className?: string;
 };
 
-const Tags: FC<Props> = ({ tags, className }) => (
-  <Container className={className} aria-label="Skill tags">
-    {tags.map((tag, index) => (
-      <Tag key={tag.label + index} style={getColourTheme(tag.type)} fontSize="12px" as="li">
-        {tag.label}
-      </Tag>
-    ))}
-  </Container>
-);
+const Tags: FC<Props> = ({ tags, className }) => {
+  const { AccentColourTheme } = useAccentColour();
+
+  return (
+    <Container className={className} aria-label="Skill tags">
+      {tags.map((tag, index) => (
+        <Tag
+          key={tag.label + index}
+          style={getColourTheme(tag.type, AccentColourTheme)}
+          fontSize="12px"
+          as="li"
+        >
+          {tag.label}
+        </Tag>
+      ))}
+    </Container>
+  );
+};
 
 export default Tags;

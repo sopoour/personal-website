@@ -2,12 +2,12 @@ import { FC, useEffect } from 'react';
 import Typography from '../../Typography/Typography';
 import Section from '../../layout/Section';
 import { AccentColours } from '@app/styles/theme';
-import getAccentColour from '@app/utils/getAccentColour';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
 import { AboutContainer, Box, BoxWrapper, BulletWrapper, RobotMono, TextWrapper } from './styles';
+import useAccentColour from '@app/hooks/useAccentColour';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -51,6 +51,8 @@ const aboutMeDetails = [
 ];
 
 const About: FC = () => {
+  const { getAccentColour } = useAccentColour();
+
   useEffect(() => {
     let ctx = gsap.context(() => {
       const boxes = gsap.utils.toArray('.box');
@@ -101,15 +103,15 @@ const About: FC = () => {
         <TextWrapper id={'text-wrapper'}>
           <Typography>
             I&apos;m passionate about building{' '}
-            <RobotMono as="span" color={AccentColours.pink}>
+            <RobotMono as="span" color={getAccentColour(0)}>
               accessible
             </RobotMono>
             ,{' '}
-            <RobotMono as="span" color={AccentColours.green}>
+            <RobotMono as="span" color={getAccentColour(1)}>
               creative
             </RobotMono>{' '}
             and{' '}
-            <RobotMono as="span" color={AccentColours.orange}>
+            <RobotMono as="span" color={getAccentColour(2)}>
               inclusive
             </RobotMono>{' '}
             products that have a positive impact on society and our environment. User experience and

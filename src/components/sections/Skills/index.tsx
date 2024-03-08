@@ -1,6 +1,5 @@
 import { FC, useEffect } from 'react';
 import Section from '@app/components/layout/Section';
-import getAccentColour from '@app/utils/getAccentColour';
 import Typography from '@app/components/Typography/Typography';
 import { robotoMono } from '@app/styles/fonts';
 import runAnimations from './utils/runAnimations';
@@ -9,9 +8,12 @@ import { gsap } from 'gsap';
 import { useMedia } from '@app/hooks/useMedia';
 import { Breakpoints } from '@app/styles/media';
 import { BallVar, BallWrapper, Bucket, Column, Wrapper } from './styles';
+import useAccentColour from '@app/hooks/useAccentColour';
 
 const Skills: FC = () => {
   const isDesktop = useMedia(Breakpoints.sm);
+  const { getAccentColour } = useAccentColour(true);
+
   useEffect(() => {
     let ctx = gsap.context(() => {
       if (isDesktop) runAnimations();

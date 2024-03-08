@@ -3,7 +3,8 @@ import { robotoMono } from '@app/styles/fonts';
 import { flexColumn, flexRow } from '@app/styles/mixins';
 import { styled } from 'styled-components';
 
-export const RobotMono = styled.li`
+export const RobotMono = styled.li<{ color: string }>`
+  color: ${({ color }) => color};
   font-family: ${robotoMono.style.fontFamily};
 `;
 

@@ -23,10 +23,22 @@ const Toggle = styled(Within)`
   }
 `;
 
-const ThemeToggle: FC = () => {
+type Props = {
+  onClick?: () => void;
+};
+
+const ThemeToggle: FC<Props> = ({ onClick }) => {
   const { setTheme, theme } = useThemeSwitch((state) => state);
   return (
-    <Toggle duration={900} title="Theme Switch" onToggle={setTheme} toggled={theme === 'light'} />
+    <Toggle
+      duration={900}
+      title="Theme Switch"
+      onToggle={() => {
+        setTheme();
+        if (onClick) onClick();
+      }}
+      toggled={theme === 'light'}
+    />
   );
 };
 

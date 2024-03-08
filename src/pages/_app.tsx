@@ -14,14 +14,14 @@ const App = ({ Component, pageProps }: AppProps) => {
   const metaTitle = 'Sophia (Fio) Auer';
   const metaImage = 'https://sophia-auer.vercel.app/og.png';
 
-  useEffect(() => {
+  /* useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (mediaQuery) {
       setSpecificTheme('dark');
     } else {
       setSpecificTheme('light');
     }
-  }, []);
+  }, []); */
 
   return (
     <>
