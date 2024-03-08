@@ -14,7 +14,7 @@ export const Container = styled.div`
 export const SubTitle = styled(Typography)`
   font-family: ${robotoMono.style.fontFamily};
   font-size: 20px;
-
+  text-align: center;
   ${({ theme }) => theme.media('sm')`
     font-size: 24px;
   `}

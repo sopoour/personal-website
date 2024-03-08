@@ -8,13 +8,13 @@ type Props = {
 
 const Headline: FC<Props> = ({ className }) => {
   const titles = [
-    'wannabe artist 🎹🎸🎨',
-    'Star Wars fan 🚀',
+    'artist 🎹🎸🎨',
+    'star wars fan 🚀',
     'LEGO architect 👷',
     'bookworm 📚',
     'underground poet 📜',
     'astronomy nerd 🛰️',
-    'wannabe artist 🎹🎸🎨',
+    'artist 🎹🎸🎨',
   ];
 
   return (
