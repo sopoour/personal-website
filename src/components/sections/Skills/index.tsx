@@ -1,7 +1,5 @@
 import { FC, useEffect } from 'react';
 import Section from '@app/components/layout/Section';
-import theme from '@app/styles/theme';
-import getAccentColour from '@app/utils/getAccentColour';
 import Typography from '@app/components/Typography/Typography';
 import { robotoMono } from '@app/styles/fonts';
 import runAnimations from './utils/runAnimations';
@@ -10,9 +8,12 @@ import { gsap } from 'gsap';
 import { useMedia } from '@app/hooks/useMedia';
 import { Breakpoints } from '@app/styles/media';
 import { BallVar, BallWrapper, Bucket, Column, Wrapper } from './styles';
+import useAccentColour from '@app/hooks/useAccentColour';
 
 const Skills: FC = () => {
   const isDesktop = useMedia(Breakpoints.sm);
+  const { getAccentColour } = useAccentColour(true);
+
   useEffect(() => {
     let ctx = gsap.context(() => {
       if (isDesktop) runAnimations();
@@ -37,12 +38,7 @@ const Skills: FC = () => {
                 .map((skill, index) => (
                   <BallWrapper key={skill.label} className="ball" aria-label={skill.label}>
                     <BallVar fill={getAccentColour(index)} aria-hidden focusable={false} />
-                    <Typography
-                      fontSize="12px"
-                      type={robotoMono.style.fontFamily}
-                      color={theme.colors.fg.contrast}
-                      className="text"
-                    >
+                    <Typography fontSize="12px" type={robotoMono.style.fontFamily} className="text">
                       {skill.label}
                     </Typography>
                   </BallWrapper>

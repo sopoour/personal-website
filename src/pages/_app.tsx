@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { AppProps } from 'next/app';
 import Layout from '@app/components/layout/Layout';
 import { GlobalStyle } from '@app/styles/global';
 import { ThemeProvider } from 'styled-components';
-import theme from '@app/styles/theme';
 import Head from 'next/head';
+import { darkTheme, lightTheme } from '@app/styles/theme';
+import useThemeSwitch from '@app/hooks/useThemeSwitch';
 
 const App = ({ Component, pageProps }: AppProps) => {
+  const { theme, setSpecificTheme } = useThemeSwitch((state) => state);
   const metaDescription =
     'Sophia (Fio) Auer is a Frontend Developer who builds accessible, creative and inclusive products for the web.';
   const metaTitle = 'Sophia (Fio) Auer';
   const metaImage = 'https://sophia-auer.vercel.app/og.png';
+
+  /* useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (mediaQuery) {
+      setSpecificTheme('dark');
+    } else {
+      setSpecificTheme('light');
+    }
+  }, []); */
+
   return (
     <>
       <Head>
@@ -27,7 +39,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta key="og:image" property="og:image" content={metaImage} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
         <GlobalStyle />
         <Layout>
           <Component {...pageProps} />

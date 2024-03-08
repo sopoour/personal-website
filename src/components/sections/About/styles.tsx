@@ -1,10 +1,10 @@
 import Typography from '@app/components/Typography/Typography';
 import { robotoMono } from '@app/styles/fonts';
 import { flexColumn, flexRow } from '@app/styles/mixins';
-import theme from '@app/styles/theme';
 import { styled } from 'styled-components';
 
-export const RobotMono = styled.li`
+export const RobotMono = styled.li<{ color: string }>`
+  color: ${({ color }) => color};
   font-family: ${robotoMono.style.fontFamily};
 `;
 
@@ -12,7 +12,7 @@ export const AboutContainer = styled.div`
   ${flexColumn};
   gap: 16px;
 
-  ${theme.media('sm')`
+  ${({ theme }) => theme.media('sm')`
     gap: 40px;
   `}
 `;
@@ -40,7 +40,7 @@ export const Box = styled.div<{ $color: string }>`
   ${flexColumn};
   gap: 8px;
   border-radius: 24px;
-  background-color: ${theme.colors.bg.soft};
+  background-color: ${({ theme }) => theme.colors.bg.soft};
   box-shadow: 0 60px 50px -60px ${({ $color }) => $color};
   width: 85%;
   height: 275px;
@@ -49,10 +49,10 @@ export const Box = styled.div<{ $color: string }>`
 
   h3,
   li {
-    color: ${theme.colors.fg.contrast} !important;
+    color: ${({ theme }) => theme.colors.bg.contrast} !important;
   }
 
-  ${theme.media('sm')`
+  ${({ theme }) => theme.media('sm')`
   width: 275px;
   
   `}
@@ -76,7 +76,7 @@ export const BulletWrapper = styled.ul`
       width: 10px;
       height: 10px;
       transform: rotate(-45deg);
-      border: 1.5px solid ${theme.colors.fg.contrast};
+      border: 1.5px solid ${({ theme }) => theme.colors.bg.contrast};
       border-radius: 2px;
     }
   }

@@ -2,7 +2,6 @@ import { FC, useEffect } from 'react';
 import GeoBackground from '../GeoBackground';
 import styled from 'styled-components';
 import { flexColumn } from '@app/styles/mixins';
-import theme from '@app/styles/theme';
 import Typography from '../Typography/Typography';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -27,14 +26,14 @@ const ContentWrapper = styled.div`
   z-index: 10;
   padding: 16px;
 
-  ${theme.media('sm')`
+  ${({ theme }) => theme.media('sm')`
     width: 45rem;
   `}
 `;
 
 const Title = styled(Typography)`
   font-size: 40px;
-  ${theme.media('sm')`
+  ${({ theme }) => theme.media('sm')`
     font-size: 60px;
 `}
 `;
@@ -44,7 +43,7 @@ const OutroDescription = styled(Typography)`
   line-height: 175%;
   font-size: 16px;
 
-  ${theme.media('sm')`
+  ${({ theme }) => theme.media('sm')`
     font-size: 18px;
   `}
 `;
@@ -57,9 +56,9 @@ const BottomSection = styled.div`
 const Question = styled(OutroDescription)`
   font-family: ${robotoMono.style.fontFamily};
 
-  color: ${theme.colors.accent.green};
+  color: ${({ theme }) => theme.colors.accent.green};
   font-weight: 500;
-  ${theme.media('sm')`
+  ${({ theme }) => theme.media('sm')`
     font-size: 18px;
   `}
 `;

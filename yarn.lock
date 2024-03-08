@@ -1743,6 +1743,11 @@
   dependencies:
     defer-to-connect "^2.0.1"
 
+"@theme-toggles/react@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@theme-toggles/react/-/react-4.1.0.tgz#8b20055749f93bee3d6e4b6bbfaa2d5573caa18a"
+  integrity sha512-h3SuJMsej8DfelHt5fjNIlaMfJOK52Vku4pPDVoHaTwjAcoTr4fn8hzeur2oiqWBYFYfKugvv1RdQaBFXaiPKg==
+
 "@tootallnate/once@2":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"

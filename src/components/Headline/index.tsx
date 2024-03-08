@@ -1,12 +1,14 @@
 import { FC } from 'react';
-import getAccentColour from '@app/utils/getAccentColour';
 import { Container, RotatingTitle, RotatingTitles, SubTitle } from './styles';
+import useAccentColour from '@app/hooks/useAccentColour';
 
 type Props = {
   className?: string;
 };
 
 const Headline: FC<Props> = ({ className }) => {
+  const { getAccentColour } = useAccentColour();
+
   const titles = [
     'artist 🎹🎸🎨',
     'star wars fan 🚀',

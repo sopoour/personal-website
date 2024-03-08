@@ -84,40 +84,13 @@ export const ProfileImage = styled(Image)`
 
 export const ScrollArrowFadeElement = styled(IoIosArrowDown)`
   transition-duration: 400ms;
-`;
+  opacity: 0.45;
+  animation: downOne 3s ease-in-out infinite;
+  margin-top: -20px;
 
-export const ScrollArrowContainer = styled.button`
-  ${flexColumn};
-  justify-content: center;
-  cursor: pointer;
-  margin-top: 30px;
-  opacity: 0;
-  animation: ${fadeIn} 1.5s forwards 5.75s;
-  -webkit-animation: ${fadeIn} 1.5s forwards 5.75s;
-  & svg {
-    width: 25px !important;
-    height: 25px !important;
-    path {
-      fill: ${({ theme }) => theme.colors.fg.default};
-    }
-  }
-
-  ${ScrollArrowFadeElement} {
-    opacity: 0.45;
-    animation: downOne 3s ease-in-out infinite;
-    margin-top: -20px;
-  }
-
-  ${ScrollArrowFadeElement}:last-of-type {
+  &:last-of-type {
     opacity: 0.2;
     animation: downTwo 3s ease-in-out infinite;
-  }
-
-  &:hover {
-    transform: scale(1.2);
-    svg > path {
-      fill: ${({ theme }) => theme.colors.accent.green};
-    }
   }
 
   @keyframes downOne {
@@ -143,6 +116,30 @@ export const ScrollArrowContainer = styled.button`
     }
     100% {
       transform: translateY(-8px);
+    }
+  }
+`;
+
+export const ScrollArrowContainer = styled.button`
+  ${flexColumn};
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 30px;
+  opacity: 0;
+  animation: ${fadeIn} 1.5s forwards 5.75s;
+  -webkit-animation: ${fadeIn} 1.5s forwards 5.75s;
+  & svg {
+    width: 25px !important;
+    height: 25px !important;
+    path {
+      fill: ${({ theme }) => theme.colors.fg.default};
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    svg > path {
+      fill: ${({ theme }) => theme.colors.accent.green};
     }
   }
 `;
