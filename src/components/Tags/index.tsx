@@ -5,7 +5,6 @@ import { Tag, TagType } from '@app/types';
 import { robotoMono } from '@app/styles/fonts';
 import { flexRow } from '@app/styles/mixins';
 import { AccentColours, DarkAccentColours } from '@app/styles/theme';
-import useThemeSwitch from '@app/hooks/useThemeSwitch';
 import useAccentColour from '@app/hooks/useAccentColour';
 
 const getColourTheme = (type: TagType, theme: typeof AccentColours | typeof DarkAccentColours) => {
@@ -39,10 +38,11 @@ const Container = styled.ul`
 type Props = {
   tags: Tag[];
   className?: string;
+  keepBrightColour?: boolean;
 };
 
-const Tags: FC<Props> = ({ tags, className }) => {
-  const { AccentColourTheme } = useAccentColour();
+const Tags: FC<Props> = ({ tags, className, keepBrightColour = false }) => {
+  const { AccentColourTheme } = useAccentColour(keepBrightColour);
 
   return (
     <Container className={className} aria-label="Skill tags">

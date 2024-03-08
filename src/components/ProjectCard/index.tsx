@@ -65,7 +65,7 @@ const ProjectCard: FC<Props> = ({ project, activeIndex, projectIndex }) => {
           <Links iconLinks={project.links} size="small" />
         </DetailHeader>
         <Typography fontSize={'14px'}>{project.description}</Typography>
-        <TagsMobile tags={project.tags} />
+        <TagsMobile tags={project.tags} keepBrightColour />
       </DetailsContainer>
       <ProjectThumbnail
         src={`/data/images/${project.id}.png`}
