@@ -1,7 +1,5 @@
 import { styled } from 'styled-components';
 import Image from 'next/image';
-
-import theme from '@app/styles/theme';
 import Typography from '../Typography/Typography';
 import { fadeIn, flexColumn } from '@app/styles/mixins';
 import { IoIosArrowDown } from 'react-icons/io';
@@ -16,7 +14,7 @@ export const ContentWrapper = styled.div`
   align-items: center;
   z-index: 10;
 
-  ${theme.media('sm')`
+  ${({ theme }) => theme.media('sm')`
     width: 32rem;
   `}
 `;
@@ -26,12 +24,11 @@ export const Title = styled(Typography)`
   overflow: hidden;
   font-size: 30px;
   animation:
-    typewriterMobile 4s steps(30) 2s 1 normal both,
-    cursor 700ms steps(25) 8;
+    typewriterMobile 4s steps(30) 1s 1 normal both,
+    cursor 700ms steps(30) 8;
   -webkit-animation:
-    typewriterMobile 4s steps(30) 2s 1 normal both,
-    cursor 700ms steps(25) 8;
-  border-right: 2px solid ${theme.colors.bg.default};
+    typewriterMobile 4s steps(30) 1s 1 normal both,
+    cursor 700ms steps(30) 8;
   border-right: 2px solid ${({ theme }) => theme.colors.bg.default};
   > span {
     font-size: 20px;
@@ -51,20 +48,20 @@ export const Title = styled(Typography)`
       width: 0;
     }
     to {
-      width: 24rem;
+      width: 20rem;
     }
   }
 
   @keyframes cursor {
     from {
-      border-right-color: ${theme.colors.bg.default};
+      border-right-color: ${({ theme }) => theme.colors.bg.default};
     }
     to {
-      border-right-color: ${theme.colors.accent.green};
+      border-right-color: ${({ theme }) => theme.colors.accent.green};
     }
   }
 
-  ${theme.media('sm')`
+  ${({ theme }) => theme.media('sm')`
     font-size: 40px;
     animation:
     typewriter 4s steps(30) 1s 1 normal both,
@@ -80,7 +77,7 @@ export const ProfileImage = styled(Image)`
   opacity: 0;
   width: 90%;
 
-  ${theme.media('xs')`
+  ${({ theme }) => theme.media('xs')`
     width: 400px;
   `}
 `;
@@ -101,7 +98,7 @@ export const ScrollArrowContainer = styled.button`
     width: 25px !important;
     height: 25px !important;
     path {
-      fill: ${theme.colors.fg.default};
+      fill: ${({ theme }) => theme.colors.fg.default};
     }
   }
 
@@ -119,7 +116,7 @@ export const ScrollArrowContainer = styled.button`
   &:hover {
     transform: scale(1.2);
     svg > path {
-      fill: ${theme.colors.accent.green};
+      fill: ${({ theme }) => theme.colors.accent.green};
     }
   }
 
