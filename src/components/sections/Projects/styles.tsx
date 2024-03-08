@@ -27,6 +27,9 @@ export const NavButton = styled.button<{ $side: 'left' | 'right' }>`
   &:hover {
     color: ${({ theme }) => theme.colors.accent.pink};
   }
+  @media only screen and (max-width: ${Breakpoints.xs}px) {
+    display: none;
+  }
 `;
 
 export const Carousel = styled.div`
@@ -49,9 +52,6 @@ export const Carousel = styled.div`
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     ${removeScrollBar};
-    ${NavButton} {
-      display: none;
-    }
   }
 `;
 
