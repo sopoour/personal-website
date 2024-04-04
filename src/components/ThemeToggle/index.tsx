@@ -5,8 +5,6 @@ import { styled } from 'styled-components';
 import '@theme-toggles/react/css/Within.css';
 
 const Toggle = styled(Within)`
-  margin-top: -30px;
-  margin-bottom: -50px;
   svg {
     width: 2rem;
     height: 2rem;

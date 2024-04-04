@@ -33,7 +33,6 @@ export const Backdrop = styled.div<{ $open?: boolean }>`
 
 export const Content = styled.header<{ $open?: boolean }>`
   position: sticky;
-  overflow-y: auto;
   top: 0;
   bottom: 0;
   height: 100vh;
