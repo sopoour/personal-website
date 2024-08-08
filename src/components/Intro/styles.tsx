@@ -39,7 +39,7 @@ export const Title = styled(Typography)`
       width: 0;
     }
     to {
-      width: 24rem;
+      width: 26rem;
     }
   }
 
@@ -48,7 +48,7 @@ export const Title = styled(Typography)`
       width: 0;
     }
     to {
-      width: 21rem;
+      width: 22rem;
     }
   }
 
