@@ -29,7 +29,7 @@ const Intro: FC = () => (
         aria-label="Personal Website by Sophia Auer"
         title="Personal Website by Sophia Auer"
       >
-        Hi! I&apos;m Fio. <span>(they/he).</span>
+        Hi! I&apos;m Fio. <span>(they/them).</span>
       </Title>
       <IntroHeadliine />
       <ScrollArrowContainer
