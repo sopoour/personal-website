@@ -28,12 +28,12 @@ const Sidebar: FC = () => {
             src={profile.src}
             width={200}
             height={200}
-            alt="sophia auer sidebar avatar"
+            alt="fio auer sidebar avatar"
             id="profile-sidebar"
             priority
           />
           <Typography $textalign="center" fontSize="18px">
-            Sophia Auer (Fio / Soph)
+            Fio Auer
           </Typography>
         </Header>
         <Navigation onClickItem={close} />

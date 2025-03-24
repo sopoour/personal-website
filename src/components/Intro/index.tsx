@@ -26,8 +26,8 @@ const Intro: FC = () => (
       <Title
         fontWeight={700}
         as="h1"
-        aria-label="Personal Website by Sophia Auer"
-        title="Personal Website by Sophia Auer"
+        aria-label="Personal Website by Fio Auer"
+        title="Personal Website by Fio Auer"
       >
         Hi! I&apos;m Fio. <span>(they/them).</span>
       </Title>

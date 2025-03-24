@@ -10,8 +10,8 @@ import useThemeSwitch from '@app/hooks/useThemeSwitch';
 const App = ({ Component, pageProps }: AppProps) => {
   const { theme, setSpecificTheme } = useThemeSwitch((state) => state);
   const metaDescription =
-    'Sophia (Fio) Auer is a Frontend Developer who builds accessible, creative and inclusive products for the web.';
-  const metaTitle = 'Sophia (Fio) Auer';
+    'Fio Auer is a Frontend Developer who builds accessible, creative and inclusive products for the web.';
+  const metaTitle = 'Fio Auer';
   const metaImage = 'https://sophia-auer.vercel.app/og.png';
 
   /* useEffect(() => {

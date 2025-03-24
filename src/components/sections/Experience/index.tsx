@@ -2,7 +2,7 @@ import { FC, Fragment } from 'react';
 import Section from '../../layout/Section';
 import Typography from '../../Typography/Typography';
 import useSWR from 'swr';
-import { Experience } from '@app/types';
+import type { Experience } from '@app/types';
 import { fetcher } from '@app/hooks/fetch/useFetch';
 import Tags from '../../Tags';
 import { toMonthAndYear } from '@app/utils/formatDate';
