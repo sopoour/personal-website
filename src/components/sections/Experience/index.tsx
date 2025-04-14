@@ -53,7 +53,7 @@ const Experience: FC = () => {
           ))}
         <LinkButton
           label="View full Résumé"
-          link="data/soph_resume.pdf"
+          link="data/fio_resume.pdf"
           aria-description="This link opens a PDF in a new tab"
         />
       </Container>

@@ -1,0 +1,31 @@
+{
+  "id": "masttro-freelance",
+  "title": "Masttro Freelance",
+  "description": "I've worked as a Freelancer at the US based wealth tech solution company. I've mainly optimized the existing website built in Webflow as well as develop new features and smooth Marketing connections to Hubspot.",
+  "date": "2024-07-01",
+  "links": [
+    {
+      "type": "link",
+      "id": "masttro-freelance-demo",
+      "link": "https://www.masttro.com/"
+    }
+  ],
+  "tags": [
+    {
+      "type": "tech",
+      "label": "Webflow"
+    },
+    {
+      "type": "tech",
+      "label": "Javascript"
+    },
+    {
+      "type": "tool",
+      "label": "Hubspot"
+    },
+    {
+      "type": "skill",
+      "label": "Freelance"
+    }
+  ]
+}
