@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styled from 'styled-components';
 import Typography from '../Typography/Typography';
-import { Tag, TagType } from '@app/types';
+import { type Tag, TagType } from '@app/types';
 import { robotoMono } from '@app/styles/fonts';
 import { flexRow } from '@app/styles/mixins';
 import { AccentColours, DarkAccentColours } from '@app/styles/theme';

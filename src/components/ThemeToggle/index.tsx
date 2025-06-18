@@ -36,6 +36,9 @@ const ThemeToggle: FC<Props> = ({ onClick }) => {
         if (onClick) onClick();
       }}
       toggled={theme === 'light'}
+      placeholder={`${theme === 'dark' ? 'Light' : 'Dark'} Theme`}
+      onPointerEnterCapture={() => null}
+      onPointerLeaveCapture={() => null}
     />
   );
 };
