@@ -12,10 +12,20 @@ const nextConfig = {
         'process.env.NEXT_IS_SERVER': JSON.stringify(isServer),
       }),
     );
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    });
+    config.module?.rules.push({
+    test: /\.svg$/,
+    issuer: {
+      not: [/\.css$/],
+    },
+    use: [
+      {
+        loader: '@svgr/webpack',
+        options: {
+          svgo: false,
+        },
+      },
+    ],
+  });
     return config;
   },
 };

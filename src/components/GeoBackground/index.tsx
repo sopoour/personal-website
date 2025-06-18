@@ -7,23 +7,14 @@ import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-type Props = {
-  children: React.ReactElement;
-  className?: string;
-  ariaLabel: string;
-};
+type Props = { children: React.ReactElement; className?: string; ariaLabel: string };
 
 const GeoBackground: FC<Props> = ({ children, className, ariaLabel }) => {
   useEffect(() => {
     let ctx = gsap.context(() => {
       const geos = gsap.utils.toArray('.geo');
       const duration = 6;
-      const initialState = {
-        x: 0,
-        y: 0,
-        duration,
-        ease: 'power3.out',
-      };
+      const initialState = { x: 0, y: 0, duration, ease: 'power3.out' };
 
       geos.forEach((geo: any, index) => {
         const tl = gsap.timeline();
@@ -31,12 +22,7 @@ const GeoBackground: FC<Props> = ({ children, className, ariaLabel }) => {
         tl.fromTo(
           geo,
           { scale: 0.5, opacity: 0 },
-          {
-            scale: 1,
-            opacity: 1,
-            duration,
-            ease: 'power3.out',
-          },
+          { scale: 1, opacity: 1, duration, ease: 'power3.out' },
         );
 
         // then rotate in two different ways
@@ -57,48 +43,12 @@ const GeoBackground: FC<Props> = ({ children, className, ariaLabel }) => {
               );
       });
 
-      gsap.fromTo(
-        '#left-top',
-        {
-          x: -100,
-          y: -100,
-        },
-        {
-          ...initialState,
-        },
-      );
-      gsap.fromTo(
-        '#top-right',
-        {
-          x: 100,
-          y: -50,
-        },
-        {
-          ...initialState,
-        },
-      );
+      gsap.fromTo('#left-top', { x: -100, y: -100 }, { ...initialState });
+      gsap.fromTo('#top-right', { x: 100, y: -50 }, { ...initialState });
 
-      gsap.fromTo(
-        '#bottom-left',
-        {
-          x: -100,
-          y: 100,
-        },
-        {
-          ...initialState,
-        },
-      );
+      gsap.fromTo('#bottom-left', { x: -100, y: 100 }, { ...initialState });
 
-      gsap.fromTo(
-        '#bottom-right',
-        {
-          x: 100,
-          y: 100,
-        },
-        {
-          ...initialState,
-        },
-      );
+      gsap.fromTo('#bottom-right', { x: 100, y: 100 }, { ...initialState });
     });
     return () => ctx.revert();
   }, []);
