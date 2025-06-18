@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@svgr/webpack": "6.5.1",
-    "@theme-toggles/react": "4.1.0",
+    "@theme-toggles/react": "latest",
     "copy-to-clipboard": "^3.3.3",
     "fs": "^0.0.1-security",
     "gsap": "^3.12.2",
@@ -28,7 +28,6 @@
     "zustand": "^4.4.4"
   },
   "devDependencies": {
-    "@svgr/cli": "5.5.0",
     "@babel/core": "7.22.20",
     "@babel/plugin-transform-react-display-name": "7.22.5",
     "@types/jest": "29.5.6",

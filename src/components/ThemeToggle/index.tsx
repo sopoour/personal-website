@@ -28,6 +28,7 @@ type Props = {
 const ThemeToggle: FC<Props> = ({ onClick }) => {
   const { setTheme, theme } = useThemeSwitch((state) => state);
   return (
+    //@ts-ignore
     <Toggle
       duration={900}
       title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Theme`}
@@ -36,9 +37,6 @@ const ThemeToggle: FC<Props> = ({ onClick }) => {
         if (onClick) onClick();
       }}
       toggled={theme === 'light'}
-      placeholder={`${theme === 'dark' ? 'Light' : 'Dark'} Theme`}
-      onPointerEnterCapture={() => null}
-      onPointerLeaveCapture={() => null}
     />
   );
 };

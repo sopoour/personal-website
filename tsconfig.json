@@ -29,11 +29,12 @@
     }
   },
   "include": [
+    "svgr.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/scripts/generate-projecct.js"
+    "src/scripts/generate-project.js"
   ],
   "exclude": [
     "node_modules"
