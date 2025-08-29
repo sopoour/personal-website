@@ -2,10 +2,10 @@
   <img alt="Logo" src="https://raw.githubusercontent.com/sopoour/personal-website/main/src/assets/logo.png" width="100" />
 </div>
 <h1 align="center">
- Personal Website - sophiaauer.me - v2
+ Personal Website - fioauer.com - v2
 </h1>
 <p align="center">
-  The second iteration of <a href="https://sophiaauer.me" target="_blank">sophiaauer.me</a> built with Next.js and hosted with Vercel
+  The second iteration of <a href="https://fioauer.com" target="_blank">fioauer.com</a> built with Next.js and hosted with Vercel
 </p>
 <p align="center">
   Previous iteration: <a href="https://github.com/sopoour/sopoour.github.io" target="_blank">v1</a>
