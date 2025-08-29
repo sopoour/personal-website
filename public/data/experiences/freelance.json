@@ -5,9 +5,10 @@
     "current": true
   },
   "id": "freelance",
-  "title": "Web Development Freelancer",
-  "companyLink": "https://www.sophiaauer.me/",
-  "description": "I'm passionate about building simple solutions either with no-code platforms like Webflow or from scratch in Next.js, React and Typescript (or Vue.js and Nuxt.js) while using CMS like Contentful to ensure control over the content by the client. I make sure to document all the development process to ensure high transparency for the client. Hit me up if you're in need of a new website or more complex web solutions. I have also experience in working with Figma and proficient in providing Design support as well.",
+  "title": "Creative Frontend Developer",
+  "companyName": "Freelancer",
+  "companyLink": "https://www.fioauer.com/",
+  "description": "I'm passionate about building simple but creative solutions either with no-code platforms like Webflow or from scratch in Next.js, React and Typescript (or Vue.js and Nuxt.js) while using CMS like Contentful to ensure control over the content by the client. I make sure to document all the development process to ensure high transparency for the client. Hit me up if you're in need of a new website or more complex web solutions. I have also experience in working with Figma and I'm excited to design websites from scratch.",
   "location": "Remote / Berlin, Germany",
   "tags": [
     {

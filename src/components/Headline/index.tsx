@@ -10,18 +10,18 @@ const Headline: FC<Props> = ({ className }) => {
   const { getAccentColour } = useAccentColour();
 
   const titles = [
-    'artist 🎹🎸🎨',
+    'wannabe artist 🎹🎸🎨',
     'star wars fan 🚀',
     'LEGO architect 👷',
     'bookworm 📚',
     'underground poet 📜',
     'astronomy nerd 🛰️',
-    'artist 🎹🎸🎨',
+    'wannabe artist 🎹🎸🎨',
   ];
 
   return (
     <Container aria-label="headlines" className={className}>
-      <SubTitle as="h2">Frontend Developer and</SubTitle>
+      <SubTitle as="h2">Creative Frontend Developer and</SubTitle>
       <RotatingTitles>
         {titles.map((title, index) => (
           <RotatingTitle key={title + index} as="h3" color={getAccentColour(index)}>
