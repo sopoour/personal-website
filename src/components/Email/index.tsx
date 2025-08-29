@@ -55,12 +55,12 @@ const Email: FC<Props> = ({ fontSize }) => {
       $textalign="center"
       fontSize={fontSize ?? '12px'}
       as="a"
-      onClick={() => copyEmail('sophia.auer@gmail.com')}
+      onClick={() => copyEmail('fio2auer5@gmail.com')}
       $copied={copied}
       onMouseLeave={() => setCopied(false)}
       aria-label="Copy email address"
     >
-      sophia.auer@gmail.com
+      fio2auer5@gmail.com
     </EmailText>
   );
 };

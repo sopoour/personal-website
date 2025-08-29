@@ -1,18 +1,18 @@
 {
-  "id": "g-emma",
-  "title": "G'emma",
-  "description": "Designed and developed a new website for the music project G'emma. The website is a single page application with a custom design and animations. I'm using GSAP for the butterfly animation on the hero section. It's fully responsive and works on all devices. The website is hosted on Vercel.",
-  "date": "2025-04-01",
+  "id": "frago",
+  "title": "Frago",
+  "description": "Designed and developed the initial website for the music project Frago. The website is a single page application with a custom design and content managed via Contentful. It's fully responsive and works on all devices. The website is hosted on Vercel.",
+  "date": "2025-05-01",
   "links": [
     {
       "type": "link",
-      "id": "g-emma-demo",
-      "link": "https://www.g-emma.com/"
+      "id": "frago-demo",
+      "link": "https://www.frago-mp3.de/"
     },
     {
       "type": "github",
-      "id": "g-emma-github",
-      "link": "https://github.com/sopoour/g-emma"
+      "id": "frago-github",
+      "link": "https://github.com/sopoour/frago"
     }
   ],
   "tags": [

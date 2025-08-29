@@ -86,7 +86,7 @@ const LinkContainer: FC<Props> = ({
               link: 'https://www.linkedin.com/in/sophiaauer/',
             };
           case 'email':
-            return { id: 'email', icon: <FaEnvelope />, link: 'mailto:sophia.auer@gmail.com' };
+            return { id: 'email', icon: <FaEnvelope />, link: 'mailto:fio2auer5@gmail.com' };
           case 'instagram':
             return {
               id: 'instagram',
@@ -96,7 +96,7 @@ const LinkContainer: FC<Props> = ({
           case 'link':
             return { id: icon.id ?? 'external link', icon: <FaExternalLinkAlt />, link: icon.link };
           default:
-            return { id: 'email', icon: <FaEnvelope />, link: 'mailto:sophia.auer@gmail.com' };
+            return { id: 'email', icon: <FaEnvelope />, link: 'mailto:fio2auer5@gmail.com' };
         }
       }),
     [iconLinks],
