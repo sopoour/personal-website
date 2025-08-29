@@ -37,7 +37,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta key="og:description" property="og:description" content={metaDescription} />
         <meta key="og:site_name" property="og:site_name" content="Fio - Frontend Developer" />
         <meta key="og:image" property="og:image" content={metaImage} />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
         <GlobalStyle />
