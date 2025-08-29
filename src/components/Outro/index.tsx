@@ -93,7 +93,7 @@ const Outro: FC = () => {
         <Title fontSize="60px" id="title" as="h2">
           Let&apos;s Chat ✌️
         </Title>
-        <Question>Need a passionate Frontend Developer or Web Developer to help out?</Question>
+        <Question>Need a passionate Creative Frontend Developer to help out?</Question>
         <OutroDescription>
           Shoot me an email, let&apos;s meet and discuss it in more detail. Alternatively connect
           with me elsewhere on the web:
