@@ -55,7 +55,7 @@ export const TopRight = styled(Geo2)`
 `;
 
 export const BottomLeft = styled(Geo3)`
-  bottom: -15%;
+  bottom: -20%;
   left: -40%;
 
   ${({ theme }) => theme.media('sm')`
@@ -71,7 +71,7 @@ export const BottomLeft = styled(Geo3)`
 
 export const BottomRight = styled(Geo4)`
   bottom: -25%;
-  right: -40%;
+  right: -50%;
 
   ${({ theme }) => theme.media('sm')`
     bottom: -5%;

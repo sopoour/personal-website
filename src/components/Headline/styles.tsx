@@ -27,10 +27,6 @@ export const RotatingTitle = styled(SubTitle)`
   animation: rotateText 8s infinite 7s;
   text-align: center;
 
-  @media only screen and (max-width: ${Breakpoints.xs}px) {
-    color: ${({ theme }) => theme.colors.bg.soft};
-  }
-
   @keyframes rotateText {
     16% {
       transform: translateY(-100%);
