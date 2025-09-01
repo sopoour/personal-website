@@ -19,9 +19,9 @@ const aboutMeDetails = [
       'mindfulness',
       'playing music',
       'drawing & painting',
+      'reality tv shows',
       'astrophysics',
-      'tinkering',
-      'DEI in Tech',
+      'justice for kids',
     ],
   },
   {

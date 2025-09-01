@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 export const SubTitle = styled(Typography)`
   font-family: ${robotoMono.style.fontFamily};
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   ${({ theme }) => theme.media('sm')`
     font-size: 24px;
@@ -59,5 +59,9 @@ export const RotatingTitle = styled(SubTitle)`
 export const RotatingTitles = styled.span`
   overflow: hidden;
   box-sizing: content-box;
-  height: 35px;
+  height: 30px;
+
+  ${({ theme }) => theme.media('sm')`
+    height: 35px;
+  `}
 `;

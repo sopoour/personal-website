@@ -10,13 +10,13 @@ const Headline: FC<Props> = ({ className }) => {
   const { getAccentColour } = useAccentColour();
 
   const titles = [
-    'wannabe artist 🎹🎸🎨',
-    'star wars fan 🚀',
     'LEGO architect 👷',
+    'star wars fan 🚀',
     'bookworm 📚',
-    'underground poet 📜',
-    'astronomy nerd 🛰️',
-    'wannabe artist 🎹🎸🎨',
+    'artsy 🎹🎸🎨',
+    'basketball newby 🏀',
+    'astronomy enthusiast 🛰️',
+    'LEGO architect 👷',
   ];
 
   return (
