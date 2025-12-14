@@ -5,6 +5,7 @@ import { fadeIn, flexColumn } from '@app/styles/mixins';
 import { IoIosArrowDown } from 'react-icons/io';
 import Headline from '../Headline';
 import { Breakpoints } from '@app/styles/media';
+import { Question } from '../Outro';
 
 export const ContentWrapper = styled.div`
   ${flexColumn};
@@ -75,10 +76,10 @@ export const Title = styled(Typography)`
 export const ProfileImage = styled(Image)`
   height: auto;
   opacity: 0;
-  width: 90%;
+  width: 70%;
 
   ${({ theme }) => theme.media('xs')`
-    width: 400px;
+    width: auto;
   `}
 `;
 
@@ -124,7 +125,7 @@ export const ScrollArrowContainer = styled.button`
   ${flexColumn};
   justify-content: center;
   cursor: pointer;
-  margin-top: 30px;
+  margin-top: 16px;
   opacity: 0;
   animation: ${fadeIn} 1.5s forwards 5.75s;
   -webkit-animation: ${fadeIn} 1.5s forwards 5.75s;
@@ -142,9 +143,27 @@ export const ScrollArrowContainer = styled.button`
       fill: ${({ theme }) => theme.colors.accent.green};
     }
   }
+
+  ${({ theme }) => theme.media('xs')`
+    margin-top: 30px;
+  `}
 `;
 
 export const IntroHeadliine = styled(Headline)`
+  opacity: 0;
+  animation: ${fadeIn} 1.5s forwards 5.5s;
+  -webkit-animation: ${fadeIn} 1.5s forwards 5.5s;
+`;
+
+export const ContactMe = styled.span`
+  ${flexColumn};
+  gap: 8px;
+  padding: 0 36px;
+  ${({ theme }) => theme.media('xs')`
+    margin-top: 32px;
+    padding: 0;
+  `}
+
   opacity: 0;
   animation: ${fadeIn} 1.5s forwards 5.5s;
   -webkit-animation: ${fadeIn} 1.5s forwards 5.5s;

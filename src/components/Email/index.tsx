@@ -15,7 +15,7 @@ const EmailText = styled(Typography)<{ $copied: boolean }>`
   &::after {
     content: '${({ $copied }) => ($copied ? 'Copied!' : 'Click to copy')}';
     position: absolute;
-    bottom: -200%;
+    bottom: -40px;
     left: calc(50% - 50px);
     display: block;
     opacity: 0;
@@ -34,7 +34,7 @@ const EmailText = styled(Typography)<{ $copied: boolean }>`
     transform: scale(1.1);
     &::after {
       opacity: 1;
-      bottom: -150%;
+      bottom: -28px;
     }
   }
 `;
