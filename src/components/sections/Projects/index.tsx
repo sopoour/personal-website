@@ -9,7 +9,7 @@ import LinkButton from '../../LinkButton';
 import { Carousel, NavButton, ProjectSection } from './styles';
 
 const Projects: FC = () => {
-  const [activeCard, setActiveCard] = useState<number>(1);
+  const [activeCard, setActiveCard] = useState<number>(0);
   const { data } = useSWR<Project[]>('/api/projects', fetcher);
   const handleNext = () => data && setActiveCard((prevIndex) => (prevIndex + 1) % data.length);
   const handlePrev = () =>

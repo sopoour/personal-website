@@ -1,0 +1,52 @@
+{
+  "id": "benge",
+  "title": "BENGE",
+  "description": "This is a website for an event series happening in Berlin in 2026. It's built with my standard tech stack: Next.js, React, styled-components. The animations are built with the gsap library. As a CMS I'm using Contentful. I've designed the website together with Susann Nguimba, the organizer of the event series.",
+  "date": "2025-12-01",
+  "links": [
+    {
+      "type": "link",
+      "id": "benge-demo",
+      "link": "https://www.benge-events.de/"
+    },
+    {
+      "type": "github",
+      "id": "benge-github",
+      "link": "https://github.com/sopoour/benge-events"
+    }
+  ],
+  "tags": [
+    {
+      "type": "tech",
+      "label": "Next.js"
+    },
+    {
+      "type": "tech",
+      "label": "React"
+    },
+    {
+      "type": "tech",
+      "label": "styled-components"
+    },
+    {
+      "type": "tech",
+      "label": "Typescript"
+    },
+    {
+      "type": "tool",
+      "label": "Vercel"
+    },
+    {
+      "type": "tech",
+      "label": "GSAP"
+    },
+    {
+      "type": "skill",
+      "label": "Frontend Development"
+    },
+    {
+      "type": "skill",
+      "label": "Design"
+    }
+  ]
+}

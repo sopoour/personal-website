@@ -206,7 +206,7 @@ export const Card = styled.button<{
         opacity: 1;
       }
       &::before {
-        bottom: 30%;
+        bottom: 20%;
         opacity: 1;
       }
     }
