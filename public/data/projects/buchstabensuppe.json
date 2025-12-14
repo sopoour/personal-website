@@ -1,0 +1,56 @@
+{
+  "id": "buchstabensuppe",
+  "title": "Buchstabensuppe",
+  "description": "This is a website for a German live audio drama project built with my standard tech stack: Next.js, React, styled-components. The animations are built with the gsap library. I'm using Contentful as a CMS. I've also done the concept and design with Figma.",
+  "date": "2025-07-01",
+  "links": [
+    {
+      "type": "link",
+      "id": "buchstabensuppe-demo",
+      "link": "https://www.buchstabensuppe-hoerspiel.de/"
+    },
+    {
+      "type": "github",
+      "id": "buchstabensuppe-github",
+      "link": "https://github.com/sopoour/buchstabensuppe"
+    }
+  ],
+  "tags": [
+    {
+      "type": "tech",
+      "label": "Next.js"
+    },
+    {
+      "type": "tech",
+      "label": "React"
+    },
+    {
+      "type": "tech",
+      "label": "styled-components"
+    },
+    {
+      "type": "tech",
+      "label": "Typescript"
+    },
+    {
+      "type": "tool",
+      "label": "Figma"
+    },
+    {
+      "type": "tool",
+      "label": "Vercel"
+    },
+    {
+      "type": "tech",
+      "label": "GSAP"
+    },
+    {
+      "type": "skill",
+      "label": "Frontend Development"
+    },
+    {
+      "type": "skill",
+      "label": "Design"
+    }
+  ]
+}

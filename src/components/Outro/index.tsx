@@ -53,7 +53,7 @@ const BottomSection = styled.div`
   gap: 32px;
 `;
 
-const Question = styled(OutroDescription)`
+export const Question = styled(OutroDescription)`
   font-family: ${robotoMono.style.fontFamily};
 
   color: ${({ theme }) => theme.colors.accent.green};
