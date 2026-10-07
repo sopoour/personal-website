@@ -26,6 +26,10 @@
     },
     {
       "type": "tech",
+      "label": "Typescript"
+    },
+    {
+      "type": "tech",
       "label": "styled-components"
     },
     {
