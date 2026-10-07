@@ -47,6 +47,10 @@
     {
       "type": "skill",
       "label": "Design"
+    },
+    {
+      "type": "skill",
+      "label": "Localization"
     }
   ]
 }

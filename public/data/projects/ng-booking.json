@@ -1,0 +1,52 @@
+{
+  "id": "ng-booking",
+  "title": "NG-Booking",
+  "description": "Website for a booking agency of small indie artists. I've built it in my standard Tech Stack with Next.js, styled-components, Contentful CMS and hosted in Vercel. For the scroll animations I've used GSAP.",
+  "date": "2026-09-10",
+  "links": [
+    {
+      "type": "link",
+      "id": "ng-booking-demo",
+      "link": "https://www.ng-booking.de/"
+    },
+    {
+      "type": "github",
+      "id": "ng-booking-github",
+      "link": "https://github.com/sopoour/ng-booking"
+    }
+  ],
+  "tags": [
+    {
+      "type": "tech",
+      "label": "next.js"
+    },
+    {
+      "type": "tech",
+      "label": "react"
+    },
+    {
+      "type": "tech",
+      "label": "styled-components"
+    },
+    {
+      "type": "tool",
+      "label": "Contentful"
+    },
+    {
+      "type": "tech",
+      "label": "GSAP"
+    },
+    {
+      "type": "tool",
+      "label": "Vercel"
+    },
+    {
+      "type": "skill",
+      "label": "Frontend"
+    },
+    {
+      "type": "skill",
+      "label": "Localization"
+    }
+  ]
+}
